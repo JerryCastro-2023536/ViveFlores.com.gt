@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: #f4f7f6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f2e3e;
+    padding: 15px 40px;
+    color: white;
+}
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight:500 ;
+}
+
+nav a:hover{
+    color: #f6b93b;
+}
+table{
+    justify-content: center;
+    width: 90%;
+    margin: 20px auto;
+}
+
+th{
+    padding: 5px;
+    background-color: #0f2e3e;
+    text-align: center;
+    color: white;
+    
+}
+td{
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #0f2e3e;
+}
+.btn-editar-tabla{
+    background-color: #f6b93b;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top:50px;
+}
+.btn-editar-tabla:hover{
+    background-color: rgb(255, 153, 0);
+}
+
+.btn-eliminar-tabla{
+    background-color: rgb(207, 33, 33);
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top:50px;
+}
+.btn-eliminar-tabla:hover{
+    background-color: rgb(255, 17, 17);
+}
+
+.btn-crud{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 90px;
+}
+.agregar{
+    background-color: #0f2e3e;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 5px;
+    
+}
+.agregar svg{
+    color: #f4f7f6;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    transform: translate(10px, 3px);
+}
+.agregar:hover, .editar:hover{
+    background-color: #545f64;
+    color: #f6b93b;
+}   
+.editar{
+    background-color: #0f2e3e;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 5px;
+}
+.editar svg{
+    color: #f4f7f6;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    transform: translate(10px, 1px);
+}
+.btn-crud a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 500;
+}
