@@ -13,29 +13,28 @@
         <div class="logo">Vive Flores</div>
             <nav>
                 <ul>
-                    <li><a href="/Index/PaginaPrincipal.html">Inicio</a></li>
+                    <li><a href="index">Inicio</a></li>
                     <li><a href="#">Categorias</a></li>
                     <li><a href="#">Eventos</a></li>
                     <li><a href="#">Servicios</a></li>
-                    <li><a href="/Index/QuienesSomos.html">¿Quienes Somos?</a></li>
-                    <li><a href="/Index/Contacto.html">Contacto</a></li>
+                    <li><a href="quienessomos">¿Quienes Somos?</a></li>
+                    <li><a href="contacto">Contacto</a></li>
                     <li><a href="#">Conviertete en vendedor</a></li>
                 </ul>
             </nav>
-            <a href="/Index/Login.html"><button class="btn-login">Iniciar Sesión</button></a>
+            <a href="index"><button class="btn-login">Iniciar Sesión</button></a>
         </div>
     </header>
 
     <section class="register-container">
         <div class="register-card">
             <h2>Crear Cuenta</h2>
-            <form>
-                <input type="text" placeholder="Nombre" required>
-                <input type="text" placeholder="Apellido" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <input type="text" placeholder="Usuario" required>
-                <input type="password" placeholder="Contraseña" required>
-                <input type="password" placeholder="Confirmar contraseña" required>
+            <form th:action="@{/crear}" method="post">
+                <input type="text" placeholder="Username" name="username" required>
+                <input type="text" placeholder="Nombre" name="nombre" required>
+                <input type="text" placeholder="Apellido" name="apellido" required>
+                <input type="email" placeholder="Correo electrónico" name="email" required>
+                <input type="password" placeholder="Contraseña" name="contrasena" required>
                 <button type="submit" class="btn-register">Registrarse</button>
             </form>
 
@@ -44,7 +43,7 @@
             </p>
         </div>
         <div class="register-image">
-            <img src="/Image/islaRegister.jpg" alt="Isla de Flores">
+            <img src="islaRegister.jpg" alt="Isla de Flores">
         </div>
 
     </section>
