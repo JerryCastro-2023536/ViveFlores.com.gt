@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>CRUD Servicios</title>
+    <link rel="stylesheet" href="../Styles/ServiciosCrud.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Vive Flores</div>
+    <nav>
+        <a href="PaginaPrincipal.html" class="btn-home">⬅ Volver al inicio</a>
+    </nav>
+</header>
+
+<!-- CONTENEDOR GENERAL -->
+<div class="container">
+
+    <h2 class="titulo">Gestión de Servicios</h2>
+
+    <!-- FORMULARIO -->
+    <div class="form-container">
+        <form th:action="@{/servicios/guardar}" th:object="${servicio}" method="post">
+
+            <input type="hidden" th:field="*{id_servicio}">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" th:field="*{nombre_servicio}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="number" th:field="*{telefono}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>ID Usuario</label>
+                    <input type="number" th:field="*{id_usuario}" required>
+                </div>
+
+                <div class="form-group full">
+                    <label>Descripción</label>
+                    <textarea th:field="*{descripcion}" required></textarea>
+                </div>
+
+            </div>
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <!-- TABLA -->
+    <div class="tabla-container">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="s : ${servicios}">
+                <td th:text="${s.idServicio}"></td>
+                <td th:text="${s.nombreServicio}"></td>
+                <td th:text="${s.telefono}"></td>
+                <td th:text="${s.fechaCreacion}"></td>
+
+                <td class="acciones">
+                    <a th:href="@{'/servicios/editar/' + ${s.idServicio}}">
+                        <button class="btn-editar">Editar</button>
+                    </a>
+
+                    <a th:href="@{'/servicios/eliminar/' + ${s.idServicio}}">
+                        <button class="btn-eliminar">Eliminar</button>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
