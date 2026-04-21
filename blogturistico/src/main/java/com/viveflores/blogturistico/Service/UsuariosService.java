@@ -12,4 +12,5 @@ public interface UsuariosService {
     Usuarios saveUsuarios(Usuarios usuarios)throws RuntimeException;
     Usuarios updateUsuarios(Integer id, Usuarios usuarios) ;
     void deleteUsuarios(Integer id);
+    Usuarios login(String username, String contrasena);
 }
