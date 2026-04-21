@@ -49,4 +49,16 @@ public class UsuariosServiceImplements implements UsuariosService{
     public void deleteUsuarios(Integer id) {
         UsuarioRepository.deleteById(id);
     }
+
+    @Override
+    public Usuarios login(String username, String contrasena) {
+
+        Usuarios u = UsuarioRepository.findByUsername(username);
+
+        if(u != null && contrasena.equals(u.getContrasena_usuario())){
+            return u;
+        }
+
+        return null;
+    }
 }
