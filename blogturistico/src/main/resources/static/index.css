@@ -117,7 +117,7 @@ nav a:hover {
     width: 350px;
     height: 450px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     color: white;
 }
 
@@ -141,7 +141,7 @@ nav a:hover {
     margin-top: 20px;
 }
 
-.card button:hover{
+.card button:hover {
     background: #e58e26;
 }
 
@@ -151,7 +151,7 @@ nav a:hover {
     width: 350px;
     height: 600px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     color: white;
 }
 
@@ -191,7 +191,7 @@ nav a:hover {
     border-radius: 10px;
 }
 
-.gallery button {
+.btn-gallery {
     background: #f6b93b;
     color: black;
     border: none;
@@ -201,7 +201,7 @@ nav a:hover {
     margin-top: 20px;
 }
 
-.gallery button:hover {
+.btn-gallery:hover {
     background: #e58e26;
 }
 
