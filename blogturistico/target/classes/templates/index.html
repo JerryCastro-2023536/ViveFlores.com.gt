@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -7,21 +8,23 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
 </head>
+
 <body>
     <header>
         <div class="logo">Vive Flores</div>
-            <nav>
-                <ul>
-                    <li><a href="index">Inicio</a></li>
-                    <li><a href="#">Categorias</a></li>
-                    <li><a href="">Eventos</a></li>
-                    <li><a href="">Servicios</a></li>
-                    <li><a href="">¿Quienes Somos?</a></li>
-                    <li><a href="">Contacto</a></li>
-                    <li><a href="">Conviertete en vendedor</a></li>
-                </ul>
-            </nav>
-            <a href="acceder"><button class="btn-login">Iniciar Sesión</button></a>
+        <nav>
+            <ul>
+                <li><a href="index">Inicio</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="">Eventos</a></li>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">¿Quienes Somos?</a></li>
+                <li><a href="">Contacto</a></li>
+                <li><a href="">Conviertete en vendedor</a></li>
+                <li><a href="paneladmin">Administrar</a></li>
+            </ul>
+        </nav>
+        <a href="acceder"><button class="btn-login">Iniciar Sesión</button></a>
         </div>
     </header>
 
@@ -38,7 +41,7 @@
         <h2>Negocios Destacados</h2>
         <div class="cards">
             <div class="card" th:each="p, iterStat : ${publi}" th:if="${iterStat.index < 3}">
-                <img src="">
+                <img class="foto" th:src="@{'/publicaciones/foto/' + ${p.id_publicacion}}" alt="Perfil Admin">
                 <h3 th:text="${p.nombre_publicacion}">Nombre</h3>
                 <p th:text="${p.descripcion}">Descripcion</p>
                 <button>Ver más</button>
@@ -80,12 +83,16 @@
             <img src="Fotos2.jpg">
             <img src="Fotos3.jpg">
             <img src="Fotos4.jpg">
+        </div>
+        <div class="btn-gallery">
             <a href="Galeria de fotos.html"><button>Ver más</button></a>
         </div>
+
     </section>
 
     <footer>
         Todos los derechos © 2026 Isla de Flores
     </footer>
 </body>
+
 </html>
