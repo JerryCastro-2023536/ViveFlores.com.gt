@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Publicaciones</title>
+    <link rel="stylesheet" href="../static/crud.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Vive Flores</h1>
+        <a href="#" class="btn-volver">← Volver al inicio</a>
+    </header>
+
+    <main>
+        <h2>Gestión de Publicaciones</h2>
+
+        <div class="card">
+            <form>
+                <div class="grid-3">
+                    <input type="text" placeholder="Nombre publicación">
+                    <input type="text" placeholder="Dirección">
+                    <input type="number" placeholder="Teléfono">
+                </div>
+
+                <textarea placeholder="Descripción"></textarea>
+
+                <div class="grid-3">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Horario">
+                    <input type="date">
+                </div>
+
+                <div class="grid-3">
+                    <input type="text" placeholder="Estado">
+                    <input type="number" placeholder="ID Categoría">
+                    <input type="number" placeholder="ID Usuario">
+                </div>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+        </table>
+
+    </main>
+
+</body>
+
+</html>
