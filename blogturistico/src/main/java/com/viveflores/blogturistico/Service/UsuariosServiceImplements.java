@@ -10,7 +10,7 @@ import com.viveflores.blogturistico.Repository.UsuariosRepository;
 
 @Service
 public class UsuariosServiceImplements implements UsuariosService{
-    
+
     @Autowired
     private UsuariosRepository repo;
 
@@ -18,4 +18,20 @@ public class UsuariosServiceImplements implements UsuariosService{
     public List<Usuarios> listar() {
         return repo.findAll();
     }
+
+    @Override
+    public Usuarios guardar(Usuarios usuarios) {
+        return repo.save(usuarios);
+    }
+
+    @Override
+    public Usuarios buscarPorId(int id) {
+        return repo.findById(id).orElse(null);
+    }
+
+    @Override
+    public void eliminar(int id) {
+        repo.deleteById(id);
+    }
 }
+
