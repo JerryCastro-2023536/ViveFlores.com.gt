@@ -8,22 +8,23 @@
 
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="logo">Vive Flores</div>
     <nav>
-        <a href="PaginaPrincipal.html" class="btn-home">⬅ Volver al inicio</a>
+        <a th:href="@{/}" class="btn-home">⬅ Volver al inicio</a>
     </nav>
 </header>
 
-<!-- CONTENEDOR GENERAL -->
 <div class="container">
 
     <h2 class="titulo">Gestión de Servicios</h2>
 
     <!-- FORMULARIO -->
     <div class="form-container">
-        <form th:action="@{/servicioscrud/guardar}" th:object="${servicio}" method="post" enctype="multipart/form-data">
+        <form th:action="@{/servicioscrud/guardar}"
+              th:object="${servicio}"
+              method="post"
+              enctype="multipart/form-data">
 
             <input type="hidden" th:field="*{id_servicio}">
 
@@ -35,13 +36,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Descripción</label>
-                    <input type="text" th:field="*{descripcion}" required>
+                    <label>Teléfono</label>
+                    <input type="number" th:field="*{telefono}" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Teléfono</label>
-                    <input type="number" th:field="*{telefono}" required>
+                    <label>Descripción</label>
+                    <input type="text" th:field="*{descripcion}" required>
                 </div>
 
                 <div class="form-group">
@@ -68,39 +69,42 @@
     <!-- TABLA -->
     <div class="tabla-container">
         <table>
+
             <thead>
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Descripción</th>
                 <th>Teléfono</th>
-                <th>Foto</th>
-                <th>Fecha de Creación</th>
-                <th>Id de Usuario</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Usuario</th>
+                <th>Acciones</th>
             </tr>
             </thead>
 
             <tbody>
             <tr th:each="s : ${servicios}">
+
                 <td th:text="${s.id_servicio}"></td>
                 <td th:text="${s.nombre_servicio}"></td>
-                <td th:text="${s.descripcion}"></td>
                 <td th:text="${s.telefono}"></td>
-                <td th:text="${s.foto}"></td>
+                <td th:text="${s.descripcion}"></td>
                 <td th:text="${s.fecha_creacion}"></td>
                 <td th:text="${s.id_usuario}"></td>
 
                 <td class="acciones">
                     <a th:href="@{'/servicioscrud/editar/' + ${s.id_servicio}}">
-                        <button class="btn-editar">Editar</button>
+                        <button type="button" class="btn-editar">Editar</button>
                     </a>
 
                     <a th:href="@{'/servicioscrud/eliminar/' + ${s.id_servicio}}">
-                        <button class="btn-eliminar">Eliminar</button>
+                        <button type="button" class="btn-eliminar">Eliminar</button>
                     </a>
                 </td>
+
             </tr>
             </tbody>
+
         </table>
     </div>
 
