@@ -10,11 +10,14 @@ body {
 }
 
 header {
-    background-color: #fff;
-    padding: 1rem;
+    background-color: #0f2e3e;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100px;
+    color: #fff;
+
 }
 
 .logo {
@@ -33,11 +36,11 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
 }
 
 .btn-regresar {
-    background-color: #333;
+    background-color: #f6b93b;
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
@@ -61,10 +64,12 @@ nav ul li a {
 }
 
 .tablas {
+    justify-items: center;
+    margin-bottom: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+
 }
 
 a {
@@ -73,14 +78,21 @@ a {
 }
 
 .cards {
-    background-color: #fff;
-    padding: 1rem;
+    background-color: #0f2e3e;
+    padding: 20px;
     border-radius: 0.5rem;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .cards h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: #ffffff;
 }
 
 .cards:hover {
@@ -88,8 +100,8 @@ a {
 }
 
 footer {
-    background-color: #333;
+    background-color: #0f2e3e;
     color: #fff;
-    padding: 1rem;
+    padding: 20px;
     text-align: center;
 }
