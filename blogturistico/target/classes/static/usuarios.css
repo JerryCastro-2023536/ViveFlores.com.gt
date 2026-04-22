@@ -1,126 +1,231 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-body {
-    background-color: #f4f7f6;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0f2e3e;
+    background: #0a3740;
     padding: 15px 40px;
     color: white;
+    height: 90px;
 }
+
+body {
+    background: #f4f6f3;
+}
+
 .logo {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
 }
-
-nav ul{
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    justify-content: flex-end;
-}
-
-nav a{
-    color: white;
+#btn-regresar {
+    background: #9dad42;
+    color: #0a3740;
+    padding: 8px 14px;
+    border-radius: 6px;
     text-decoration: none;
-    font-weight:500 ;
-}
-
-nav a:hover{
-    color: #f6b93b;
-}
-table{
-    justify-content: center;
-    width: 90%;
-    margin: 20px auto;
-}
-
-th{
-    padding: 5px;
-    background-color: #0f2e3e;
-    text-align: center;
-    color: white;
-    
-}
-td{
-    padding: 5px;
-    text-align: center;
-    border-bottom: 1px solid #0f2e3e;
-}
-.btn-editar-tabla{
-    background-color: #f6b93b;
-    padding: 5px;
-    border-radius: 5px;
+    font-weight: bold;
+    border: none;
     cursor: pointer;
-    margin-right: 5px;
-    margin-top:50px;
-}
-.btn-editar-tabla:hover{
-    background-color: rgb(255, 153, 0);
 }
 
-.btn-eliminar-tabla{
-    background-color: rgb(207, 33, 33);
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top:50px;
+#btn-regresar:hover {
+    background: #b1bf63;
 }
-.btn-eliminar-tabla:hover{
-    background-color: rgb(255, 17, 17);
-}
-
-.btn-crud{
+.container{
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin: 500px; margin-top: 25px; margin-bottom: 25px;
+    width: 100%;
+    max-width: 700px;
     display: flex;
-    margin-top: 50px;
-    margin-left: 90px;
-}
-.agregar{
-    background-color: #0f2e3e;
-    margin-right: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    padding: 5px 5px;
-    
-}
-.agregar svg{
-    color: #f4f7f6;
-    width: 20px;
-    height: 20px;
+    flex-direction: row;
+    gap: 80px;
     justify-content: center;
-    transform: translate(10px, 3px);
 }
-.agregar:hover, .editar:hover{
+.agregar-container p{
+    color: #0a3740;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.agregar-container input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#btn-agregar {
+    display: flex;
+    background: #258a60;
+    color: white;
+    border-radius: 6px;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    font-size: 25px;
+    margin-top: 20px;
+}
+#btn-agregar:hover {
     background-color: #545f64;
-    color: #f6b93b;
-}   
-.editar{
-    background-color: #0f2e3e;
-    margin-right: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    padding: 5px 5px;
 }
-.editar svg{
-    color: #f4f7f6;
-    width: 20px;
-    height: 20px;
-    justify-content: center;
-    transform: translate(10px, 1px);
-}
-.btn-crud a{
+#btn-agregar svg{
     color: white;
+    margin-right: 10px;
+    margin-left: 5px;
+    font-size: 28px;
+}
+
+.buscar {
+    display: flex;
+    background: #258a60;
+    color: white;
+    border-radius: 6px;
+    align-items: center;
+    font-size: 25px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 25px;
+    padding: 5px 10px;
+}
+
+.buscar a{
     text-decoration: none;
-    padding: 10px;
-    font-weight: 500;
+    color: white;
+}
+
+.buscar:hover {
+    background-color: #545f64;
+}
+
+.buscar svg {
+    color: white;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+table {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+thead {
+    background: #0a3740;
+    color: white;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+tbody tr:hover {
+    background: #f5f8f6;
+}
+.btn-editar-tabla {
+    background: #b1bf63;
+    color: #0a3740;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 5px;
+    cursor: pointer;
+
+}
+.btn-editar-tabla:hover {
+    background: #9dad42;
+}
+
+.btn-eliminar-tabla {
+    background: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-eliminar-tabla:hover {
+    background: #c0392b;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 700px;
+    color: #333;
+}
+
+.modal-content h2 {
+    color: #0a3740;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #f6b93b;
+    padding-bottom: 10px;
+}
+
+.modal-content form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.modal-content label{
+    font-weight: bold;
+    color: #0a3740;
+}
+.modal-content button{
+    border:none;
+    background: #0a3740;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close{
+    font-size: 30px;
+}
+.modal-content p {
+    font-weight: bold;
+    color: #0a3740;
+    margin-bottom:5px;
 }
