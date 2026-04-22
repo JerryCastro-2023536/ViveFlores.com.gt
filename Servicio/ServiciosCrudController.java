@@ -5,6 +5,7 @@ import com.viveflores.blogturistico.Service.ServicioService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 
@@ -24,19 +25,31 @@ public class ServiciosCrudController {
         model.addAttribute("servicios", servicioService.getAllServicios());
         model.addAttribute("servicio", new Servicio());
 
-        return "serviciosCrud"; // 👈 tu HTML
+        return "serviciosCrud";
     }
 
     @PostMapping("/guardar")
-    public String guardar(@ModelAttribute Servicio servicio) {
+    public String guardar(
+            @ModelAttribute Servicio servicio,
+            @RequestParam("archivo") MultipartFile archivo
+    ) {
+        try {
 
-        if (servicio.getId_servicio() == null) {
-            servicio.setFecha_creacion(LocalDate.now());
+            if (!archivo.isEmpty()) {
+                servicio.setFoto(archivo.getBytes());
+            }
+
+            if (servicio.getId_servicio() == null) {
+                servicio.setFecha_creacion(LocalDate.now());
+            }
+
+            servicioService.saveServicio(servicio);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        servicioService.saveServicio(servicio);
-
-        return "redirect:/servicios";
+        return "redirect:/servicioscrud";
     }
 
     @GetMapping("/editar/{id}")
@@ -47,7 +60,7 @@ public class ServiciosCrudController {
         model.addAttribute("servicio", servicioEdit);
         model.addAttribute("servicios", servicioService.getAllServicios());
 
-        return "servicioCrud";
+        return "servicioscrud";
     }
 
     @GetMapping("/eliminar/{id}")
@@ -55,6 +68,6 @@ public class ServiciosCrudController {
 
         servicioService.deleteServicio(id);
 
-        return "redirect:/servicios";
+        return "redirect:/servicioscrud";
     }
 }
