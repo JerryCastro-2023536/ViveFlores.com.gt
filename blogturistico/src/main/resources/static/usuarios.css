@@ -32,7 +32,15 @@ body {
     font-weight: bold;
     border: none;
     cursor: pointer;
+    align-items: center;
 }
+#btn-regresar i{
+    margin-right: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items:start;
+}
+
 
 #btn-regresar:hover {
     background: #b1bf63;
@@ -42,7 +50,7 @@ body {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    margin: 500px; margin-top: 25px; margin-bottom: 25px;
+    margin: 600px; margin-top: 25px; margin-bottom: 25px;
     width: 100%;
     max-width: 700px;
     display: flex;
@@ -76,7 +84,7 @@ body {
     margin-top: 20px;
 }
 #btn-agregar:hover {
-    background-color: #545f64;
+    background-color: #0a3740;
 }
 #btn-agregar svg{
     color: white;
@@ -104,7 +112,7 @@ body {
 }
 
 .buscar:hover {
-    background-color: #545f64;
+    background-color: #0a3740;
 }
 
 .buscar svg {
@@ -222,7 +230,11 @@ tbody tr:hover {
     cursor: pointer;
 }
 .close{
-    font-size: 30px;
+    display: flex;
+    font-size: 40px;
+    text-decoration: none;
+    color: #0a3740;
+    justify-content: end;
 }
 .modal-content p {
     font-weight: bold;
