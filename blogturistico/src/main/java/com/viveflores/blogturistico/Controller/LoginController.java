@@ -26,18 +26,18 @@ public class LoginController {
 
     @PostMapping("/login")
     public String iniciarSesion(@RequestParam("username") String username,
-                                @RequestParam("contrasena") String contraena,
+                                @RequestParam("contrasena") String contrasena,
                                 Model model,
                                 HttpSession session){
 
-        Usuarios u = usuariosService.login(username, contraena);
+        Usuarios u = usuariosService.login(username, contrasena);
 
         if (u != null) {
             session.setAttribute("usuarioLogueado", u);
-            return "redirect:/principal";
+            return "redirect:/index";
         } else {
             model.addAttribute("error", "Credenciales incorrectas");
-            return "login";
+            return "acceder";
         }
     }
 }
