@@ -30,8 +30,8 @@
         <div class="login-card">
             <h2>Bienvenido</h2>
             <form th:action="@{/login}" method="post">
-                <input type="text" placeholder="Usuario o correo" required>
-                <input type="password" placeholder="Contraseña" required>
+                <input type="text" placeholder="Usuario o correo" name="username" required>
+                <input type="password" placeholder="Contraseña" name="contrasena" required>
                 <button type="submit" class="btn-login">Ingresar</button>
             </form>
             <p class="register-text">
