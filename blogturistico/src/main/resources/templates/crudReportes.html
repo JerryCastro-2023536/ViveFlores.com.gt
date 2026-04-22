@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reportes</title>
+    <link rel="stylesheet" href="../static/crud.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Vive Flores</h1>
+        <a href="#" class="btn-volver">← Volver al inicio</a>
+    </header>
+
+    <main>
+        <h2>Gestión de Reportes</h2>
+
+        <div class="card">
+            <form>
+                <input type="text" placeholder="Asunto">
+
+                <textarea placeholder="Mensaje"></textarea>
+
+                <div class="grid-2">
+                    <input type="datetime-local">
+                    <input type="text" placeholder="ID Usuario">
+                </div>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Asunto</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+        </table>
+
+    </main>
+
+</body>
+
+</html>
