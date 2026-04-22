@@ -18,7 +18,14 @@ header {
 body {
     background: #f4f6f3;
 }
-
+body h2{
+    display: flex;
+    color: #0a3740;
+    font-weight: bold;
+    font-size: 45px;
+    justify-content: center;
+    margin-top: 25px;
+}
 .logo {
     font-size: 28px;
     font-weight: bold;
