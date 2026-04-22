@@ -27,7 +27,7 @@ public class Servicio {
     private Integer telefono;
 
     @Lob
-    @Column (name = "foto")
+    @Column (name = "foto", columnDefinition = "mediumblob")
     private byte[] foto;
 
     @NotNull(message = "El campo no debe ir vacio")

@@ -27,7 +27,7 @@ public class Publicaciones {
     private String direccion;
 
     @Lob
-    @Column(name = "foto", columnDefinition = "blob")
+    @Column(name = "foto", columnDefinition = "mediumblob")
     private byte[] foto;
 
     @NotNull(message = "El campo no debe ir vacio")
