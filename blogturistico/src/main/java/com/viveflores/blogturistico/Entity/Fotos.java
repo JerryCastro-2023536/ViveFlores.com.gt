@@ -24,7 +24,7 @@ public class Fotos {
     private String descripcion;
 
     @Lob
-    @Column(name = "foto")
+    @Column(name = "foto", columnDefinition = "mediumblob")
     private byte[] foto;
 
     @NotNull(message = "El campo no debe ir vacio")
