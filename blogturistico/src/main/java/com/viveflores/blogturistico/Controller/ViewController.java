@@ -14,4 +14,9 @@ public class ViewController {
     public String contacto(){
         return "Contacto";
     }
+
+    @GetMapping("/administracion")
+    public String panelAdmin(){
+        return "paneladmin";
+    }
 }
