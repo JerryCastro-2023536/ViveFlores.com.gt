@@ -67,7 +67,7 @@ public class UsuariosController {
     }
 
     @GetMapping("/usuarios/eliminar/{id}")
-    public String getMethodName(@PathVariable int id) {
+    public String eliminarUsuario(@PathVariable int id) {
         service.eliminar(id);
         return "redirect:/usuarios";
     }
