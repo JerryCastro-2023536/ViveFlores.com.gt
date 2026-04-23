@@ -1,16 +1,15 @@
 package com.viveflores.blogturistico.Service;
 
-import com.viveflores.blogturistico.Entity.SolicitudPublicacion;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.viveflores.blogturistico.Entity.SolicitudPublicacion;
 
 @Service
 public interface SolicitudPublicacionService {
-
-    List<SolicitudPublicacion> getAllSolicitud();
-    SolicitudPublicacion getSolicitudById(Integer id);
-    SolicitudPublicacion saveSolicitud(SolicitudPublicacion solicitudPublicacion) throws RuntimeException;
-    SolicitudPublicacion updateSolicitud(Integer id,SolicitudPublicacion SolicitudPublicacion);
-    void deleteSolicitud(Integer id);
+    List<SolicitudPublicacion> listar();
+    SolicitudPublicacion guardar(SolicitudPublicacion solicitudPublicacion);
+    SolicitudPublicacion buscarPorId(int id);
+    void eliminar(int id);
 }
