@@ -1,75 +1,67 @@
 package com.viveflores.blogturistico.Controller;
 
-import com.viveflores.blogturistico.Entity.SolicitudPublicacion;
-import com.viveflores.blogturistico.Exception.FechasValidar;
-import com.viveflores.blogturistico.Exception.NotFoundExcepcion;
-import com.viveflores.blogturistico.Service.SolicitudPublicacionService;
-import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
-import java.util.List;
+import com.viveflores.blogturistico.Entity.SolicitudPublicacion;
+import com.viveflores.blogturistico.Service.SolicitudPublicacionService;
 
-@RestController
-@RequestMapping("/api/solicitud")
-
+@Controller
 public class SolicitudPublicacionController {
-    private final SolicitudPublicacionService solicitudPublicacionService;
-    FechasValidar fv = new FechasValidar();
+    @Autowired
+    private SolicitudPublicacionService service;
 
-    public SolicitudPublicacionController(SolicitudPublicacionService solicitudPublicacionService){ this.solicitudPublicacionService=solicitudPublicacionService;}
+//    @GetMapping("/solicitudPublicacion")
+//    public String listarsolicitudPublicacion(@RequestParam(name = "accion", required = false) String accion,
+//                                 @RequestParam(name = "id", required = false) Integer id,
+//                                 Model model) {
+//
+//        model.addAttribute("solicitudPublicacion",service.listar());
+//        model.addAttribute("accion", accion);
+//
+//        if("editar".equals(accion) && id !=null ){
+//            model.addAttribute("uEncontrado",service.buscarPorId(id));
+//        }else{
+//            model.addAttribute("uEcontrado", new SolicitudPublicacion());
+//        }
+//        return "solicitudPublicacion";
+//    }
 
-    @GetMapping
-    public List<SolicitudPublicacion> getAllSolicitud(){return solicitudPublicacionService.getAllSolicitud();}
-
-    @PostMapping
-    public ResponseEntity<Object> createSolicitud(@Valid @RequestBody SolicitudPublicacion solicitudP){
-        try{
-            SolicitudPublicacion Createdsolicitud= solicitudPublicacionService.saveSolicitud(solicitudP);
-            return new ResponseEntity<>(Createdsolicitud,HttpStatus.CREATED);
-        }catch(IllegalArgumentException e){
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    @PostMapping("/solicitudPublicacion/agregar")
+    public String agregar(@ModelAttribute SolicitudPublicacion solicitudPublicacion) {
+        service.guardar(solicitudPublicacion);
+        return "redirect:/solicitudPublicacion";
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Object> updateSolicitud(@PathVariable Integer id, @Valid @RequestBody SolicitudPublicacion solicitud){
-        try {
-            SolicitudPublicacion solicitudPubli= solicitudPublicacionService.getSolicitudById(id);
-            if(solicitudPubli==null) {
-                throw new NotFoundExcepcion("El id no existe");
+    @PostMapping("/solicitudPublicacion/buscar")
+    public String buscar(@RequestParam Integer id_solicitud, Model model) {
+        if (id_solicitud != null) {
+            SolicitudPublicacion u = service.buscarPorId(id_solicitud);
+            if (u != null) {
+                model.addAttribute("solicitudPublicacion", java.util.List.of(u));
+            } else {
+                model.addAttribute("solicitudPublicacion", service.listar());
+                model.addAttribute("error", "No existe ese ID");
             }
-            fv.validarLocalDate(solicitud.getFecha_solicitud());
-            solicitud.setId_solicitud(id);
-
-            SolicitudPublicacion updateSolicitud= solicitudPublicacionService.updateSolicitud(id,solicitud);
-            return ResponseEntity.ok(updateSolicitud);
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
         }
+        return "solicitudPublicacion";
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteSolicitud(@PathVariable Integer id){
-        try {
 
-            SolicitudPublicacion solicitudP = solicitudPublicacionService.getSolicitudById(id);
-
-            solicitudPublicacionService.deleteSolicitud(id);
-            return ResponseEntity.ok(solicitudP);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    @PostMapping("/solicitudPublicacion/editar")
+    public String editar(@ModelAttribute SolicitudPublicacion solicitudPublicacion) {
+        service.guardar(solicitudPublicacion);
+        return "redirect:/solicitudPublicacion";
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Object> getSolicitudById(@PathVariable Integer id) {
-        try {
-            SolicitudPublicacion solicitudP = solicitudPublicacionService.getSolicitudById(id);
-            return ResponseEntity.ok(solicitudP);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    @GetMapping("/solicitudPublicacion/eliminar/{id}")
+    public String eliminar(@PathVariable int id) {
+        service.eliminar(id);
+        return "redirect:/solicitudPublicacion";
     }
+
+
 }
