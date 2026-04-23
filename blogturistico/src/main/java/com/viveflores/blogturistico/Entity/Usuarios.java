@@ -1,10 +1,13 @@
 package com.viveflores.blogturistico.Entity;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-
 import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "usuarios")
@@ -15,31 +18,30 @@ public class Usuarios {
     @Column(name = "id_usuario")
     private Integer id_usuario;
 
-    @NotBlank(message = "El campo no debe ir vacio")
+    
     @Column(name = "username")
     private String username;
 
-    @NotBlank(message = "El campo no debe ir vacio")
+    
     @Column(name = "nombre_usuario")
     private String nombre_usuario;
 
-    @NotBlank(message = "El campo no debe ir vacio")
+    
     @Column(name = "apellido_usuario")
     private String apellido_usuario;
 
-    @NotBlank(message = "El campo no debe ir vacio")
+    
     @Column(name = "email_usuario")
     private String email_usuario;
 
-    @NotBlank(message = "El campo no debe ir vacio")
+    
     @Column(name = "contrasena_usuario")
     private String contrasena_usuario;
 
-    @NotBlank(message = "El campo no debe ir vacio")
+    
     @Column(name = "rol")
     private String rol;
-
-    @NotNull(message = "El campo no debe ir vacio")
+    
     @Column(name = "fecha_registro")
     private LocalDate fecha_registro;
 
