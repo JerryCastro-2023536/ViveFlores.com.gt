@@ -41,7 +41,7 @@
         <h2>Negocios Destacados</h2>
         <div class="cards">
             <div class="card" th:each="p, iterStat : ${publi}" th:if="${iterStat.index < 3}">
-                <img class="foto" th:src="@{'/publicaciones/foto/' + ${p.id_publicacion}}" alt="Perfil Admin">
+                <img class="foto" th:src="@{'/publicaciones/foto/' + ${p.id_publicacion}}" alt="publicacion">
                 <h3 th:text="${p.nombre_publicacion}">Nombre</h3>
                 <p th:text="${p.descripcion}">Descripcion</p>
                 <button>Ver más</button>
@@ -54,7 +54,7 @@
         <h2>Eventos</h2>
         <div class="cards">
             <div class="card1" th:each="e, iterStat : ${event}" th:if="${iterStat.index < 3}">
-                <img src="">
+                <img class="foto" th:src="@{'/eventos/foto/' + ${e.id_evento}}" alt="Eventos">
                 <h3 th:text="${e.nombre_evento}"></h3>
                 <p th:text="${e.descripcion}"></p>
                 <button>Más información</button>
@@ -67,7 +67,7 @@
         <h2>Servicios Turísticos</h2>
         <div class="cards">
             <div class="card" th:each="s, iterStat : ${servi}" th:if="${iterStat.index < 3}">
-                <img src="">
+                <img class="foto" th:src="@{'/servicios/foto/' + ${s.id_servicio}}" alt="Servicio">
                 <h3 th:text="${s.nombre_servicio}"></h3>
                 <p th:text="${s.descripcion}"></p>
                 <button>Ver más</button>
