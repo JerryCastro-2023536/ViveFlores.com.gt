@@ -6,12 +6,19 @@ import jakarta.servlet.ServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
-
+/*
 @RestController
 @RequestMapping("/api/reportes")
+ */
+
+@Controller
 public class ReportesController {
     private final ReportesService reportesService;
 
@@ -19,6 +26,60 @@ public class ReportesController {
         this.reportesService = reportesService;
     }
 
+    @GetMapping("reportes")
+    public String mostrarReportes(Model model){
+        model.addAttribute("reportes", reportesService.getAllReportes());
+        return "crudReportes";
+    }
+
+    @PostMapping("/saveReporte")
+    public String saveReporte(@RequestParam("asunto") String asunto,
+                              @RequestParam("mensaje") String mensaje,
+                              @RequestParam("fecha") LocalDateTime fecha,
+                              @RequestParam("idUsuario") Integer idUsuario){
+        Reportes r = new Reportes();
+
+        r.setAsunto(asunto);
+        r.setMensaje(mensaje);
+        r.setFecha_envio(fecha);
+        r.setId_usuario(idUsuario);
+
+        reportesService.saveReportes(r);
+        return "redirect:/reportes";
+
+    }
+
+    @PostMapping("/updateReporte")
+    public String updateReporte(@RequestParam("id") Integer id,
+                                @RequestParam("asunto") String asunto,
+                                @RequestParam("mensaje") String mensaje,
+                                @RequestParam("fecha") LocalDateTime fecha,
+                                @RequestParam("idUsuario") Integer idUsuario){
+        Reportes r = new Reportes();
+
+        r.setAsunto(asunto);
+        r.setMensaje(mensaje);
+        r.setFecha_envio(fecha);
+        r.setId_usuario(idUsuario);
+
+        reportesService.updateReportes(id, r);
+        return "redirect:/reportes";
+    }
+
+    @PostMapping("/searchReporte")
+    public String buscarReporte(@RequestParam("id") Integer id, Model model){
+        Reportes r = reportesService.getReporteById(id);
+        model.addAttribute("reportes", List.of(r));
+        return "crudReportes";
+    }
+
+    @GetMapping("/deleteReporte/{id}")
+    public String deleteReporte(@PathVariable("id") Integer id){
+        reportesService.deleteReportes(id);
+        return "redirect:/reportes";
+    }
+
+    /*
     @GetMapping
     public List<Reportes> getAllReportes(){
         return reportesService.getAllReportes();
@@ -63,5 +124,5 @@ public class ReportesController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
+    */
 }
