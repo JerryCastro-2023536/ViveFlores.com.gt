@@ -33,11 +33,11 @@ nav a {
 }
 
 nav a:hover {
-    color: #f6b93b;
+    color: #fbb824;
 }
 
 .btn-login {
-    background: #f6b93b;
+    background: #fbb824;
     border: none;
     padding: 8px 15px;
     cursor: pointer;
@@ -191,7 +191,7 @@ nav a:hover {
     border-radius: 10px;
 }
 
-.btn-gallery {
+.btn-gallery button{
     background: #f6b93b;
     color: black;
     border: none;
@@ -201,7 +201,7 @@ nav a:hover {
     margin-top: 20px;
 }
 
-.btn-gallery:hover {
+.btn-gallery button:hover {
     background: #e58e26;
 }
 
