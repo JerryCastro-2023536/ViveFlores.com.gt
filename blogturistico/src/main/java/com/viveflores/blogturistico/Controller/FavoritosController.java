@@ -5,12 +5,18 @@ import com.viveflores.blogturistico.Service.FavoritosService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/*
 @RestController
 @RequestMapping("/api/favoritos")
+ */
+
+@Controller
 public class FavoritosController {
 
     private final FavoritosService favoritosService;
@@ -19,6 +25,57 @@ public class FavoritosController {
         this.favoritosService = favoritosService;
     }
 
+    @GetMapping("/favoritos")
+    public String mostrarFavoritos(Model model){
+        model.addAttribute("favoritos", favoritosService.getFavoritosAll());
+        return "crudFavoritos";
+    }
+
+    @PostMapping("/saveFavorito")
+    public String saveFavorito(
+            @RequestParam("idUsuario") Integer idUsuario,
+            @RequestParam("idPublicacion") Integer idPublicacion,
+            @RequestParam("idCategoria") Integer idCategoria
+    ) {
+        Favoritos f = new Favoritos();
+        f.setId_usuario(idUsuario);
+        f.setId_publicacion(idPublicacion);
+        f.setId_categoria(idCategoria);
+
+        favoritosService.saveFavoritos(f);
+        return "redirect:/favoritos";
+    }
+
+    @PostMapping("/updateFavorito")
+    public String updateFavorito(
+            @RequestParam("id") Integer id,
+            @RequestParam("idUsuario") Integer idUsuario,
+            @RequestParam("idPublicacion") Integer idPublicacion,
+            @RequestParam("idCategoria") Integer idCategoria
+    ) {
+        Favoritos f = new Favoritos();
+        f.setId_usuario(idUsuario);
+        f.setId_publicacion(idPublicacion);
+        f.setId_categoria(idCategoria);
+
+        favoritosService.updateFavoritos(id, f);
+        return "redirect:/favoritos";
+    }
+
+    @PostMapping("/searchFavorito")
+    public String buscarFavorito(@RequestParam("id") Integer id, Model model){
+        Favoritos f = favoritosService.getFavoritosById(id);
+        model.addAttribute("favoritos", List.of(f));
+        return "crudFavoritos";
+    }
+
+    @GetMapping("/deleteFavorito/{id}")
+    public String deleteFavorito(@PathVariable("id") Integer id){
+        favoritosService.deleteFavoritos(id);
+        return "redirect:/favoritos";
+    }
+
+    /*
     @GetMapping
     List<Favoritos> getAllFavoritos(){
         return favoritosService.getFavoritosAll();
@@ -63,5 +120,5 @@ public class FavoritosController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
+    */
 }
