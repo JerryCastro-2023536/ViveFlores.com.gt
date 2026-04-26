@@ -15,7 +15,7 @@ public class ViewController {
         return "Contacto";
     }
 
-    @GetMapping("/administracion")
+    @GetMapping("/paneladmin")
     public String panelAdmin(){
         return "paneladmin";
     }
