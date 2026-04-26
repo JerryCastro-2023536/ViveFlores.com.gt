@@ -5,12 +5,19 @@ import com.viveflores.blogturistico.Service.PublicacionesService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
+/*
 @RestController
 @RequestMapping("/api/publicaciones")
+ */
+
+@Controller
 public class PublicacionesController {
     private final PublicacionesService publicacionesService;
 
@@ -18,6 +25,85 @@ public class PublicacionesController {
         this.publicacionesService = publicacionesService;
     }
 
+    @GetMapping("/publicaciones")
+    public String mostrarPublicaciones(Model model){
+        model.addAttribute("publicaciones", publicacionesService.getAllPublicaciones());
+        return "crudPublicaciones";
+    }
+
+    @PostMapping("/savePublicacion")
+    public String savePublicacion(
+            @RequestParam("nombrePublicacion") String nombrePublicacion,
+            @RequestParam("descripcion") String descripcion,
+            @RequestParam("direccion") String direccion,
+            @RequestParam("telefono") Integer telefono,
+            @RequestParam("emailPublicacion") String emailPublicacion,
+            @RequestParam("horario") String horario,
+            @RequestParam("fechaCreacion") LocalDate fechaCreacion,
+            @RequestParam("estadoPublicacion") String estadoPublicacion,
+            @RequestParam("idCategoria") Integer idCategoria,
+            @RequestParam("idUsuario") Integer idUsuario
+    ) {
+        Publicaciones p = new Publicaciones();
+        p.setNombre_publicacion(nombrePublicacion);
+        p.setDescripcion(descripcion);
+        p.setDireccion(direccion);
+        p.setTelefono(telefono);
+        p.setEmail_publicacion(emailPublicacion);
+        p.setHorario(horario);
+        p.setFecha_creacion(fechaCreacion);
+        p.setEstado_publicacion(estadoPublicacion);
+        p.setId_categoria(idCategoria);
+        p.setId_usuario(idUsuario);
+
+        publicacionesService.savePublicaciones(p);
+        return "redirect:/publicaciones";
+    }
+
+    @PostMapping("/updatePublicacion")
+    public String updatePublicacion(
+            @RequestParam("id") Integer id,
+            @RequestParam("nombrePublicacion") String nombrePublicacion,
+            @RequestParam("descripcion") String descripcion,
+            @RequestParam("direccion") String direccion,
+            @RequestParam("telefono") Integer telefono,
+            @RequestParam("emailPublicacion") String emailPublicacion,
+            @RequestParam("horario") String horario,
+            @RequestParam("fechaCreacion") LocalDate fechaCreacion,
+            @RequestParam("estadoPublicacion") String estadoPublicacion,
+            @RequestParam("idCategoria") Integer idCategoria,
+            @RequestParam("idUsuario") Integer idUsuario
+    ) {
+        Publicaciones p = new Publicaciones();
+        p.setNombre_publicacion(nombrePublicacion);
+        p.setDescripcion(descripcion);
+        p.setDireccion(direccion);
+        p.setTelefono(telefono);
+        p.setEmail_publicacion(emailPublicacion);
+        p.setHorario(horario);
+        p.setFecha_creacion(fechaCreacion);
+        p.setEstado_publicacion(estadoPublicacion);
+        p.setId_categoria(idCategoria);
+        p.setId_usuario(idUsuario);
+
+        publicacionesService.updatePublicaciones(id, p);
+        return "redirect:/publicaciones";
+    }
+
+    @PostMapping("/searchPublicacion")
+    public String buscarPublicacion(@RequestParam("id") Integer id, Model model){
+        Publicaciones p = publicacionesService.getPublicacionesById(id);
+        model.addAttribute("publicaciones", List.of(p));
+        return "crudPublicaciones";
+    }
+
+    @GetMapping("/deletePublicacion/{id}")
+    public String deletePublicacion(@PathVariable("id") Integer id){
+        publicacionesService.deletePublicaciones(id);
+        return "redirect:/publicaciones";
+    }
+
+    /*
     @GetMapping
     List<Publicaciones> getAllPublicaciones() {
         return publicacionesService.getAllPublicaciones();
@@ -57,9 +143,9 @@ public class PublicacionesController {
     public ResponseEntity<Object> deletePublicaciones(@PathVariable Integer id){
         try {
             publicacionesService.deletePublicaciones(id);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (Exception e) {
+            return ResponseEntity.ok(HttpStatus.OK);
+        }catch(Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-    }
+    */
 }
