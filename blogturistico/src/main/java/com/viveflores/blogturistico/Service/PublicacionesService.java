@@ -1,15 +1,15 @@
 package com.viveflores.blogturistico.Service;
 
-import com.viveflores.blogturistico.Entity.Publicaciones;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.viveflores.blogturistico.Entity.Publicaciones;
 
 @Service
 public interface PublicacionesService {
-    List<Publicaciones> getAllPublicaciones();
-    Publicaciones getPublicacionesById(Integer id);
-    Publicaciones savePublicaciones(Publicaciones publicaciones);
-    Publicaciones updatePublicaciones(Integer id, Publicaciones publicaciones);
-    void deletePublicaciones(Integer id);
+    List<Publicaciones> listar();
+    Publicaciones guardar(Publicaciones publicaciones);
+    Publicaciones buscarporId(int id);
+    void eliminar(int id);
 }
