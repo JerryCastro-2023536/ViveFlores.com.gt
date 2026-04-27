@@ -21,7 +21,7 @@ body {
 body h2{
     display: flex;
     color: #0a3740;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 45px;
     justify-content: center;
     margin-top: 25px;
