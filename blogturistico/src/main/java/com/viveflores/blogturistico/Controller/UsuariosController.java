@@ -20,24 +20,24 @@ public class UsuariosController {
     @Autowired
     private UsuariosService service;
 
-    @GetMapping("/")
-    public String inicio() {return "redirect:/usuarios";}
+    // @GetMapping("/")
+    // public String inicio() {return "redirect:/usuarios";}
 
-    @GetMapping("/usuarios")
-    public String listarUsuarios(@RequestParam(name = "accion", required = false) String accion,
-                                 @RequestParam(name = "id", required = false) Integer id,
-                                 Model model) {
+    // @GetMapping("/usuarios")
+    // public String listarUsuarios(@RequestParam(name = "accion", required = false) String accion,
+    //                              @RequestParam(name = "id", required = false) Integer id,
+    //                              Model model) {
 
-        model.addAttribute("usuarios",service.listar());
-        model.addAttribute("accion", accion);
+    //     model.addAttribute("usuarios",service.listar());
+    //     model.addAttribute("accion", accion);
 
-        if("editar".equals(accion) && id !=null ){
-            model.addAttribute("uEncontrado",service.buscarPorId(id));
-        }else{
-            model.addAttribute("uEcontrado", new Usuarios());
-        }
-        return "usuarios";
-    }
+    //     if("editar".equals(accion) && id !=null ){
+    //         model.addAttribute("uEncontrado",service.buscarPorId(id));
+    //     }else{
+    //         model.addAttribute("uEcontrado", new Usuarios());
+    //     }
+    //     return "usuarios";
+    // }
 
     @PostMapping("/usuarios/agregar")
     public String agregar(@ModelAttribute Usuarios usuarios) {
