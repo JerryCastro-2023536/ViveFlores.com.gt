@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vive Flores - Gestión de Fotos</title>
+    <link rel="stylesheet" href="/css/estilos.css" th:href="@{/css/estilos.css}"/>
+    <link rel="stylesheet" href="/css/fotos.css"   th:href="@{/css/fotos.css}"/>
+</head>
+<body>
+
+<nav>
+    <span class="brand">Vive Flores</span>
+    <a class="btn-back" href="/">&#8592; Volver al inicio</a>
+</nav>
+
+<div class="container">
+    <h1>Gestión de Fotos</h1>
+
+    <!-- FORM CARD -->
+    <div class="card">
+        <!-- SAVE FORM -->
+        <form th:if="${!modoEdicion}" th:action="@{/fotos/guardar}" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Título de la Foto</label>
+                    <input type="text" name="titulo_foto" placeholder="Título" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Usuario</label>
+                    <input type="number" name="id_usuario" placeholder="ID Usuario" required/>
+                </div>
+                <div class="form-group">
+                    <label>Fecha de Creación</label>
+                    <input type="date" name="fecha_creacion" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea name="descripcion" placeholder="Descripción de la foto..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Archivo de Imagen</label>
+                    <input type="file" name="archivo" accept="image/*"/>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-save">Guardar</button>
+            </div>
+        </form>
+
+        <!-- EDIT FORM -->
+        <form th:if="${modoEdicion}" th:action="@{/fotos/actualizar/{id}(id=${foto.id_foto})}" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Título de la Foto</label>
+                    <input type="text" name="titulo_foto" th:value="${foto.titulo_foto}" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Usuario</label>
+                    <input type="number" name="id_usuario" th:value="${foto.id_usuario}" required/>
+                </div>
+                <div class="form-group">
+                    <label>Fecha de Creación</label>
+                    <input type="date" name="fecha_creacion"
+                           th:value="${#temporals.format(foto.fecha_creacion, 'yyyy-MM-dd')}" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea name="descripcion" th:text="${foto.descripcion}" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Nueva Imagen <span class="hint">(dejar vacío para conservar la actual)</span></label>
+                    <input type="file" name="archivo" accept="image/*"/>
+                    <!-- Vista previa de imagen actual -->
+                    <img th:if="${foto.foto != null}" class="preview-actual"
+                         th:src="@{/fotos/imagen/{id}(id=${foto.id_foto})}" alt="imagen actual"/>
+                </div>
+            </div>
+            <div class="form-actions">
+                <a class="btn-cancel" href="/fotos">Cancelar</a>
+                <button type="submit" class="btn-save">Actualizar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrapper">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Imagen</th>
+                <th>Fecha Creación</th>
+                <th>ID Usuario</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(fotos)}">
+                <td colspan="7" class="empty-row">No hay fotos registradas.</td>
+            </tr>
+            <tr th:each="f : ${fotos}">
+                <td th:text="${f.id_foto}"></td>
+                <td th:text="${f.titulo_foto}"></td>
+                <td th:text="${f.descripcion}"></td>
+                <td>
+                    <img th:if="${f.foto != null}" class="thumb"
+                         th:src="@{/fotos/imagen/{id}(id=${f.id_foto})}" alt="foto"/>
+                    <span th:unless="${f.foto != null}" class="no-img">Sin imagen</span>
+                </td>
+                <td th:text="${#temporals.format(f.fecha_creacion, 'dd/MM/yyyy')}"></td>
+                <td th:text="${f.id_usuario}"></td>
+                <td>
+                    <a class="btn-edit" th:href="@{/fotos/editar/{id}(id=${f.id_foto})}">Editar</a>
+                    <a class="btn-delete" th:href="@{/fotos/eliminar/{id}(id=${f.id_foto})}"
+                       onclick="return confirm('¿Eliminar esta foto?')">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

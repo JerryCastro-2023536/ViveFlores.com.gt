@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vive Flores - Gestión de Contactos</title>
+    <link rel="stylesheet" href="/css/estilos.css"   th:href="@{/css/estilos.css}"/>
+    <link rel="stylesheet" href="/css/contactar.css" th:href="@{/css/contactar.css}"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <span class="brand">Vive Flores</span>
+    <a class="btn-back" href="/">&#8592; Volver al inicio</a>
+</nav>
+
+<div class="container">
+    <h1>Gestión de Contactos</h1>
+
+    <!-- FORM CARD -->
+    <div class="card">
+        <!-- SAVE FORM -->
+        <form th:if="${!modoEdicion}" th:action="@{/contactar/guardar}" method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Asunto</label>
+                    <input type="text" name="asunto" th:value="${contactar.asunto}" placeholder="Asunto" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Usuario</label>
+                    <input type="number" name="id_usuario" th:value="${contactar.id_usuario}" placeholder="ID Usuario" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Publicación</label>
+                    <input type="number" name="id_publicacion" th:value="${contactar.id_publicacion}" placeholder="ID Publicación" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Fecha de Envío</label>
+                    <input type="datetime-local" name="fecha_envio" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea name="mensaje" placeholder="Escribe el mensaje aquí..." required></textarea>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-save">Guardar</button>
+            </div>
+        </form>
+
+        <!-- EDIT FORM -->
+        <form th:if="${modoEdicion}" th:action="@{/contactar/actualizar/{id}(id=${contactar.id_contactar})}" method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Asunto</label>
+                    <input type="text" name="asunto" th:value="${contactar.asunto}" placeholder="Asunto" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Usuario</label>
+                    <input type="number" name="id_usuario" th:value="${contactar.id_usuario}" placeholder="ID Usuario" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Publicación</label>
+                    <input type="number" name="id_publicacion" th:value="${contactar.id_publicacion}" placeholder="ID Publicación" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Fecha de Envío</label>
+                    <input type="datetime-local" name="fecha_envio"
+                           th:value="${#temporals.format(contactar.fecha_envio, 'yyyy-MM-dd''T''HH:mm')}" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea name="mensaje" th:text="${contactar.mensaje}" required></textarea>
+                </div>
+            </div>
+            <div class="form-actions">
+                <a class="btn-cancel" href="/contactar">Cancelar</a>
+                <button type="submit" class="btn-save">Actualizar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrapper">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Asunto</th>
+                <th>Mensaje</th>
+                <th>Fecha Envío</th>
+                <th>ID Usuario</th>
+                <th>ID Publicación</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(contactos)}">
+                <td colspan="7" class="empty-row">No hay contactos registrados.</td>
+            </tr>
+            <tr th:each="c : ${contactos}">
+                <td th:text="${c.id_contactar}"></td>
+                <td th:text="${c.asunto}"></td>
+                <td th:text="${c.mensaje}"></td>
+                <td th:text="${#temporals.format(c.fecha_envio, 'dd/MM/yyyy HH:mm')}"></td>
+                <td th:text="${c.id_usuario}"></td>
+                <td th:text="${c.id_publicacion}"></td>
+                <td>
+                    <a class="btn-edit" th:href="@{/contactar/editar/{id}(id=${c.id_contactar})}">Editar</a>
+                    <a class="btn-delete" th:href="@{/contactar/eliminar/{id}(id=${c.id_contactar})}"
+                       onclick="return confirm('¿Eliminar este contacto?')">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
