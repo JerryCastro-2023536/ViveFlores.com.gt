@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f2e3e;
+    padding: 15px 40px;
+    color: white;
+    height: 100px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #f6b93b;
+}
+
+.btn-login {
+    background: #f6b93b;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-login:hover {
+    background: #e58e26;
+}
+
+.hero-small {
+    background: #1f7a8c;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-small h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.hero-small p {
+    
+    opacity: 0.9;
+}
+
+/* ── Contenedor eventos ── */
+.eventos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 40px;
+}
+
+/* ── Tarjeta de evento ── */
+.evento-card {
+    background: white;
+    border-radius: 12px;
+    width: 820px;
+    max-width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    overflow: hidden;
+}
+
+/* ── Imagen con badge de fecha ── */
+.evento-image {
+    width: 280px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.evento-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fecha-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #f6b93b;
+    color: #0f2e3e;
+    border-radius: 8px;
+    padding: 6px 12px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.fecha-badge .dia {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.fecha-badge .mes {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+/* ── Cuerpo ── */
+.evento-body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.evento-body h3 {
+    font-size: 1.25rem;
+    color: #0f2e3e;
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.65;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+/* ── Detalles ── */
+.evento-detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid #eee;
+}
+
+.detalle {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.label {
+    font-weight: bold;
+    color: #0f2e3e;
+    flex-shrink: 0;
+    
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+footer {
+    background: #0e3a46;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
