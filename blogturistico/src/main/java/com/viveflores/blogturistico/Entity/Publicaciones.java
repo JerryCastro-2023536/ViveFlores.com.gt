@@ -1,10 +1,16 @@
 package com.viveflores.blogturistico.Entity;
 
-import jakarta.persistence.*;
+import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "publicaciones")
@@ -27,7 +33,7 @@ public class Publicaciones {
     private String direccion;
 
     @Lob
-    @Column(name = "foto", columnDefinition = "blob")
+    @Column(name = "foto", columnDefinition = "longblob")
     private byte[] foto;
 
     @NotNull(message = "El campo no debe ir vacio")
