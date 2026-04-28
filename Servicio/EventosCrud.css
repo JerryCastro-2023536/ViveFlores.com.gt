@@ -1,14 +1,27 @@
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+/* VARIABLES DE COLOR */
+:root {
+    --color-principal: #001d3d;
+    --color-secundario: #003566;
+    --color-boton: #489964;
+    --color-editar: #9a031e;
+    --color-eliminar: #fbb824;
+    --color-fondo: #f5f6fa;
+}
+
 /* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Stack Sans Headline", sans-serif;
 }
 
 /* BODY */
 body {
-    background: #f4f6f3;
+    background: var(--color-fondo);
 }
 
 /* HEADER */
@@ -16,7 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0a3740;
+    background: var(--color-principal);
     padding: 15px 40px;
     color: white;
     height: 90px;
@@ -34,13 +47,13 @@ nav a {
 }
 
 nav a:hover {
-    color: #d6d578;
+    color: var(--color-eliminar);
 }
 
 /* BOTÓN HOME */
 .btn-home {
-    background: #9dad42;
-    color: #0a3740;
+    background: var(--color-secundario);
+    color: white;
     padding: 8px 14px;
     border-radius: 6px;
     text-decoration: none;
@@ -48,7 +61,7 @@ nav a:hover {
 }
 
 .btn-home:hover {
-    background: #b1bf63;
+    background: var(--color-principal);
 }
 
 /* CONTENEDOR */
@@ -64,7 +77,7 @@ nav a:hover {
 .titulo {
     text-align: center;
     margin-bottom: 30px;
-    color: #0a3740;
+    color: var(--color-principal);
 }
 
 /* FORM */
@@ -107,7 +120,7 @@ form {
 /* LABEL */
 .form-group label {
     font-weight: bold;
-    color: #0a3740;
+    color: var(--color-principal);
     margin-bottom: 5px;
 }
 
@@ -125,10 +138,10 @@ form {
     resize: none;
 }
 
-/* BOTÓN */
+/* BOTÓN GUARDAR */
 form button {
     padding: 12px;
-    background: #258a60;
+    background: var(--color-boton);
     color: white;
     border: none;
     border-radius: 6px;
@@ -139,7 +152,28 @@ form button {
 }
 
 form button:hover {
-    background: #0a3740;
+    background: var(--color-secundario);
+}
+
+/* BOTONES DE ACCIÓN (Bootstrap override) */
+.btn-warning {
+    background: var(--color-editar);
+    border: none;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #7a0217;
+}
+
+.btn-danger {
+    background: var(--color-eliminar);
+    border: none;
+    color: #000;
+}
+
+.btn-danger:hover {
+    background: #d99c1c;
 }
 
 /* BUSCADOR */
@@ -161,7 +195,7 @@ form button:hover {
 
 .tabla-container table {
     width: 95%;
-    max-width: 1200px; /* más ancho por más columnas */
+    max-width: 1200px;
     border-collapse: collapse;
     background: white;
     border-radius: 12px;
@@ -172,7 +206,7 @@ form button:hover {
 
 /* HEADER TABLA */
 thead {
-    background: #0a3740;
+    background: var(--color-principal);
     color: white;
 }
 
@@ -189,7 +223,7 @@ tbody td {
 
 /* HOVER */
 tbody tr:hover {
-    background: #f5f8f6;
+    background: #eef1f7;
 }
 
 /* ACCIONES */
