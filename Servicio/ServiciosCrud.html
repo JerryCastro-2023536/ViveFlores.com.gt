@@ -3,7 +3,9 @@
 
 <head>
     <title>CRUD Servicios</title>
-    <link rel="stylesheet" th:href="@{/Styles/ServiciosCrud.css}">
+    <link rel="stylesheet" th:href="@{/Styles/EventosCrud.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -65,6 +67,13 @@
             <button type="submit">Guardar</button>
         </form>
     </div>
+    <div class="mb-4 text-center">
+        <input type="number" id="buscarId" placeholder="Buscar por ID"
+               class="form-control w-25 d-inline">
+        <button onclick="buscarServicio()" class="btn btn-dark ms-2">
+            <i class="bi bi-search"></i>
+        </button>
+    </div>
 
     <!-- TABLA -->
     <div class="tabla-container">
@@ -94,11 +103,15 @@
 
                 <td class="acciones">
                     <a th:href="@{'/servicioscrud/editar/' + ${s.id_servicio}}">
-                        <button type="button" class="btn-editar">Editar</button>
+                        <button type="button" class="btn btn-warning">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
                     </a>
 
                     <a th:href="@{'/servicioscrud/eliminar/' + ${s.id_servicio}}">
-                        <button type="button" class="btn-eliminar">Eliminar</button>
+                        <button type="button" class="btn btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
                     </a>
                 </td>
 
@@ -109,6 +122,22 @@
     </div>
 
 </div>
+<script>
+    function buscarServicio() {
+        let input = document.getElementById("buscarId").value;
+        let filas = document.querySelectorAll("tbody tr");
+
+        filas.forEach(fila => {
+            let id = fila.children[0].textContent;
+
+            if (id === input || input === "") {
+                fila.style.display = "";
+            } else {
+                fila.style.display = "none";
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
