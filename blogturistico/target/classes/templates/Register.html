@@ -22,7 +22,7 @@
                     <li><a href="#">Conviertete en vendedor</a></li>
                 </ul>
             </nav>
-            <a href="index"><button class="btn-login">Iniciar Sesión</button></a>
+            <a href="acceder"><button class="btn-login">Iniciar Sesión</button></a>
         </div>
     </header>
 
@@ -35,11 +35,15 @@
                 <input type="text" placeholder="Apellido" name="apellido" required>
                 <input type="email" placeholder="Correo electrónico" name="email" required>
                 <input type="password" placeholder="Contraseña" name="contrasena" required>
+                <input type="password" placeholder="Confirmar Contraseña" name="confirmar" required>
+                <div th:if="${errorMessage}" style="color: red;">
+                    <p th:text="${errorMessage}"></p>
+                </div>
                 <button type="submit" class="btn-register">Registrarse</button>
             </form>
 
             <p class="login-text">
-                ¿Ya tienes cuenta? <a href="login">Inicia sesión</a>
+                ¿Ya tienes cuenta? <a href="acceder">Inicia sesión</a>
             </p>
         </div>
         <div class="register-image">
