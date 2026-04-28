@@ -4,104 +4,164 @@
     box-sizing: border-box;
 }
 
+
+:root {
+    --primary: #001d3d;
+    --secondary: #003566;
+    --accent: #489964;
+    --danger: #9a031e;
+    --warning: #fbb824;
+    --light: #f5f6fa;
+}
+
+/* Animación general */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación escalonada */
+.cards {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: cardEntry 0.6s ease forwards;
+}
+
+@keyframes cardEntry {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+.delay-9 { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1s; }
+.delay-11 { animation-delay: 1.1s; }
+
+/* HEADER */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f5f5;
 }
 
+
 header {
-    background-color: #0f2e3e;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
-    color: #fff;
-
+    color: white;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
+/* BOTÓN */
 .btn-regresar {
-    background-color: #f6b93b;
-    color: #fff;
-    padding: 0.5rem 1rem;
+    background: var(--warning);
+    color: white;
+    padding: 0.5rem 1.2rem;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 8px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.hero {
-    background-color: #f5f5f5;
-    padding: 2rem;
+.btn-regresar:hover {
+    background: #ffcc3c;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* HERO */
+.hero1 {
+    padding: 3rem;
     text-align: center;
+    background: linear-gradient(to right, #f5f6fa, #ffffff);
 }
 
-.hero h1 {
+/* GRID */
+.tablas {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* CARDS MODERNAS */
+.cards {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 20px;
+    border-radius: 15px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect */
+.cards::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: rgba(255,255,255,0.1);
+    top: -100%;
+    left: -100%;
+    transform: rotate(25deg);
+    transition: 0.5s;
+}
+
+.cards:hover::before {
+    top: 0;
+    left: 0;
+}
+
+/* Hover */
+.cards:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* ICONOS */
+.cards i {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    display: block;
+    margin-bottom: 10px;
+    color: var(--warning);
 }
 
-.hero p {
+/* TEXTO */
+.cards h1 {
     font-size: 1.2rem;
 }
 
-.tablas {
-    justify-items: center;
-    margin-bottom: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-
-}
-
-a {
-    text-decoration: none;
-    color: #000000;
-}
-
-.cards {
-    background-color: #0f2e3e;
-    padding: 20px;
-    border-radius: 0.5rem;
-    width: 250px;
-    height: 200px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.cards h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.cards:hover {
-    transform: translateY(-10px);
-}
-
+/* FOOTER */
 footer {
-    background-color: #0f2e3e;
-    color: #fff;
-    padding: 20px;
+    background: var(--primary);
+    color: white;
     text-align: center;
+    padding: 20px;
 }
