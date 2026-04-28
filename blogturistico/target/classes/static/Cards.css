@@ -1,0 +1,269 @@
+:root {
+    --primary: #001d3d;
+    --secondary: #003566;
+    --accent: #489964;
+    --danger: #9a031e;
+    --warning: #fbb824;
+    --light: #f5f6fa;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--light);
+    color: #333;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    padding: 15px 40px;
+    color: white;
+    height: 90px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* NAV */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--warning);
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* BOTÓN */
+.btn-login {
+    background: var(--warning);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #ffcc3c;
+    transform: scale(1.05);
+}
+
+/* HERO */
+.hero-small {
+    background: linear-gradient(120deg, var(--secondary), var(--primary));
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeDown 0.8s ease;
+}
+
+.hero-small h1 {
+    font-size: 2.2rem;
+}
+
+.hero-small p {
+    opacity: 0.9;
+}
+
+/* ANIMACIÓN HERO */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CONTENEDORES (AMBOS HTML) */
+.eventos-container,
+.publicaciones-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 20px;
+}
+
+/* TARJETAS BASE */
+.evento-card,
+.pub-card {
+    background: white;
+    border-radius: 15px;
+    width: 850px;
+    max-width: 100%;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+    animation: fadeUp 0.6s ease;
+}
+
+/* ANIMACIÓN ENTRADA */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HOVER TARJETAS */
+.evento-card:hover,
+.pub-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* IMÁGENES */
+.evento-image,
+.pub-image {
+    width: 280px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.evento-image img,
+.pub-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.evento-card:hover img,
+.pub-card:hover img {
+    transform: scale(1.1);
+}
+
+/* BODY */
+.evento-body,
+.pub-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* TITULOS */
+.evento-body h3,
+.pub-body h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* DESCRIPCIÓN */
+.descripcion {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* DETALLES EVENTOS */
+.evento-detalles {
+    margin-top: auto;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.detalle {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+/* INFO PUBLICACIONES */
+.pub-info {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-item {
+    font-size: 0.85rem;
+}
+
+/* LABEL */
+.label {
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+/* FOOTER CARD */
+.pub-footer {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: gray;
+}
+
+/* FOOTER */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .evento-card,
+    .pub-card {
+        flex-direction: column;
+    }
+
+    .evento-image,
+    .pub-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    header {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

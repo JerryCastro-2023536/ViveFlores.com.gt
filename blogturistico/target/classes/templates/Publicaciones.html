@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones - Vive Flores</title>
+    <link rel="stylesheet" type="text/css" href="Cards.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Vive Flores</div>
+        <nav>
+            <ul>
+                <li><a href="index">Inicio</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="eventosAll">Eventos</a></li>
+                <li><a href="">Servicios</a></li>
+                <li><a href="quienessomos">¿Quiénes Somos?</a></li>
+                <li><a href="contacto">Contacto</a></li>
+                <li><a href="#">Conviértete en vendedor</a></li>
+            </ul>
+        </nav>
+        <a href="acceder"><button class="btn-login">Iniciar Sesión</button></a>
+    </header>
+
+    <section class="hero-small">
+        <h1>Lugares Destacados</h1>
+        <p>Descubre los rincones más especiales dentro de la Isla de Flores, Petén</p>
+    </section>
+
+    <section class="publicaciones-container">
+        <div class="pub-card" th:each="p : ${publicaciones}">
+            <div class="pub-image">
+                <img th:src="@{'/publicaciones/foto/' + ${p.id_publicacion}}" alt="Foto publicación">
+            </div>
+            <div class="pub-body">
+                <h3 th:text="${p.nombre_publicacion}"></h3>
+                <p class="descripcion" th:text="${p.descripcion}"></p>
+                <div class="pub-info">
+                    <div class="info-item">
+                        <span class="label">Dirección:</span>
+                        <span th:text="${p.direccion}"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Teléfono:</span>
+                        <span th:text="${p.telefono}"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Horario:</span>
+                        <span th:text="${p.horario}"></span>
+                    </div>
+                </div>
+                <div class="pub-footer">
+                    <span class="fecha">Publicado: <span th:text="${p.fecha_creacion}"></span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vive Flores — Isla de Flores, Petén, Guatemala</p>  
+    </footer>
+
+</body>
+
+</html>
+
