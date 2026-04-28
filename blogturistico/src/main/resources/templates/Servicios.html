@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" type="text/css" href="publicaciones.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Vive Flores</div>
+        <nav>
+            <ul>
+                <li><a href="index">Inicio</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="">Publicaciones</a></li>
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="quienessomos">¿Quiénes Somos?</a></li>
+                <li><a href="contacto">Contacto</a></li>
+                <li><a href="#">Conviértete en vendedor</a></li>
+            </ul>
+        </nav>
+        <a href="acceder"><button class="btn-login">Iniciar Sesión</button></a>
+    </header>
+
+    <section class="hero-small">
+        <h1>Eventos Importantes</h1>
+        <p>Vive las festividades y celebraciones únicas de la Isla de Flores, Petén</p>
+    </section>
+
+    <section class="eventos-container">
+        <!-- Evento 1 -->
+        <div class="evento-card"  th:each="e : ${eventos}">
+            <div class="evento-image">
+                <img th:src="@{'/eventos/foto/' + ${e.id_evento}}" alt="Imagen evento">
+            </div>
+            <div class="evento-body">
+                <h3 th:text="${e.nombre_evento}"></h3>
+                <p th:text="${e.descripcion}"></p>
+                <div class="evento-detalles">
+                    <div class="detalle">
+                        <span class="label">Fechas:</span>
+                        <div>
+                            <strong>Inicio:</strong><p th:text="${e.fecha_inicio}"></p>
+                            <strong>Fin:</strong><p th:text="${e.fecha_fin}"></p>
+                        </div>
+                    </div>
+                    <div class="detalle">
+                        <span class="label">Ubicación:</span>
+                        <span th:text="${e.ubicacion}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vive Flores — Isla de Flores, Petén, Guatemala</p>
+    </footer>
+
+</body>
+</html>
