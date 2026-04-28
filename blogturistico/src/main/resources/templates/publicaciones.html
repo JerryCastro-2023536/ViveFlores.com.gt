@@ -39,7 +39,6 @@
             <div class="agregar-container">
                 <p>horario:</p>
                 <input type="text" name="horario">
-
                 <p>fecha de creacion:</p>
                 <input type="date" name="fecha_creacion">
                 <p>estado de publicacion:</p>
@@ -128,8 +127,8 @@
                     <p>direccion:</p>
                     <input type="text" name="direccion" th:value="${uEncontrado?.direccion}">
                     <p>foto</p>
-                    <img th:src="@{/publicaciones/foto/{id}(id=${uEncontrado.id_publicacion})}" width="100">
-                     <input type="file" name="fotoArchivo" accept="image/*">
+                    <img th:if="${uEncontrado?.foto != null}" th:src="@{/foto/{id}(id=${uEncontrado.id_publicacion})}" width="100">
+                    <input type="file" name="fotoArchivo" accept="image/*">
                     <p>telefono:</p>
                     <input type="text" name="telefono" th:value="${uEncontrado?.telefono}">
                     <p>email:</p>
