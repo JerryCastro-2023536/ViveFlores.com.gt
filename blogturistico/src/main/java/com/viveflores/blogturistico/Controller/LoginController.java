@@ -36,8 +36,8 @@ public class LoginController {
             session.setAttribute("usuarioLogueado", u);
             return "redirect:/index";
         } else {
-            model.addAttribute("error", "Credenciales incorrectas");
-            return "acceder";
+            model.addAttribute("errorMessage", "Credenciales incorrectas");
+            return "login";
         }
     }
 }
