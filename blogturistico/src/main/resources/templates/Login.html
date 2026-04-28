@@ -32,6 +32,9 @@
             <form th:action="@{/login}" method="post">
                 <input type="text" placeholder="Usuario o correo" name="username" required>
                 <input type="password" placeholder="Contraseña" name="contrasena" required>
+                <div th:if="${errorMessage}" style="color: red;">
+                    <p th:text="${errorMessage}"></p>
+                </div>
                 <button type="submit" class="btn-login">Ingresar</button>
             </form>
             <p class="register-text">
