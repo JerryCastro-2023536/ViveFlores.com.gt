@@ -36,18 +36,21 @@ public class FotosServiceImplements implements FotosService {
 
     @Override
     public Fotos updateFotos(Integer id, Fotos fotos) {
-        Fotos fotos1 = fotosRepository.findById(id).orElseThrow(() ->
+        Fotos existente = fotosRepository.findById(id).orElseThrow(() ->
                 new NotFoundExcepcion("El id no existe"));
 
-        fotos1.setTitulo_foto(fotos.getTitulo_foto());
-        fotos1.setDescripcion(fotos.getDescripcion());
-        fotos1.setFoto(fotos.getFoto());
-        fotos1.setFecha_creacion(fotos.getFecha_creacion());
-        fotos1.setId_usuario(fotos.getId_usuario());
+        existente.setTitulo_foto(fotos.getTitulo_foto());
+        existente.setDescripcion(fotos.getDescripcion());
+        existente.setFecha_creacion(fotos.getFecha_creacion());
+        existente.setId_usuario(fotos.getId_usuario());
 
-        fv.validarLocalDate(fotos1.getFecha_creacion());
+        if (fotos.getFoto() != null && fotos.getFoto().length > 0) {
+            existente.setFoto(fotos.getFoto());
+        }
 
-        return fotosRepository.save(fotos1);
+        fv.validarLocalDate(existente.getFecha_creacion());
+
+        return fotosRepository.save(existente);
     }
 
     @Override
