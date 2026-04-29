@@ -29,11 +29,11 @@ public class EventoCrudController {
     @PostMapping("/guardar")
     public String guardar(
             @ModelAttribute Evento evento,
-            @RequestParam("archivo") MultipartFile archivo
+            @RequestParam(value = "archivo", required = false) MultipartFile archivo
     ) {
         try {
 
-            if (!archivo.isEmpty()) {
+            if (archivo != null && !archivo.isEmpty()) {
                 evento.setFoto(archivo.getBytes());
             }
 
