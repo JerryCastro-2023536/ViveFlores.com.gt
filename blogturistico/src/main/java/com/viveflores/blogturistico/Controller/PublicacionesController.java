@@ -8,7 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -42,7 +44,8 @@ public class PublicacionesController {
             @RequestParam("fechaCreacion") LocalDate fechaCreacion,
             @RequestParam("estadoPublicacion") String estadoPublicacion,
             @RequestParam("idCategoria") Integer idCategoria,
-            @RequestParam("idUsuario") Integer idUsuario
+            @RequestParam("idUsuario") Integer idUsuario,
+            @RequestParam("foto") MultipartFile foto
     ) {
         Publicaciones p = new Publicaciones();
         p.setNombre_publicacion(nombrePublicacion);
@@ -55,6 +58,14 @@ public class PublicacionesController {
         p.setEstado_publicacion(estadoPublicacion);
         p.setId_categoria(idCategoria);
         p.setId_usuario(idUsuario);
+
+        if (foto != null && !foto.isEmpty()) {
+            try {
+                p.setFoto(foto.getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         publicacionesService.savePublicaciones(p);
         return "redirect:/publicaciones";
@@ -72,7 +83,8 @@ public class PublicacionesController {
             @RequestParam("fechaCreacion") LocalDate fechaCreacion,
             @RequestParam("estadoPublicacion") String estadoPublicacion,
             @RequestParam("idCategoria") Integer idCategoria,
-            @RequestParam("idUsuario") Integer idUsuario
+            @RequestParam("idUsuario") Integer idUsuario,
+            @RequestParam(value = "foto", required = false) MultipartFile foto
     ) {
         Publicaciones p = new Publicaciones();
         p.setNombre_publicacion(nombrePublicacion);
@@ -85,6 +97,19 @@ public class PublicacionesController {
         p.setEstado_publicacion(estadoPublicacion);
         p.setId_categoria(idCategoria);
         p.setId_usuario(idUsuario);
+
+        if (foto != null && !foto.isEmpty()) {
+            try {
+                p.setFoto(foto.getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Publicaciones existing = publicacionesService.getPublicacionesById(id);
+            if (existing != null) {
+                p.setFoto(existing.getFoto());
+            }
+        }
 
         publicacionesService.updatePublicaciones(id, p);
         return "redirect:/publicaciones";
