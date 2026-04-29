@@ -32,7 +32,7 @@ public class PublicacionesServiceImplements implements PublicacionesService {
     }
 
     @Override
-    public Publicaciones savePublicaciones(Publicaciones publicaciones) {
+    public void savePublicaciones(Publicaciones publicaciones) {
         cv.formatoCorreo(publicaciones.getEmail_publicacion());
         fv.validarLocalDate(publicaciones.getFecha_creacion());
 
@@ -43,11 +43,11 @@ public class PublicacionesServiceImplements implements PublicacionesService {
             }
         }
 
-        return publicacionesRepository.save(publicaciones);
+        publicacionesRepository.save(publicaciones);
     }
 
     @Override
-    public Publicaciones updatePublicaciones(Integer id, Publicaciones publicaciones) {
+    public void updatePublicaciones(Integer id, Publicaciones publicaciones) {
         Publicaciones publicaciones1 = publicacionesRepository.findById(id).orElseThrow(() ->
                 new NotFoundExcepcion("El id no existe"));
 
@@ -74,7 +74,7 @@ public class PublicacionesServiceImplements implements PublicacionesService {
             }
         }
 
-        return publicacionesRepository.save(publicaciones1);
+        publicacionesRepository.save(publicaciones1);
     }
 
     @Override
