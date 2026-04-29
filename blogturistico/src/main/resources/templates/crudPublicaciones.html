@@ -72,24 +72,24 @@
         <div class="card">
             <form th:action="@{/savePublicacion}" method="post" enctype="multipart/form-data">
                 <div class="grid-3">
-                    <input type="text" placeholder="Nombre publicación" name="nombrePublicacion">
-                    <input type="text" placeholder="Dirección" name="direccion">
-                    <input type="number" placeholder="Teléfono" name="telefono">
+                    <input type="text" placeholder="Nombre publicación" name="nombrePublicacion" required>
+                    <input type="text" placeholder="Dirección" name="direccion" required>
+                    <input type="number" placeholder="Teléfono" name="telefono" required>
                 </div>
-                <textarea placeholder="Descripción" name="descripcion"></textarea>
+                <textarea placeholder="Descripción" name="descripcion" required></textarea>
                 <div class="grid-3">
-                    <input type="email" placeholder="Email" name="emailPublicacion">
-                    <input type="text" placeholder="Horario" name="horario">
-                    <input type="date" name="fechaCreacion">
+                    <input type="email" placeholder="Email" name="emailPublicacion" required>
+                    <input type="text" placeholder="Horario" name="horario" required>
+                    <input type="date" name="fechaCreacion" required>
                 </div>
                 <div class="grid-3">
-                    <input type="text" placeholder="Estado" name="estadoPublicacion">
-                    <input type="number" placeholder="ID Categoría" name="idCategoria">
-                    <input type="number" placeholder="ID Usuario" name="idUsuario">
+                    <input type="text" placeholder="Estado" name="estadoPublicacion" required>
+                    <input type="number" placeholder="ID Categoría" name="idCategoria" required>
+                    <input type="number" placeholder="ID Usuario" name="idUsuario" required>
                 </div>
                 <div class="file-input-container">
                     <label><strong>Foto:</strong></label><br>
-                    <input type="file" name="foto" accept="image/*">
+                    <input type="file" name="foto" accept="image/*" required>
                 </div>
 
                 <button type="submit">Guardar</button>
@@ -186,7 +186,7 @@
                 </div>
                 <div class="file-input-container">
                     <label><strong>Actualizar Foto:</strong></label><br>
-                    <input type="file" name="foto" accept="image/*">
+                    <input type="file" name="foto" accept="image/*" enctype="multipart/form-data" >
                 </div>
 
                 <button type="submit" style="margin-top: 15px;">Actualizar Publicación</button>
