@@ -8,6 +8,50 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="crud.css">
+    <style>
+        /* Estilos para el modal */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(10, 30, 43, 0.7); 
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #faf7f0;
+            margin: 5% auto; 
+            padding: 30px;
+            border: none;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 14px;
+            box-shadow: 0 20px 60px rgba(10, 30, 43, 0.25);
+            border-top: 4px solid #f6b93b;
+            animation: modalFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @keyframes modalFadeUp {
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .close {
+            color: #6b7c93;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close:hover,
+        .close:focus {
+            color: #0a1e2b;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,37 +80,115 @@
             </form>
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Asunto</th>
-                    <th>Mensaje</th>
-                    <th>Fecha</th>
-                    <th>ID Usuario</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="r : ${reportes}">
-                    <td th:text="${r.id_reporte}"></td>
-                    <td th:text="${r.asunto}"></td>
-                    <td th:text="${r.mensaje}"></td>
-                    <td th:text="${r.fecha_envio}"></td>
-                    <td th:text="${r.id_usuario}"></td>
-                    <td>
-                        <a th:href="@{'/deleteReporte/' + ${r.id_reporte}}">
-                            <button>Editar</button>
-                            <button>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Asunto</th>
+                        <th>Mensaje</th>
+                        <th>Fecha</th>
+                        <th>ID Usuario</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="r : ${reportes}">
+                        <td th:text="${r.id_reporte}"></td>
+                        <td th:text="${r.asunto}"></td>
+                        <td th:text="${r.mensaje}"></td>
+                        <td th:text="${r.fecha_envio}"></td>
+                        <td th:text="${r.id_usuario}"></td>
+                        <td>
+                            <button type="button" 
+                                    th:data-id="${r.id_reporte}"
+                                    th:data-asunto="${r.asunto}"
+                                    th:data-mensaje="${r.mensaje}"
+                                    th:data-fecha="${r.fecha_envio}"
+                                    th:data-usuario="${r.id_usuario}"
+                                    onclick="openEditModal(this)">Editar</button>
+                            <button type="button" 
+                                    th:data-url="@{'/deleteReporte/' + ${r.id_reporte}}"
+                                    onclick="openDeleteModal(this.getAttribute('data-url'))">
                                 <i class="bi bi-trash"></i>
                             </button>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
 
+    <!-- Modal de Edición -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Editar Reporte</h2>
+            <form th:action="@{/updateReporte}" method="post">
+                <input type="hidden" id="edit-id" name="id">
+                
+                <input type="text" placeholder="Asunto" id="edit-asunto" name="asunto">
+                <textarea placeholder="Mensaje" id="edit-mensaje" name="mensaje"></textarea>
+                <div class="grid-2">
+                    <input type="datetime-local" id="edit-fecha" name="fecha">
+                    <input type="text" placeholder="ID Usuario" id="edit-usuario" name="idUsuario">
+                </div>
+
+                <button type="submit" style="margin-top: 15px;">Actualizar Reporte</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Eliminación -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <span class="close" onclick="closeDeleteModal()">&times;</span>
+            <h2 style="color: #0a1e2b; margin-bottom: 15px;">¿Eliminar registro?</h2>
+            <p style="color: #6b7c93; margin-bottom: 25px;">Esta acción no se puede deshacer.</p>
+            <div style="display: flex; justify-content: center; gap: 15px;">
+                <button type="button" onclick="closeDeleteModal()" style="background: #e0e6ed; color: #1a1a2e; box-shadow: none;">Cancelar</button>
+                <a id="confirmDeleteBtn" href="#">
+                    <button type="button" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; box-shadow: 0 6px 15px rgba(231, 76, 60, 0.3);">Sí, eliminar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openEditModal(btn) {
+            document.getElementById('edit-id').value = btn.getAttribute('data-id');
+            document.getElementById('edit-asunto').value = btn.getAttribute('data-asunto');
+            document.getElementById('edit-mensaje').value = btn.getAttribute('data-mensaje');
+            document.getElementById('edit-fecha').value = btn.getAttribute('data-fecha');
+            document.getElementById('edit-usuario').value = btn.getAttribute('data-usuario');
+            
+            document.getElementById('editModal').style.display = 'block';
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        function openDeleteModal(url) {
+            document.getElementById('confirmDeleteBtn').href = url;
+            document.getElementById('deleteModal').style.display = 'block';
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var editModal = document.getElementById('editModal');
+            var deleteModal = document.getElementById('deleteModal');
+            if (event.target == editModal) {
+                closeEditModal();
+            }
+            if (event.target == deleteModal) {
+                closeDeleteModal();
+            }
+        }
+    </script>
 </body>
 
 </html>
