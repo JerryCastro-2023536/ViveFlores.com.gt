@@ -45,7 +45,10 @@
                 <img class="foto" th:src="@{'/publicaciones/foto/' + ${p.id_publicacion}}" alt="publicacion">
                 <h3 th:text="${p.nombre_publicacion}">Nombre</h3>
                 <p th:text="${p.descripcion}">Descripcion</p>
-                <button>Ver más</button>
+                <a th:href="@{'/post/' + ${p.id_publicacion}}">
+                    <button>Ver más</button>
+                </a>
+                
             </div>
         </div>
     </section>
