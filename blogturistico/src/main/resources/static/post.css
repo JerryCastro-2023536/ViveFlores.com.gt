@@ -1,0 +1,249 @@
+/* =========================
+   🎨 VARIABLES DE COLOR
+========================= */
+:root {
+    --primary: #001d3d;
+    --secondary: #003566;
+    --accent: #489964;
+    --warning: #fbb824;
+    --light: #f5f6fa;
+    --gray: #eaeaea;
+}
+
+/* =========================
+   🔄 RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--light);
+    color: #333;
+}
+
+/* =========================
+   🔝 HEADER
+========================= */
+header {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* =========================
+   📦 FEED (tipo marketplace)
+========================= */
+.feed {
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+}
+
+/* =========================
+   🧾 POST
+========================= */
+.post {
+    width: 600px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    animation: fadeUp 0.6s ease;
+    transition: 0.3s;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   🏷 HEADER POST
+========================= */
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.post-header h2 {
+    font-size: 1.2rem;
+}
+
+.estado {
+    background: var(--accent);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+}
+
+/* =========================
+   🖼 IMAGEN
+========================= */
+.post-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.post:hover .post-img {
+    transform: scale(1.03);
+}
+
+/* =========================
+   📄 CONTENIDO
+========================= */
+.post-body {
+    padding: 15px;
+}
+
+.post-body p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* =========================
+   📊 INFO
+========================= */
+.post-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.post-info span {
+    background: var(--gray);
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.post-info span:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* =========================
+   ⭐ RATING
+========================= */
+.rating {
+    padding: 10px 15px;
+    font-size: 1.4rem;
+    color: var(--warning);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rating:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   💬 COMENTARIOS
+========================= */
+.comments {
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.comments h3 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+/* comentario individual */
+.comment {
+    background: var(--gray);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+/* =========================
+   📝 FORMULARIO
+========================= */
+.comment-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-form input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.comment-form button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.comment-form button:hover {
+    background: var(--secondary);
+    transform: scale(1.05);
+}
+
+/* =========================
+   🔻 FOOTER
+========================= */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* =========================
+   ✨ ANIMACIÓN
+========================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .post {
+        width: 95%;
+    }
+
+    .post-img {
+        height: 220px;
+    }
+
+    .post-info {
+        flex-direction: column;
+    }
+}
