@@ -23,11 +23,11 @@ public class PublicacionesController {
     @Autowired
     PublicacionesService service;
 
-    @Autowired
-    PublicacionesRepository repo;
-
-    @GetMapping("/")
-    public String inicio() {return "redirect:/publicaciones";}
+//    @Autowired
+//    PublicacionesRepository repo;
+//
+//    @GetMapping("/")
+//    public String inicio() {return "redirect:/publicaciones";}
 
     @GetMapping("/publicaciones")
     public String listarPublicaciones(@RequestParam(name = "accion", required = false) String accion,
