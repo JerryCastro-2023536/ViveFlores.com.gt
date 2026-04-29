@@ -47,6 +47,12 @@ public class PublicacionesController {
             @RequestParam("idUsuario") Integer idUsuario,
             @RequestParam("foto") MultipartFile foto
     ) {
+
+        System.out.println("FILE NAME: " + foto.getOriginalFilename());
+        System.out.println("FILE SIZE: " + foto.getSize());
+        System.out.println("EMPTY: " + foto.isEmpty());
+
+
         Publicaciones p = new Publicaciones();
         p.setNombre_publicacion(nombrePublicacion);
         p.setDescripcion(descripcion);
@@ -84,7 +90,7 @@ public class PublicacionesController {
             @RequestParam("estadoPublicacion") String estadoPublicacion,
             @RequestParam("idCategoria") Integer idCategoria,
             @RequestParam("idUsuario") Integer idUsuario,
-            @RequestParam(value = "foto", required = false) MultipartFile foto
+            @RequestParam("foto") MultipartFile foto
     ) {
         Publicaciones p = new Publicaciones();
         p.setNombre_publicacion(nombrePublicacion);
