@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang='en' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title th:text="${post.nombre_publicacion}"></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" th:href="@{/post.css}">
+    <link rel="stylesheet" th:href="@{/index.css}">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Vive Flores</div>
+    <nav>
+        <ul>
+            <li><a th:href="@{/index}">Inicio</a></li>
+            <li><a href="">Categorias</a></li>
+            <li><a th:href="@{/publicaciones}">Publicaciones</a></li>
+            <li><a th:href="@{/eventos}">Eventos</a></li>
+            <li><a th:href="@{/servicios}">Servicios</a></li>
+            <li><a th:href="@{/quienessomos}">¿Quienes Somos?</a></li>
+            <li><a th:href="@{/contacto}">Contacto</a></li>
+            <li><a th:href="@{/vendedor}">Conviertete en vendedor</a></li>
+            <li><a th:href="@{/paneladmin}">Administrar</a></li>
+        </ul>
+    </nav>
+    <a th:href="@{/acceder}"><button class="btn-login">Iniciar Sesión</button></a>
+    </div>
+</header>
+
+<main class="feed">
+
+    <div class="post">
+
+        <div class="post-header">
+            <h2 th:text="${post.nombre_publicacion}"></h2>
+            <span class="estado" th:text="${post.estado_publicacion}"></span>
+        </div>
+
+        <img class="post-img" th:src="@{'/publicaciones/foto/' + ${post.id_publicacion}}">
+
+        <div class="post-body">
+
+            <p th:text="${post.descripcion}"></p>
+
+            <div class="post-info">
+                <span><i class="bi bi-geo"></i> <span th:text="${post.direccion}"></span></span>
+                <span><i class="bi bi-telephone"></i> <span th:text="${post.telefono}"></span></span>
+                <span><i class="bi bi-envelope"></i> <span th:text="${post.email_publicacion}"></span></span>
+                <span><i class="bi bi-clock"></i> <span th:text="${post.horario}"></span></span>
+                <span><i class="bi bi-calendar"></i> <span th:text="${post.fecha_creacion}"></span></span>
+            </div>
+
+        </div>
+
+        <!-- CALIFICACIÓN -->
+        <div class="rating">
+        </div>
+
+        <!-- COMENTARIOS -->
+        <div class="comments">
+
+            <h3>Comentarios</h3>
+
+            <div class="comment">
+                <strong>Juan:</strong> Muy buen servicio
+            </div>
+
+            <div class="comment">
+                <strong>Ana:</strong> Lo recomiendo bastante
+            </div>
+
+            <!-- FORM -->
+            <form class="comment-form">
+                <input type="text" placeholder="Escribe un comentario...">
+                <button>Publicar</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 Vive Flores</p>
+</footer>
+
+</body>
+</html>
