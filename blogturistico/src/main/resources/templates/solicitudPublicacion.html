@@ -1,121 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/solicitudPublicacion.css}">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Solicitud de Publicación - Vive Flores</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Solicitud de publicacion</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" th:href="@{/usuarios.css}">
 </head>
 <body>
-    <header>
-        <div class="logo">Vive Flores</div>
-            <nav>
-                <ul>
-                    <button id="btn-regresar"> <i class="bi bi-arrow-left"></i> volver al inicio</button>
-                </u>
-            </nav>
-        </div>
-    </header>
-    <h2>Solicitud de publicacion</h2>
+<header>
+    <h1>Vive Flores</h1>
+    <a th:href="@{/}" class="btn-volver">Volver al inicio</a>
+</header>
 
-    <form th:action="@{/solicitudPublicacion/agregar}" method="post">
-        <div class="container">
-            <div class="agregar-container">
-                <p>fecha de solicitud:</p>
-                <input type="date" name="fecha_solicitud">
+<main>
+    <h2>Solicitud de Publicación</h2>
 
-                <p>estado:</p>
-                <input type="text" name="estado">
-
-                <p>descripcion:</p>
-                <input type="text" name="descripcion">
-
-            </div>
-            <div class="agregar-container">
-                <p>id de publicacion:</p>
-                <input type="number" name="id_publicacion">
-
-                <p>id de usuario:</p>
-                <input type="number" name="id_usuario">
-
-                <button type="submit" id="btn-agregar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                    </svg>agregar solicitud
-                </button>
-                <div class="buscar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                    </svg>
-                    <a th:href="@{/solicitudPublicacion(accion='buscar')}" id="buscar">buscar solicitud</a>
+    <div class="card">
+        <form th:action="@{/solicitudPublicacion/agregar}" method="post">
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>Fecha de Solicitud</label>
+                    <input type="date" name="fecha_solicitud" required>
+                </div>
+                <div class="input-group">
+                    <label>Estado</label>
+                    <input type="text" placeholder="Ej: Pendiente" name="estado" required>
                 </div>
             </div>
 
-        </div>
-    </form>
-    <table>
-        <thead>
+            <textarea placeholder="Descripción de la solicitud" name="descripcion" required></textarea>
+
+            <div class="grid-2">
+                <input type="number" placeholder="ID Publicación" name="id_publicacion" required>
+                <input type="number" placeholder="ID Usuario" name="id_usuario" required>
+            </div>
+            <button type="submit">Agregar Solicitud</button>
+        </form>
+
+        <form th:action="@{/solicitudPublicacion/buscar}" method="post" class="search-form">
+            <input type="number" name="id_solicitud" placeholder="Buscar por ID de solicitud" required>
+            <button type="submit" class="btn-search">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
             <tr>
-                <th>id de solicitud</th>
-                <th>fecha de solicitud</th>
-                <th>estado</th>
-                <th>descripcion</th>
-                <th>id de publicacion</th>
-                <th>id de usuario</th>
-                <th>editar/eliminar</th>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Descripción</th>
+                <th>ID Pub.</th>
+                <th>ID Usu.</th>
+                <th>Acciones</th>
             </tr>
-        </thead>
-        <tbody>
-        <tr th:each="u : ${solicitudPublicacion}">
-            <td th:text="${u.id_solicitud}"></td>
-            <td th:text="${u.fecha_solicitud}"></td>
-            <td th:text="${u.estado}"></td>
-            <td th:text="${u.descripcion}"></td>
-            <td th:text="${u.id_publicacion}"></td>
-            <td th:text="${u.id_usuario}"></td>
-            <td>
-                <a  th:href="@{/solicitudPublicacion(accion='editar',id=${u.id_solicitud})}" class="btn-editar-tabla" ><i class="bi bi-pencil"></i></a>
-                <a th:href="@{/solicitudPublicacion/eliminar/{id}(id=${u.id_solicitud})}" class="btn-eliminar-tabla" onclick="return confirm('¿Seguro?')"><i class="bi bi-trash"></i></a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <div class="crud">
-        <div class="modal-overlay" th:if="${accion !=null}">
+            </thead>
+            <tbody>
+            <tr th:each="u : ${solicitudPublicacion}">
+                <td th:text="${u.id_solicitud}"></td>
+                <td th:text="${u.fecha_solicitud}"></td>
+                <td>
+                    <span class="status-badge" th:text="${u.estado}"></span>
+                </td>
+                <td th:text="${u.descripcion}"></td>
+                <td th:text="${u.id_publicacion}"></td>
+                <td th:text="${u.id_usuario}"></td>
+                <td>
+                    <!-- Usamos la misma lógica de pasar datos al JS para el modal -->
+                    <button type="button"
+                            th:data-id="${u.id_solicitud}"
+                            th:data-fecha="${u.fecha_solicitud}"
+                            th:data-estado="${u.estado}"
+                            th:data-descripcion="${u.descripcion}"
+                            th:data-idpub="${u.id_publicacion}"
+                            th:data-idusu="${u.id_usuario}"
+                            onclick="openEditModal(this)">Editar</button>
 
-            <div class="modal-content" th:if="${accion=='editar'}">
-                <a th:href="@{/solicitudPublicacion}" class="close">&times;</a>
-                <h2>editar usuario</h2>
-                <form th:action="@{/solicitudPublicacion/editar}" method="post" >
+                    <button type="button" class="btn-delete-icon"
+                            th:onclick="'openDeleteModal(\'/solicitudPublicacion/eliminar/' + ${u.id_solicitud} + '\')'">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
 
-                    <input type="hidden" name="id_solicitud" th:value="${uEncontrado?.id_solicitud}">
+<!-- Modal de Edición -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditModal()">&times;</span>
+        <h2>Editar Solicitud</h2>
+        <form th:action="@{/solicitudPublicacion/editar}" method="post">
+            <input type="hidden" id="edit-id" name="id_solicitud">
 
-                    <p>fecha de solicitud:</p>
-                    <input type="date" name="fecha_solicitud" th:value="${uEncontrado?.fecha_solicitud}">
-                    <p>estado:</p>
-                    <input type="text" name="estado" th:value="${uEncontrado?.estado}">
-                    <p>descripcion:</p>
-                    <input type="text" name="descripcion" th:value="${uEncontrado?.descripcion}">
-                    <p>id de publicacion:</p>
-                    <input type="number" name="id_publicacion" th:value="${uEncontrado?.id_publicacion}">
-                    <p>id de usuario:</p>
-                    <input type="number" name="id_usuario" th:value="${uEncontrado?.id_usuario}">
-                    <button type="submit">editar</button>
-                </form>
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>Fecha</label>
+                    <input type="date" id="edit-fecha" name="fecha_solicitud">
+                </div>
+                <div class="input-group">
+                    <label>Estado</label>
+                    <input type="text" id="edit-estado" name="estado">
+                </div>
             </div>
-            <div class="modal-content" th:if="${accion == 'buscar'}">
-                <a th:href="@{/solicitudPublicacion}" class="close">&times;</a>
-                <h2>Buscar por id</h2>
-                <form th:action="@{/solicitudPublicacion/buscar}" method="post">
-                    <p>ingrese el id de la solicitud</p>
-                    <input type="number" name="id_solicitud"  required>
-                    <button type="submit">Buscar</button>
-                </form>
-            </div>
 
+            <textarea id="edit-descripcion" name="descripcion" placeholder="Descripción"></textarea>
+
+            <div class="grid-2">
+                <input type="number" id="edit-idpub" name="id_publicacion" placeholder="ID Publicación">
+                <input type="number" id="edit-idusu" name="id_usuario" placeholder="ID Usuario">
+            </div>
+            <button type="submit" style="margin-top: 15px;">Actualizar Cambios</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal de Eliminación -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content" style="max-width: 400px; text-align: center;">
+        <span class="close" onclick="closeDeleteModal()">&times;</span>
+        <h2 style="color: #0a1e2b; margin-bottom: 15px;">¿Eliminar solicitud?</h2>
+        <p style="color: #6b7c93; margin-bottom: 25px;">Esta acción borrará el registro permanentemente.</p>
+        <div style="display: flex; justify-content: center; gap: 15px;">
+            <button type="button" onclick="closeDeleteModal()" class="btn-cancelar">Cancelar</button>
+            <a id="confirmDeleteBtn" href="#">
+                <button type="button" class="btn-confirmar-eliminar">Sí, eliminar</button>
+            </a>
         </div>
     </div>
-    </body>
+</div>
+
+<script>
+    function openEditModal(btn) {
+        document.getElementById('edit-id').value = btn.getAttribute('data-id');
+        document.getElementById('edit-fecha').value = btn.getAttribute('data-fecha');
+        document.getElementById('edit-estado').value = btn.getAttribute('data-estado');
+        document.getElementById('edit-descripcion').value = btn.getAttribute('data-descripcion');
+        document.getElementById('edit-idpub').value = btn.getAttribute('data-idpub');
+        document.getElementById('edit-idusu').value = btn.getAttribute('data-idusu');
+
+        document.getElementById('editModal').style.display = 'block';
+    }
+
+    function closeEditModal() {
+        document.getElementById('editModal').style.display = 'none';
+    }
+
+    function openDeleteModal(url) {
+        document.getElementById('confirmDeleteBtn').href = url;
+        document.getElementById('deleteModal').style.display = 'block';
+    }
+
+    function closeDeleteModal() {
+        document.getElementById('deleteModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        var editModal = document.getElementById('editModal');
+        var deleteModal = document.getElementById('deleteModal');
+        if (event.target == editModal) closeEditModal();
+        if (event.target == deleteModal) closeDeleteModal();
+    }
+</script>
+</body>
 </html>
