@@ -2,6 +2,7 @@ package com.viveflores.blogturistico.Controller;
 
 import com.viveflores.blogturistico.Entity.Publicaciones;
 import com.viveflores.blogturistico.Service.PublicacionesService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -22,29 +23,42 @@ public class AdministrarPublicacionController {
     // LISTAR
     @GetMapping
     public String listar(Model model) {
-
         model.addAttribute("publicaciones", publicacionesService.getAllPublicaciones());
         model.addAttribute("publicacion", new Publicaciones());
-
         return "administrarPublicaciones";
     }
 
-    // GUARDAR
+    // GUARDAR (crear y editar)
     @PostMapping("/guardar")
     public String guardar(
             @ModelAttribute Publicaciones publicacion,
-            @RequestParam("archivo") MultipartFile archivo
+            @RequestParam(value = "archivo", required = false) MultipartFile archivo
     ) {
         try {
 
-            if (!archivo.isEmpty()) {
-                publicacion.setFoto(archivo.getBytes());
-            }
+            Publicaciones existente = null;
 
-            // Solo si es nueva
-            if (publicacion.getId_publicacion() == null) {
+            if (publicacion.getId_publicacion() != null) {
+                existente = publicacionesService.getPublicacionesById(publicacion.getId_publicacion());
+
+                // Mantener fecha
+                publicacion.setFecha_creacion(existente.getFecha_creacion());
+
+                // Mantener imagen si no sube nueva
+                if (archivo == null || archivo.isEmpty()) {
+                    publicacion.setFoto(existente.getFoto());
+                } else {
+                    publicacion.setFoto(archivo.getBytes());
+                }
+
+            } else {
+                // NUEVA PUBLICACIÓN
                 publicacion.setFecha_creacion(LocalDate.now());
                 publicacion.setEstado_publicacion("activo");
+
+                if (archivo != null && !archivo.isEmpty()) {
+                    publicacion.setFoto(archivo.getBytes());
+                }
             }
 
             publicacionesService.savePublicaciones(publicacion);
@@ -53,36 +67,39 @@ public class AdministrarPublicacionController {
             e.printStackTrace();
         }
 
-        return "redirect:/mis-publicaciones";
+        return "redirect:/adminpublicaciones";
     }
 
     // EDITAR
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable Integer id, Model model) {
 
-        Publicaciones publiEdit = publicacionesService.getPublicacionesById(id);
+        Publicaciones pub = publicacionesService.getPublicacionesById(id);
+        model.addAttribute("publicacion", pub);
 
-        model.addAttribute("publicacion", publiEdit);
-        model.addAttribute("publicaciones", publicacionesService.getAllPublicaciones());
-
-        return "administrarPublicaciones";
+        return "editarPublicacion";
     }
 
     // ELIMINAR
     @GetMapping("/eliminar/{id}")
     public String eliminar(@PathVariable Integer id) {
-
         publicacionesService.deletePublicaciones(id);
-
-        return "redirect:/mis-publicaciones";
+        return "redirect:/adminpublicaciones";
     }
 
+    // IMAGEN
     @GetMapping("/imagen/{id}")
     @ResponseBody
-    public byte[] obtenerImagen(@PathVariable Integer id) {
+    public ResponseEntity<byte[]> obtenerImagen(@PathVariable Integer id) {
 
         Publicaciones p = publicacionesService.getPublicacionesById(id);
 
-        return p.getFoto();
+        if (p.getFoto() == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok()
+                .header("Content-Type", "image/jpeg")
+                .body(p.getFoto());
     }
 }
