@@ -9,7 +9,7 @@ import java.util.List;
 public interface PublicacionesService {
     List<Publicaciones> getAllPublicaciones();
     Publicaciones getPublicacionesById(Integer id);
-    Publicaciones savePublicaciones(Publicaciones publicaciones);
-    Publicaciones updatePublicaciones(Integer id, Publicaciones publicaciones);
+    void savePublicaciones(Publicaciones publicaciones);
+    void updatePublicaciones(Integer id, Publicaciones publicaciones);
     void deletePublicaciones(Integer id);
 }
