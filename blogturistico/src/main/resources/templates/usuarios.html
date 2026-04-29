@@ -1,149 +1,163 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/usuarios.css}">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Gestión de Usuarios - Vive Flores</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Usuarios</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" th:href="@{/usuarios.css}">
 </head>
 <body>
     <header>
-        <div class="logo">Vive Flores</div>
-            <nav>
-                <ul>
-                    <button id="btn-regresar"> <i class="bi bi-arrow-left"></i> volver al inicio</button>
-            
-                </u>
-            </nav>
-        </div>
+        <h1>Vive Flores</h1>
+        <a th:href="@{/}" class="btn-volver">Volver al inicio</a>
     </header>
-    <h2>Usuarios</h2>
 
-    <form th:action="@{/usuarios/agregar}" method="post">
-        <div class="container">
-            <div class="agregar-container">
-                <p>username:</p>
-                <input type="text" name="username">
-                <p>nombre:</p>
-                <input type="text" name="nombre">
-                <p>apellido:</p>
-                <input type="text" name="apellido">
-                <p>correo:</p>
-                <input type="email" name="email">
-            </div>
-            <div class="agregar-container">
-                <p>contraseña:</p>
-                <input type="password" name="contrasena">
-                <p>rol:</p>
-                <input type="text" name="rol">
-                <p>fecha de registro:</p>
-                <input type="date" name="fecha_registro">
-                <button type="submit" id="btn-agregar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                    </svg>agregar usuario
-                </button>
-                <div class="buscar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                    </svg>
-                    <a th:href="@{/usuarios(accion='buscar')}" id="buscar">buscar Usuario</a>
+    <main>
+        <h2>Gestión de Usuarios</h2>
+        
+        <div class="card">
+            <!-- Formulario de Registro Principal -->
+            <form th:action="@{/usuarios/agregar}" method="post">
+                <input type="text" placeholder="Username" name="username" required>
+                <div class="grid-2">
+                    <input type="text" placeholder="Nombre" name="nombre_usuario" required>
+                    <input type="text" placeholder="Apellido" name="apellido_usuario" required>
                 </div>
-            </div>
+                <input type="email" placeholder="Correo Electrónico" name="email_usuario" required>
+                <div class="grid-3">
+                    <input type="password" placeholder="Contraseña" name="contrasena_usuario" required>
+                    <input type="text" placeholder="Rol" name="rol" required>
+                    <input type="date" name="fecha_registro" required title="Fecha de Registro">
+                </div>
+                <button type="submit">Guardar Usuario</button>
+            </form>
 
+            <!-- Buscador por ID -->
+            <form th:action="@{/usuarios/buscar}" method="post">
+                <input type="number" name="id_usuario" placeholder="Buscar por ID" required>
+                <button type="submit" class="btn-search">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
         </div>
-    </form>
-    <table>
-        <thead>
-            <tr>
-                <th>id del usuario</th>
-                <th>username</th>
-                <th>nombre del usuario</th>
-                <th>apellido del usuario</th>
-                <th>email del usuario</th>
-                <th>rol de usuario</th>
-                <th>fecha del usuario</th>
-                <th>editar/eliminar</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr th:each="u : ${usuarios}">
-            <td th:text="${u.id_usuario}"></td>
-            <td th:text="${u.username}"></td>
-            <td th:text="${u.nombre_usuario}"></td>
-            <td th:text="${u.apellido_usuario}"></td>
-            <td th:text="${u.email_usuario}"></td>
-            <td th:text="${u.rol}"></td>
-            <td th:text="${u.fecha_registro}"></td>
-            <td>
-                <a  th:href="@{/usuarios(accion='editar',id=${u.id_usuario})}" class="btn-editar-tabla" ><i class="bi bi-pencil"></i></a>
-                <a th:href="@{/usuarios/eliminar/{id}(id=${u.id_usuario})}" class="btn-eliminar-tabla" onclick="return confirm('¿Seguro?')"><i class="bi bi-trash"></i></a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <div class="crud">
-        <div class="modal-overlay" th:if="${accion !=null}">
 
-            <div class="modal-content" th:if="${accion=='agregar'}">
-                <a th:href="@{/usuarios}" class="close">&times;</a>
-                <h2>Registrar Usuario</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Fecha Registro</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="u : ${usuarios}">
+                        <td th:text="${u.id_usuario}"></td>
+                        <td th:text="${u.username}"></td>
+                        <td th:text="${u.nombre_usuario + ' ' + u.apellido_usuario}"></td>
+                        <td th:text="${u.email_usuario}"></td>
+                        <td th:text="${u.rol}"></td>
+                        <td th:text="${u.fecha_registro}"></td>
+                        <td>
+                            <button type="button" 
+                                th:data-id="${u.id_usuario}"
+                                th:data-username="${u.username}"
+                                th:data-nombre="${u.nombre_usuario}"
+                                th:data-apellido="${u.apellido_usuario}"
+                                th:data-email="${u.email_usuario}"
+                                th:data-rol="${u.rol}"
+                                th:data-fecha="${u.fecha_registro}"
+                                onclick="openEditModal(this)">Editar</button>
+                                
+                            <button type="button" 
+                                th:data-url="@{'/usuarios/eliminar/' + ${u.id_usuario}}"
+                                onclick="openDeleteModal(this.getAttribute('data-url'))">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
 
-                <form th:action="@{/usuarios/agregar}" method="post">
-                    <p>username:</p>
-                    <input type="text" name="username">
-                    <p>nombre:</p>
-                    <input type="text" name="nombre_usuario">
-                    <p>apellido:</p>
-                    <input type="text" name="apellido_usuario">
-                    <p>correo:</p>
-                    <input type="email" name="email_usuario">
-                    <p>contraseña:</p>
-                    <input type="password" name="contrasena_usuario">
-                    <p>rol:</p>
-                    <input type="text" name="rol">
-                    <p>fecha de registro:</p>
-                    <input type="date" name="fecha_registro">
-                    <button type="submit">agregar usuario</button>
-                </form>
-            </div>
-            <div class="modal-content" th:if="${accion=='editar'}">
-                <a th:href="@{/usuarios}" class="close">&times;</a>
-                <h2>editar usuario</h2>
-                <form th:action="@{/usuarios/editar}" method="post" >
-
-                    <input type="hidden" name="id_usuario" th:value="${uEncontrado?.id_usuario}">
-
-                    <p>username:</p>
-                    <input type="text" name="username" th:value="${uEncontrado?.username}">
-                    <p>nombre:</p>
-                    <input type="text" name="nombre_usuario" th:value="${uEncontrado?.nombre_usuario}">
-                    <p>apellido:</p>
-                    <input type="text" name="apellido_usuario" th:value="${uEncontrado?.apellido_usuario}">
-                    <p>correo</p>
-                    <input type="email" name="email_usuario" th:value="${uEncontrado?.email_usuario}">
-                    <p>contarseña:</p>
-                    <input type="text" name="contrasena_usuario" th:value="${uEncontrado?.contrasena_usuario}">
-                    <p>rol:</p>
-                    <input type="text" name="rol" th:value="${uEncontrado?.rol}">
-                    <p>fecha de registro</p>
-                    <input type="date" name="fecha_registro" th:value="${uEncontrado?.fecha_registro}">
-                    <button type="submit">editar</button>
-                </form>
-            </div>
-            <div class="modal-content" th:if="${accion == 'buscar'}">
-                <a th:href="@{/usuarios}" class="close">&times;</a>
-                <h2>Buscar por id</h2>
-                <form th:action="@{/usuarios/buscar}" method="post">
-                    <p>ingrese el id del usuario</p>
-                    <input type="number" name="id_usuario"  required>
-                    <button type="submit">Buscar</button>
-                </form>
-            </div>
-
+    <!-- Modal de Edición -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Editar Usuario</h2>
+            <form th:action="@{/usuarios/editar}" method="post">
+                <input type="hidden" id="edit-id" name="id_usuario">
+                
+                <input type="text" placeholder="Username" id="edit-username" name="username">
+                <div class="grid-2">
+                    <input type="text" placeholder="Nombre" id="edit-nombre" name="nombre_usuario">
+                    <input type="text" placeholder="Apellido" id="edit-apellido" name="apellido_usuario">
+                </div>
+                <input type="email" placeholder="Email" id="edit-email" name="email_usuario">
+                
+                <div class="grid-2">
+                    <input type="text" placeholder="Rol" id="edit-rol" name="rol">
+                    <input type="date" id="edit-fecha" name="fecha_registro">
+                </div>
+                <button type="submit" style="margin-top: 15px;">Actualizar Usuario</button>
+            </form>
         </div>
     </div>
-    </body>
+
+    <!-- Modal de Eliminación -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <span class="close" onclick="closeDeleteModal()">&times;</span>
+            <h2 style="color: #0a1e2b; margin-bottom: 15px;">¿Eliminar registro?</h2>
+            <p style="color: #6b7c93; margin-bottom: 25px;">Esta acción no se puede deshacer.</p>
+            <div style="display: flex; justify-content: center; gap: 15px;">
+                <button type="button" onclick="closeDeleteModal()" style="background: #e0e6ed; color: #1a1a2e; border-radius: 50px; padding: 10px 20px; border:none; cursor:pointer;">Cancelar</button>
+                <a id="confirmDeleteBtn" href="#">
+                    <button type="button" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; border-radius: 50px; padding: 10px 20px; border:none; cursor:pointer;">Sí, eliminar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openEditModal(btn) {
+            document.getElementById('edit-id').value = btn.getAttribute('data-id');
+            document.getElementById('edit-username').value = btn.getAttribute('data-username');
+            document.getElementById('edit-nombre').value = btn.getAttribute('data-nombre');
+            document.getElementById('edit-apellido').value = btn.getAttribute('data-apellido');
+            document.getElementById('edit-email').value = btn.getAttribute('data-email');
+            document.getElementById('edit-rol').value = btn.getAttribute('data-rol');
+            document.getElementById('edit-fecha').value = btn.getAttribute('data-fecha');
+
+            document.getElementById('editModal').style.display = 'block';
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        function openDeleteModal(url) {
+            document.getElementById('confirmDeleteBtn').href = url;
+            document.getElementById('deleteModal').style.display = 'block';
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var editModal = document.getElementById('editModal');
+            var deleteModal = document.getElementById('deleteModal');
+            if (event.target == editModal) closeEditModal();
+            if (event.target == deleteModal) closeDeleteModal();
+        }
+    </script>
+</body>
 </html>
