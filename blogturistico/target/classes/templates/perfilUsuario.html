@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/perfilUsuario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Vive Flores</div>
+            <nav>
+                <ul>
+                    <button id="btn-regresar"> <i class="bi bi-arrow-left"></i> volver al inicio</button>
+            
+                </u>
+            </nav>
+        </div>
+    </header>
+    <h2>Tu Perfil</h2>
+
+    <div class="container">
+        <div class="content">
+            <h1>Nombre completo</h1>
+            <p>Nombre de Usuario:</p>
+            <p>Email:</p>
+            <p>Fecha de Registro:</p>
+        </div>
+        <div class="img">
+            <i class="bi bi-person-circle"></i>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button><i class="bi bi-pencil-fill"></i>Editar Perfil</button>
+        <input type="file" id="file" class="input-file">
+        <label for="file" class="btn-file"><i class="bi bi-image-fill"></i> cambiar imagen</label>
+    </div>
+    <div class="modal-overlay">
+            <div class="modal-content">
+                <a th:href="@{/usuarios}" class="close">&times;</a>
+                <h2>editar perfil</h2>
+                <p>username:</p>
+                <input type="text" name="username">
+                <p>nombre:</p>
+                <input type="text" name="nombre_usuario">
+                <p>apellido:</p>
+                <input type="text" name="apellido_usuario">
+                <p>correo:</p>
+                <input type="email" name="fecha_registro">
+                <button type="submit">editar</button>
+            </div>
+        </div>
+</body>
+</html>
