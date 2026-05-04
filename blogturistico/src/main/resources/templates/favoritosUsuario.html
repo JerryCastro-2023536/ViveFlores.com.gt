@@ -1,36 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/favoritosUsuario.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Favoritos</title>
+    <title>Vive Flores - Favoritos</title>
 </head>
 <body>
     <header>
         <div class="logo">Vive Flores</div>
-            <nav>
-                <ul>
-                    <button id="btn-regresar"> <i class="bi bi-arrow-left"></i> volver al inicio</button>
-            
-                </u>
-            </nav>
-        </div>
+        <nav>
+            <button id="btn-regresar" onclick="window.history.back()"> 
+                <i class="bi bi-arrow-left"></i> volver al inicio
+            </button>
+        </nav>
     </header>
-    <h2>Tus Favoritos</h2>
 
-    <div class="container">
-        <div class="fav1">
-            <div class="content">
-                <div class="textos-column">
-                    <h3>Publicacion 1</h3>
-                    <p>Descripción de la publicación 1.</p>
+    <main class="favoritos-main">
+        <h2>Tus Favoritos</h2>
+
+        <div class="favoritos-container">
+            <div class="fav-item">
+                <div class="fav-content">
+                    <div class="fav-text">
+                        <h3>Publicación 1</h3>
+                        <p>Descripción de la publicación 1. Aquí puedes ver los detalles de lo que guardaste.</p>
+                    </div>
+                    <div class="fav-action">
+                        <i class="bi bi-star-fill star-icon"></i>
+                    </div>
                 </div>
-            
-                <i class="bi bi-star-fill"></i>
+            </div>
+
+            <div class="fav-item">
+                <div class="fav-content">
+                    <div class="fav-text">
+                        <h3>Publicación 2</h3>
+                        <p>Otra descripción interesante sobre las flores o el contenido del sitio.</p>
+                    </div>
+                    <div class="fav-action">
+                        <i class="bi bi-star-fill star-icon"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-</div>
+    </main>
+
+    <script>
+        document.querySelectorAll('.star-icon').forEach(star => {
+            star.addEventListener('click', function() {
+                this.classList.toggle('bi-star-fill');
+                this.classList.toggle('bi-star');
+                
+                const card = this.closest('.fav-item');
+                if (this.classList.contains('bi-star')) {
+                    card.style.opacity = '0.5';
+                    card.style.filter = 'grayscale(1)';
+                } else {
+                    card.style.opacity = '1';
+                    card.style.filter = 'grayscale(0)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
