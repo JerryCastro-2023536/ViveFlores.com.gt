@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+:root {
+    --deep: #0a1e2b;
+    --navy: #0f2e3e;
+    --gold: #f6b93b;
+    --gold-dark: #c9932a;
+    --cream: #faf7f0;
+    --mist: #f0f4f7;
+    --white: #ffffff;
+    --text: #1a1a2e;
+    --text-light: #6b7c93;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,96 +19,112 @@
     font-family: "Stack Sans Headline", sans-serif;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #001d3d;
-    padding: 15px 40px;
-    color: #f5f6fa;
-    height: 90px;
-}
 body {
-    background: #f5f6fa;
-}
-body h2{
-    display: flex;
-    color: #001d3d;
-    font-weight: bolder;
-    font-size: 45px;
-    justify-content: center;
-    margin-top: 25px;
-}
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-}
-#btn-regresar {
-    background: #fbb824;
-    color: #001d3d;
-    padding: 8px 14px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    align-items: center;
-}
-#btn-regresar:hover {
-    background: #eecb80;
-}
-#btn-regresar i{
-    margin-right: 5px;
-    font-size: 15px;
-    font-weight: bold;
-    align-items:start;
+    background-color: var(--cream);
+    color: var(--text);
 }
 
-.container{
+header {
+    background: rgba(10, 30, 43, 0.95);
+    color: var(--white);
+    padding: 0 48px;
     display: flex;
-    flex-direction: column;
-    background-color: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    margin-top: 50px;
-    margin-left: 200px; margin-right: 200px;
-    gap: 25px;
-}
-.container .content {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
-    background-color: #ffeabc;
-    border-left: 5px solid #fbb824;
-    border-radius: 5px;
-    padding: 25px;
+    height: 90px;
+    border-bottom: 2px solid var(--gold);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--white) 40%, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#btn-regresar {
+    background: transparent;
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+#btn-regresar:hover {
+    color: var(--gold);
+}
+
+.favoritos-main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--deep);
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.favoritos-container {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
-.textos-column {
+
+.fav-item {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(10, 30, 43, 0.1);
+    border-left: 5px solid var(--gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fav-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(10, 30, 43, 0.15);
+}
+
+.fav-content {
+    padding: 25px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
 }
-.container i {
-    font-size: 30px;
-    color: #fbb824;
+
+.fav-text h3 {
+    color: var(--deep);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.fav-text p {
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.star-icon {
+    font-size: 28px;
+    color: var(--gold);
     cursor: pointer;
-    flex-shrink: 0;
+    transition: 0.2s ease;
 }
 
-.container i:hover {
-    color: #d4a017;
-}
-.container .content h3{
-    color: #001d3d;
-    font-weight: bold;
-    font-size: 35px;
-}
-.container .content p{
-    color: #333;
-    font-size: 20px;
+.star-icon:hover {
+    transform: scale(1.2);
+    color: var(--gold-dark);
 }
 
+/* Responsividad */
+@media (max-width: 600px) {
+    header { padding: 0 20px; }
+    .fav-content { flex-direction: column; text-align: center; gap: 15px; }
+}
