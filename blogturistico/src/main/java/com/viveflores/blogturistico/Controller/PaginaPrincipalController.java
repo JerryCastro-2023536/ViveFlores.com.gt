@@ -1,5 +1,6 @@
 package com.viveflores.blogturistico.Controller;
 
+import com.viveflores.blogturistico.Entity.Publicaciones;
 import com.viveflores.blogturistico.Repository.EventoRepository;
 import com.viveflores.blogturistico.Repository.PublicacionesRepository;
 import com.viveflores.blogturistico.Repository.ServicioRepository;
@@ -12,6 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class PaginaPrincipalController {
@@ -72,4 +76,11 @@ public class PaginaPrincipalController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/buscarNombre")
+    public String buscar(@RequestParam("nombre") String nombre, Model model) {
+        List<Publicaciones> resultados = publicacionesRepository.buscarPorNombre(nombre);
+        model.addAttribute("busqueda", nombre);
+        model.addAttribute("publiEncont", resultados);
+        return "mostrar";
+    }
 }
