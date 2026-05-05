@@ -26,12 +26,6 @@
         <form th:action="@{/reportes/agregar}" th:object="${reporte}" method="post">
 
             <div class="input-group" style="margin-bottom: 15px;">
-                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Tu ID de Usuario</label>
-                <input type="number" th:field="*{id_usuario}" placeholder="Ej: 123" required
-                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: #f0f4f7;">
-            </div>
-
-            <div class="input-group" style="margin-bottom: 15px;">
                 <label style="display: block; font-weight: bold; margin-bottom: 5px;">Asunto</label>
                 <input type="text" th:field="*{asunto}" placeholder="¿Qué sucede?" required
                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: #f0f4f7;">
