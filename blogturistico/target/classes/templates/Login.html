@@ -31,7 +31,9 @@
             <h2>Bienvenido</h2>
             <form th:action="@{/login}" method="post">
                 <input type="text" placeholder="Usuario o correo" name="username" required>
-                <input type="password" placeholder="Contraseña" name="contrasena" required>
+                <input type="password" placeholder="Contraseña" name="contrasena" id="contrasena" required>
+                <label for="mostrarPassword">Mostrar contraseña</label>
+                <input type="checkbox" id="mostrarPassword">
                 <div th:if="${errorMessage}" style="color: red;">
                     <p th:text="${errorMessage}"></p>
                 </div>
@@ -41,11 +43,22 @@
                 No tienes cuenta? <a href="registro">Crea una</a>
             </p>
         </div>
+        <script>
+            const mostrarPassword = document.getElementById('mostrarPassword');
+            const passwordInput = document.querySelector('contrasena');
 
+            mostrarPassword.addEventListener('change', function() {
+                if (this.checked) {
+                    passwordInput.type = 'text';
+                } else {
+                    passwordInput.type = 'password';
+                }
+            });
+        </script>
         <div class="login-image">
             <img src="islaLogin.jpg">
         </div>
-
+    
     </section>
 </body>
 </html>
