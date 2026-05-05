@@ -69,7 +69,8 @@ public class PublicacionesServiceImplements implements PublicacionesService {
         List<Publicaciones> publicacionesList = publicacionesRepository.findAll();
 
         for(Publicaciones p : publicacionesList){
-            if(p.getEmail_publicacion().equals(publicaciones1.getEmail_publicacion())){
+            if(p.getEmail_publicacion().equals(publicaciones1.getEmail_publicacion()) && 
+               !p.getId_publicacion().equals(publicaciones1.getId_publicacion())){
                 throw new NotFoundExcepcion("El correo ya existe");
             }
         }
