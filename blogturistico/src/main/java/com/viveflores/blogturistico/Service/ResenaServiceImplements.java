@@ -47,6 +47,11 @@ public class ResenaServiceImplements implements ResenaService{
     }
 
     @Override
+    public List<Resena> getResenasByPublicacionId(Integer idPublicacion) {
+        return resenaRepository.findByIdPublicacion(idPublicacion);
+    }
+
+    @Override
     public Resena updateResena (Integer id, Resena resena){
         Resena existingResena= resenaRepository.findById(id).orElseThrow(() ->
                 new NotFoundExcepcion("El id no existe"));
