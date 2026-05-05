@@ -69,6 +69,10 @@
     <main>
         <h2>Gestión de Publicaciones</h2>
 
+        <div th:if="${error}" style="background-color: #f8d7da; color: #721c24; padding: 15px; margin-bottom: 20px; border: 1px solid #f5c6cb; border-radius: 4px; text-align: center;">
+            <p th:text="${error}" style="margin: 0; font-weight: bold;"></p>
+        </div>
+
         <div class="card">
             <form th:action="@{/savePublicacion}" method="post" enctype="multipart/form-data">
                 <div class="grid-3">
@@ -89,7 +93,7 @@
                 </div>
                 <div class="file-input-container">
                     <label><strong>Foto:</strong></label><br>
-                    <input type="file" name="foto" accept="image/*" required>
+                    <input type="file" name="foto" required>
                 </div>
 
                 <button type="submit">Guardar</button>
@@ -101,6 +105,7 @@
                 </button>
             </form>
         </div>
+
 
         <div class="table-container">
             <table>
