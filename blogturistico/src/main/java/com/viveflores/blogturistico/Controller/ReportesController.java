@@ -21,6 +21,7 @@ public class ReportesController {
 
     @PostMapping("/reportes/agregar")
     public String agregar(@ModelAttribute("reporte") Reportes reportes) {
+        reportes.setId_usuario(9);
         reportes.setFecha_envio(java.time.LocalDateTime.now());
         service.agregarReportes(reportes);
         return "redirect:/reportesUsuario?exito";
