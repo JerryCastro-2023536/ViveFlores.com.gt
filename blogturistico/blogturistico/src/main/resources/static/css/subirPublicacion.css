@@ -1,0 +1,152 @@
+/* ============================================================
+   subirPublicacion.css — Estilos específicos de Crear Publicación
+   Depende de estilos.css (debe cargarse primero)
+   ============================================================ */
+
+/* ── Columna doble ─────────────────────────────────────────── */
+.form-group.col-2 {
+    flex: 2;
+    min-width: 220px;
+}
+
+/* ── Campos deshabilitados ─────────────────────────────────── */
+.form-group input:disabled,
+.form-group textarea:disabled {
+    background: #ececec;
+    color: #aaa;
+    cursor: not-allowed;
+    border-color: #e0e0e0;
+}
+
+/* ── Fila invisible (espaciado) ────────────────────────────── */
+.form-group.invisible {
+    visibility: hidden;
+}
+
+/* ── Drop Zone ─────────────────────────────────────────────── */
+.drop-zone {
+    position: relative;
+    border: 2px dashed #d5d5d5;
+    border-radius: 12px;
+    background: #fafafa;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.25s, background 0.25s, transform 0.2s, box-shadow 0.25s;
+    overflow: hidden;
+}
+.drop-zone:hover {
+    border-color: #fbb824;
+    background: #fffdf4;
+    box-shadow: 0 4px 18px rgba(251,184,36,0.15);
+}
+.drop-zone.drag-over {
+    border-color: #489964;
+    background: #f0f9f3;
+    transform: scale(1.01);
+    box-shadow: 0 6px 24px rgba(72,153,100,0.18);
+}
+.drop-zone__input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.drop-zone__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 24px 16px;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+.drop-zone__icon {
+    width: 44px;
+    height: 44px;
+    color: #fbb824;
+    margin-bottom: 4px;
+    animation: float 3s ease-in-out infinite;
+}
+.drop-zone__icon svg { width: 100%; height: 100%; }
+@keyframes float {
+    0%, 100% { transform: translateY(0);   }
+    50%       { transform: translateY(-6px); }
+}
+.drop-zone.drag-over .drop-zone__icon { color: #489964; }
+.drop-zone__text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #003566;
+}
+.drop-zone__sub {
+    font-size: 0.82rem;
+    color: #888;
+}
+.drop-zone__hint {
+    font-size: 0.75rem;
+    color: #bbb;
+    margin-top: 2px;
+}
+
+/* ── Preview dentro del drop zone ──────────────────────────── */
+.drop-zone__preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    animation: fadeIn 0.3s ease both;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+.foto-preview {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #fbb824;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    display: block;
+}
+.drop-zone__filename {
+    font-size: 0.78rem;
+    color: #555;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.drop-zone__remove {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transition: background 0.2s, transform 0.15s;
+    line-height: 1;
+}
+.drop-zone__remove:hover { background: #c0392b; transform: scale(1.1); }
