@@ -12,4 +12,5 @@ public interface ResenaService {
     Resena saveResena (Resena resena) throws RuntimeException;
     Resena updateResena (Integer id, Resena resena);
     void deleteResena (Integer id);
+    List<Resena> getResenasByPublicacionId(Integer idPublicacion);
 }
