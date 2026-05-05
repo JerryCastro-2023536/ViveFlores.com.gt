@@ -14,24 +14,24 @@ public class SolicitudPublicacionController {
     @Autowired
     private SolicitudPublicacionService service;
 
-    @GetMapping("/")
-    public String inicio() {return "redirect:/solicitudPublicacion";}
-
-    @GetMapping("/solicitudPublicacion")
-    public String listarsolicitudPublicacion(@RequestParam(name = "accion", required = false) String accion,
-                                 @RequestParam(name = "id", required = false) Integer id,
-                                 Model model) {
-
-        model.addAttribute("solicitudPublicacion",service.listar());
-        model.addAttribute("accion", accion);
-
-        if("editar".equals(accion) && id !=null ){
-            model.addAttribute("uEncontrado",service.buscarPorId(id));
-        }else{
-            model.addAttribute("uEcontrado", new SolicitudPublicacion());
-        }
-        return "solicitudPublicacion";
-    }
+//    @GetMapping("/")
+//    public String inicio() {return "redirect:/solicitudPublicacion";}
+//
+//    @GetMapping("/solicitudPublicacion")
+//    public String listarsolicitudPublicacion(@RequestParam(name = "accion", required = false) String accion,
+//                                 @RequestParam(name = "id", required = false) Integer id,
+//                                 Model model) {
+//
+//        model.addAttribute("solicitudPublicacion",service.listar());
+//        model.addAttribute("accion", accion);
+//
+//        if("editar".equals(accion) && id !=null ){
+//            model.addAttribute("uEncontrado",service.buscarPorId(id));
+//        }else{
+//            model.addAttribute("uEcontrado", new SolicitudPublicacion());
+//        }
+//        return "solicitudPublicacion";
+//    }
 
     @PostMapping("/solicitudPublicacion/agregar")
     public String agregar(@ModelAttribute SolicitudPublicacion solicitudPublicacion) {
