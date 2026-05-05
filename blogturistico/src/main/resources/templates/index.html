@@ -31,10 +31,10 @@
 
     <section class="hero">
         <h1>Explora y descubre este hermoso lugar</h1>
-        <div class="search-box">
-            <input type="text" placeholder="Buscar algo...">
-            <button>Buscar</button>
-        </div>
+        <form class="search-box" th:action="@{/buscarNombre}" method="get">
+            <input type="text" name="nombre" placeholder="Buscar algo...">
+            <button type="submit">Buscar</button>
+        </form>
     </section>
 
     <!-- NEGOCIOS -->
