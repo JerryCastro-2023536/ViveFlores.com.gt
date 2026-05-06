@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,23 +14,28 @@
                 <ul>
                     <button id="btn-regresar"> <i class="bi bi-arrow-left"></i> volver al inicio</button>
             
-                </u>
+                </ul>
             </nav>
         </div>
     </header>
     <h2>Tus Favoritos</h2>
-
     <div class="container">
-        <div class="fav1">
+        <div class="fav1" th:each="fav : ${publicaciones}">
             <div class="content">
+
+                <img th:src="@{'/publicaciones/foto/' + ${fav.id_publicacion}}" width="200">
+
                 <div class="textos-column">
-                    <h3>Publicacion 1</h3>
-                    <p>Descripción de la publicación 1.</p>
+                    <h3 th:text="${fav.nombre_publicacion}"></h3>
+                    <p th:text="${fav.descripcion}"></p>
+
+                    <a th:href="@{'/post/' + ${fav.id_publicacion}}">Ver</a>
                 </div>
-            
+
                 <i class="bi bi-star-fill"></i>
+
+            </div>
         </div>
-        </div>
-</div>
+    </div>
 </body>
 </html>
