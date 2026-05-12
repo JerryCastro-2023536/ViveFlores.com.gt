@@ -10,18 +10,25 @@
         <div class="logo">Vive Flores</div>
             <nav>
                 <ul>
-                    <li><a href="index">Inicio</a></li>
+                    <li><a th:href="@{/index}">Inicio</a></li>
                     <li><a href="#">Categorias</a></li>
-                    <li><a href="publicacionesAll">Publicaciones</a></li>
-                    <li><a href="eventosAll">Eventos</a></li>
-                    <li><a href="serviciosAll">Servicios</a></li>
-                    <li><a href="quienessomos">¿Quienes Somos?</a></li>
-                    <li><a href="contacto">Contacto</a></li>
-                    <li><a href="vendedor">Conviertete en vendedor</a></li>
-                    <li><a href="paneladmin">Administrar</a></li>
+                    <li><a th:href="@{/publicacionesAll}">Publicaciones</a></li>
+                    <li><a th:href="@{/eventosAll}">Eventos</a></li>
+                    <li><a th:href="@{/serviciosAll}">Servicios</a></li>
+                    <li><a th:href="@{/quienessomos}">¿Quienes Somos?</a></li>
+                    <li><a th:href="@{/contacto}">Contacto</a></li>
+                    <li><a th:href="@{/vendedor}">Conviertete en vendedor</a></li>
+                    <li th:if="${session.usuarioLogueado != null and #strings.equalsIgnoreCase(session.usuarioLogueado.rol, 'admin')}">
+                        <a th:href="@{/paneladmin}">Administrar</a>
+                    </li>
                 </ul>
             </nav>
-            <a href="acceder"><button class="btn-login">Iniciar Sesión</button></a>
+            <div class="user-actions" style="display: flex; align-items: center; gap: 15px;">
+                <a th:if="${session.usuarioLogueado == null}" th:href="@{/acceder}"><button class="btn-login">Iniciar Sesión</button></a>
+                
+                <span th:if="${session.usuarioLogueado != null}" style="color: white; font-weight: 500;" th:text="'Hola, ' + ${session.usuarioLogueado.nombre_usuario}"></span>
+                <a th:if="${session.usuarioLogueado != null}" th:href="@{/logout}"><button class="btn-login" style="background-color: #e74c3c;">Cerrar Sesión</button></a>
+            </div>
         </div>
     </header>
 </body>
