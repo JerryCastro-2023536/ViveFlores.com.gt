@@ -16,15 +16,10 @@ public class DatabaseFix {
     @PostConstruct
     public void fixBlobColumn() {
         try {
-            jdbcTemplate.execute("ALTER TABLE publicaciones MODIFY COLUMN foto LONGBLOB");
-            try {
-                jdbcTemplate.execute("SET GLOBAL max_allowed_packet=33554432");
-                System.out.println("EXITO: max_allowed_packet ajustado a 32MB");
-            } catch (Exception e) {
-                System.out.println("Nota: No se pudo ajustar max_allowed_packet automáticamente: " + e.getMessage());
-            }
+            jdbcTemplate.execute("SET GLOBAL max_allowed_packet=33554432");
+            System.out.println("EXITO: max_allowed_packet ajustado a 32MB");
         } catch (Exception e) {
-            System.out.println("Ocurrió un detalle alterando la columna foto: " + e.getMessage());
+            System.out.println("Nota: No se pudo ajustar max_allowed_packet automáticamente: " + e.getMessage());
         }
     }
 
