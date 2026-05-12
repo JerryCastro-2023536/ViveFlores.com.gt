@@ -20,9 +20,6 @@ tbody td { vertical-align: middle; }
 }
 .no-img { color: #aaa; font-size: 0.78rem; }
 
-/* Input de archivo */
-.form-group input[type="file"] { padding: 6px 8px; }
-
 /* Hint de texto pequeño en label */
 .hint { font-weight: 400; color: #888; font-size: 0.75rem; }
 
