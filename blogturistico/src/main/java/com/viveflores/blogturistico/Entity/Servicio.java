@@ -14,7 +14,7 @@ import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table (name = "Servicios")
-public class servicio {
+public class Servicio {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (name = "id_servicio")

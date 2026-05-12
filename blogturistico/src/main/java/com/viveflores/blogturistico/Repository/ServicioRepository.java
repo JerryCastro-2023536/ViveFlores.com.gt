@@ -1,9 +1,9 @@
 package com.viveflores.blogturistico.Repository;
 
-import com.viveflores.blogturistico.Entity.Contactar;
+import com.viveflores.blogturistico.Entity.Servicio;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ContactarRepository extends JpaRepository<Contactar, Integer> {
+public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
 }

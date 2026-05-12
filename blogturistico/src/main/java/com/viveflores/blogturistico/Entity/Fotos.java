@@ -24,11 +24,7 @@ public class Fotos {
     private String descripcion;
 
     @Lob
-<<<<<<<< HEAD:ft-lchan-2024540/src/main/java/com/viveflores/blogturistico/Entity/Fotos.java
-    @Column(name = "foto", columnDefinition = "mediumblob")
-========
     @Column(name = "foto", columnDefinition = "longblob")
->>>>>>>> ft-lchan-2024540:ft-lchan-2024540/blogturistico/src/main/java/com/viveflores/blogturistico/Entity/Fotos.java
     private byte[] foto;
 
     @NotNull(message = "El campo no debe ir vacio")
