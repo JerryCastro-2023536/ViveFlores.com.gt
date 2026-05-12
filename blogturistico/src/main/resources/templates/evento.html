@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title th:text="${evento.nombre_evento}"></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" th:href="@{/post.css}">
+    <link rel="stylesheet" th:href="@{/index.css}">
+</head>
+
+<body>
+
+    <div th:replace="~{fragments :: header}"></div>
+
+<main class="feed">
+
+    <div class="post">
+
+        <div class="post-header">
+            <h2 th:text="${evento.nombre_evento}"></h2>
+        </div>
+
+        <img class="post-img" th:src="@{'/eventos/foto/' + ${evento.id_evento}}">
+
+        <div class="post-body">
+
+            <p th:text="${evento.descripcion}"></p>
+
+            <div class="post-info">
+                <span><i class="bi bi-geo"></i> <span th:text="${evento.ubicacion}"></span></span>
+                <span><i class="bi bi-calendar"></i> Inicio: <span th:text="${evento.fecha_inicio}"></span></span>
+                <span><i class="bi bi-calendar"></i> Fin: <span th:text="${evento.fecha_fin}"></span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Vive Flores</p>
+</footer>
+
+</body>
+</html>
