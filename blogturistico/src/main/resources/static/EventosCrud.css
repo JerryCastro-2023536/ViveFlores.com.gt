@@ -1,0 +1,694 @@
+/* ─────────────────────────────────────────────
+   IMPORT FONT
+───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+
+/* ─────────────────────────────────────────────
+   VARIABLES GLOBALES (MISMO ESTILO INDEX.CSS)
+───────────────────────────────────────────── */
+:root {
+    --deep: #0a1e2b;
+    --navy: #0f2e3e;
+    --gold: #f6b93b;
+    --gold-light: #fdd17a;
+    --gold-dark: #c9932a;
+    --cream: #faf7f0;
+    --mist: #f0f4f7;
+    --text: #1a1a2e;
+    --text-light: #6b7c93;
+    --white: #ffffff;
+
+    --success: #489964;
+    --danger: #9a031e;
+
+    --radius: 14px;
+    --shadow: 0 20px 60px rgba(10, 30, 43, 0.15);
+    --shadow-card: 0 8px 32px rgba(10, 30, 43, 0.18);
+}
+
+/* ─────────────────────────────────────────────
+   RESET
+───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ─────────────────────────────────────────────
+   BODY
+───────────────────────────────────────────── */
+body {
+    font-family: "Stack Sans Headline", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────────
+   ANIMACIONES
+───────────────────────────────────────────── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes pulseGlow {
+    0%,100% {
+        box-shadow: 0 0 0 0 rgba(246, 185, 59, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(246, 185, 59, 0);
+    }
+}
+
+@keyframes modalFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ─────────────────────────────────────────────
+   HEADER
+───────────────────────────────────────────── */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(10, 30, 43, 0.95);
+    backdrop-filter: blur(20px);
+
+    padding: 0 48px;
+    color: var(--white);
+
+    height: 80px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    border-bottom: 1px solid rgba(246, 185, 59, 0.15);
+}
+
+header::after {
+    content: '';
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        var(--white) 40%,
+        var(--gold)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ─────────────────────────────────────────────
+   NAV
+───────────────────────────────────────────── */
+nav a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.85);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 8px 14px;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+    bottom: 5px;
+
+    height: 2px;
+    background: var(--gold);
+
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--gold);
+    background: rgba(246, 185, 59, 0.08);
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* ─────────────────────────────────────────────
+   BOTÓN HOME
+───────────────────────────────────────────── */
+.btn-home {
+    background: linear-gradient(
+        135deg,
+        var(--gold) 0%,
+        var(--gold-dark) 100%
+    );
+
+    color: var(--deep);
+
+    padding: 10px 20px;
+    border-radius: 50px;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-home:hover {
+    transform: translateY(-2px) scale(1.03);
+
+    box-shadow: 0 8px 24px rgba(246, 185, 59, 0.4);
+
+    background: linear-gradient(
+        135deg,
+        var(--gold-light) 0%,
+        var(--gold) 100%
+    );
+}
+
+/* ─────────────────────────────────────────────
+   CONTENEDOR
+───────────────────────────────────────────── */
+.container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px 20px;
+
+    animation: fadeUp 0.7s ease;
+}
+
+/* ─────────────────────────────────────────────
+   TÍTULO
+───────────────────────────────────────────── */
+.titulo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo h1,
+.titulo h2 {
+    font-size: clamp(28px, 3vw, 38px);
+    color: var(--deep);
+    margin-bottom: 10px;
+}
+
+.titulo::after {
+    content: '';
+
+    display: block;
+
+    width: 60px;
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        var(--gold),
+        var(--gold-light)
+    );
+}
+
+/* ─────────────────────────────────────────────
+   FORM CONTAINER
+───────────────────────────────────────────── */
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ─────────────────────────────────────────────
+   FORMULARIO
+───────────────────────────────────────────── */
+form {
+    background: linear-gradient(
+        160deg,
+        #ffffff 0%,
+        #fdfdfd 100%
+    );
+
+    padding: 35px;
+
+    border-radius: var(--radius);
+
+    width: 100%;
+    max-width: 760px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    box-shadow: var(--shadow-card);
+
+    border-top: 4px solid var(--gold);
+
+    transition: all 0.35s ease;
+}
+
+form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(10, 30, 43, 0.18);
+}
+
+/* ─────────────────────────────────────────────
+   GRID
+───────────────────────────────────────────── */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+/* ─────────────────────────────────────────────
+   GRUPOS
+───────────────────────────────────────────── */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+/* ─────────────────────────────────────────────
+   LABELS
+───────────────────────────────────────────── */
+.form-group label {
+    font-weight: 600;
+    color: var(--deep);
+
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* ─────────────────────────────────────────────
+   INPUTS
+───────────────────────────────────────────── */
+.form-group input,
+.form-group textarea,
+#buscarId {
+    background: var(--mist);
+
+    border: 1px solid transparent;
+
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    color: var(--text);
+
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+#buscarId:focus {
+    outline: none;
+
+    border-color: var(--gold);
+
+    background: var(--white);
+
+    box-shadow: 0 0 0 4px rgba(246, 185, 59, 0.18);
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+/* ─────────────────────────────────────────────
+   BOTÓN GUARDAR
+───────────────────────────────────────────── */
+form button {
+    padding: 13px 28px;
+
+    background: linear-gradient(
+        135deg,
+        var(--gold) 0%,
+        var(--gold-dark) 100%
+    );
+
+    color: var(--deep);
+
+    border: none;
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+    font-size: 14px;
+
+    width: 220px;
+    align-self: center;
+
+    transition: all 0.3s ease;
+
+    animation: pulseGlow 2.5s infinite;
+}
+
+form button:hover {
+    transform: translateY(-2px) scale(1.03);
+
+    box-shadow: 0 8px 24px rgba(246, 185, 59, 0.4);
+
+    background: linear-gradient(
+        135deg,
+        var(--gold-light) 0%,
+        var(--gold) 100%
+    );
+}
+
+/* ─────────────────────────────────────────────
+   BOTONES BOOTSTRAP
+───────────────────────────────────────────── */
+
+/* EDITAR → AMARILLO */
+.btn-warning {
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold-dark)
+    );
+
+    border: none;
+    color: var(--deep);
+
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(246, 185, 59, 0.3);
+}
+
+/* ELIMINAR → ROJO */
+.btn-danger {
+    background: linear-gradient(
+        135deg,
+        var(--danger),
+        #7a0217
+    );
+
+    border: none;
+    color: white;
+
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(154, 3, 30, 0.3);
+}
+
+/* ─────────────────────────────────────────────
+   BUSCADOR
+───────────────────────────────────────────── */
+#buscarId {
+    height: 48px;
+    font-size: 15px;
+
+    width: 100%;
+    max-width: 380px;
+
+    margin-bottom: 10px;
+}
+
+/* ─────────────────────────────────────────────
+   TABLA
+───────────────────────────────────────────── */
+.tabla-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+.tabla-container table {
+    width: 95%;
+    max-width: 1200px;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-card);
+
+    text-align: center;
+}
+
+/* HEADER TABLA */
+thead {
+    background: linear-gradient(
+        135deg,
+        var(--deep),
+        var(--navy)
+    );
+
+    color: var(--white);
+}
+
+thead th {
+    padding: 16px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* BODY TABLA */
+tbody td {
+    padding: 15px;
+
+    border-bottom: 1px solid #edf1f5;
+
+    vertical-align: middle;
+
+    transition: background 0.3s ease;
+}
+
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background: rgba(246, 185, 59, 0.08);
+    transform: scale(1.003);
+}
+
+/* ─────────────────────────────────────────────
+   ACCIONES
+───────────────────────────────────────────── */
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ─────────────────────────────────────────────
+   MODAL
+───────────────────────────────────────────── */
+.modal {
+    display: none;
+
+    position: fixed;
+    z-index: 1000;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+
+    background-color: rgba(10, 30, 43, 0.7);
+
+    backdrop-filter: blur(6px);
+}
+
+.modal-content {
+    background: var(--cream);
+
+    margin: 5% auto;
+    padding: 35px;
+
+    width: 80%;
+    max-width: 800px;
+
+    border-radius: var(--radius);
+
+    box-shadow: 0 20px 60px rgba(10, 30, 43, 0.25);
+
+    border-top: 4px solid var(--gold);
+
+    animation: modalFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.close {
+    color: var(--text-light);
+
+    float: right;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--deep);
+    transform: rotate(90deg);
+}
+
+/* ─────────────────────────────────────────────
+   BOTÓN CANCELAR
+───────────────────────────────────────────── */
+.btn-cancel {
+    background: #e0e6ed;
+
+    color: var(--text);
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background: #cfd8e3;
+    transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        width: 95%;
+        padding: 25px;
+    }
+
+    #buscarId {
+        max-width: 100%;
+    }
+
+    .tabla-container {
+        overflow-x: auto;
+    }
+
+    .tabla-container table {
+        min-width: 700px;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        width: 92%;
+        padding: 25px;
+    }
+}

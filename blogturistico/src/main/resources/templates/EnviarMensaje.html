@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - Vive Flores</title>
+
+    <link rel="stylesheet" th:href="@{/Styles/EnviarMensaje.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">Vive Flores</div>
+    <a th:href="@{/}" class="btn-home">Volver</a>
+</header>
+
+<div class="container-contact">
+
+    <div class="contact-card">
+
+        <h2 class="title">Enviar Mensaje</h2>
+        <p class="subtitle">¿Tienes alguna duda o sugerencia? Escríbenos.</p>
+
+        <!-- FORM -->
+        <form th:action="@{/contacto/enviar}" th:object="${contactar}" method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Asunto</label>
+                <input type="text"
+                       th:field="*{asunto}"
+                       class="form-control input-custom"
+                       placeholder="Ej: Consulta sobre eventos">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Mensaje</label>
+                <textarea th:field="*{mensaje}"
+                          class="form-control input-custom"
+                          rows="5"
+                          placeholder="Escribe tu mensaje..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                Enviar Mensaje
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
