@@ -1,15 +1,16 @@
 package com.viveflores.blogturistico.Service;
 
-import com.viveflores.blogturistico.Entity.Servicio;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.viveflores.blogturistico.Entity.servicio;
 
 @Service
 public interface ServicioService {
-    List<Servicio> getAllServicios();
-    Servicio getServicioById (Integer id);
-    Servicio saveServicio (Servicio servicio) throws RuntimeException;
-    Servicio updateServicio (Integer id, Servicio servicio);
-    void deleteServicio (Integer id);
+    List<servicio> listar();
+    servicio agregarServicio(servicio servicio);
+    servicio buscarPorId(int id);
+    void eliminar(int id);
+
 }
