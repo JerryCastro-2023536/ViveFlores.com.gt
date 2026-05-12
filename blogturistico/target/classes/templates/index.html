@@ -4,8 +4,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Inicio</title>
+    <title>Inicio - Vive Flores</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
 </head>
 <body>
@@ -20,8 +21,39 @@
         </form>
     </section>
 
-    <!-- NEGOCIOS -->
+    <!-- INFO GENERAL DEL LUGAR -->
     <section class="section">
+        <h2 class="reveal visible">Descubre Isla de Flores, Petén</h2>
+        <div style="max-width: 1000px; margin: 0 auto; text-align: left; line-height: 1.8; color: var(--text-light); font-size: 18px;" class="reveal visible">
+            <p style="margin-bottom: 25px; text-align: center; font-size: 20px;">La <strong>Isla de Flores</strong> es una joya colonial en el corazón del Lago Petén Itzá. Famosa por sus calles coloridas y techos rojos, es el punto de partida perfecto para explorar la majestuosidad de la civilización maya, incluyendo Tikal y Yaxhá.</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <div style="flex: 1; min-width: 280px; background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow-card); border-top: 4px solid var(--gold); transition: transform 0.3s ease;">
+                    <h3 style="color: var(--deep); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="bi bi-thermometer-sun" style="font-size: 24px; color: var(--gold);"></i> Clima Tropical
+                    </h3>
+                    <p style="font-size: 15px; margin: 0;">Petén es cálido todo el año (25°C - 35°C). Prepárate con ropa ligera y cómoda, bloqueador solar, gafas de sol y mantén siempre a mano una botella de agua.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow-card); border-top: 4px solid var(--gold); transition: transform 0.3s ease;">
+                    <h3 style="color: var(--deep); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="bi bi-cash-coin" style="font-size: 24px; color: var(--gold);"></i> Moneda y Pagos
+                    </h3>
+                    <p style="font-size: 15px; margin: 0;">La moneda oficial es el Quetzal (GTQ). Es altamente recomendable llevar efectivo para lanchas y mercados locales, aunque restaurantes y hoteles aceptan tarjeta.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 280px; background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow-card); border-top: 4px solid var(--gold); transition: transform 0.3s ease;">
+                    <h3 style="color: var(--deep); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="bi bi-compass" style="font-size: 24px; color: var(--gold);"></i> Transporte
+                    </h3>
+                    <p style="font-size: 15px; margin: 0;">La isla se recorre caminando en pocos minutos. Para cruzar a otros pueblos como San Miguel o el zoológico Petencito, los pintorescos viajes en lancha son la mejor opción.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEGOCIOS -->
+    <section class="section alt">
         <h2>Negocios Destacados</h2>
         <div class="cards">
             <div class="card" th:each="p, iterStat : ${publi}" th:if="${iterStat.index < 3}">
@@ -31,54 +63,61 @@
                 <a th:href="@{'/post/' + ${p.id_publicacion}}">
                     <button>Ver más</button>
                 </a>
-
             </div>
         </div>
     </section>
 
     <!-- EVENTOS -->
-    <section class="section alt">
+    <section class="section">
         <h2>Eventos</h2>
         <div class="cards">
-            <div class="card1" th:each="e, iterStat : ${event}" th:if="${iterStat.index < 3}">
+            <div class="card" th:each="e, iterStat : ${event}" th:if="${iterStat.index < 3}">
                 <img class="foto" th:src="@{'/eventos/foto/' + ${e.id_evento}}" alt="Eventos">
                 <h3 th:text="${e.nombre_evento}"></h3>
                 <p th:text="${e.descripcion}"></p>
-                <button>Más información</button>
+                <a th:href="@{'/evento/' + ${e.id_evento}}">
+                    <button>Más información</button>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- SERVICIOS -->
-    <section class="section">
+    <section class="section alt">
         <h2>Servicios Turísticos</h2>
         <div class="cards">
             <div class="card" th:each="s, iterStat : ${servi}" th:if="${iterStat.index < 3}">
                 <img class="foto" th:src="@{'/servicios/foto/' + ${s.id_servicio}}" alt="Servicio">
                 <h3 th:text="${s.nombre_servicio}"></h3>
                 <p th:text="${s.descripcion}"></p>
-                <button>Ver más</button>
+                <a th:href="@{'/servicio/' + ${s.id_servicio}}">
+                    <button>Ver más</button>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- GALERÍA -->
-    <section class="section alt">
+    <!-- GALERÍA (Ahora como publicaciones) -->
+    <section class="section">
         <h2>Álbum de Fotografías</h2>
-        <div class="gallery">
-            <img src="Fotos1.jpg">
-            <img src="Fotos2.jpg">
-            <img src="Fotos3.jpg">
-            <img src="Fotos4.jpg">
+        <div class="cards">
+            <div class="card" th:each="f, iterStat : ${fotos}" th:if="${iterStat.index < 3}">
+                <img class="foto" th:src="@{'/fotos/foto/' + ${f.id_foto}}" alt="Fotografía" style="height: 200px; object-fit: cover;">
+                <h3 th:text="${f.titulo_foto}" style="margin-top: 15px;"></h3>
+                <p th:text="${f.descripcion}"></p>
+            </div>
+            
+            <div th:if="${#lists.isEmpty(fotos)}" style="text-align: center; width: 100%; color: var(--text-light);">
+                <p>No hay fotos disponibles en este momento.</p>
+            </div>
         </div>
-        <div class="btn-gallery">
-            <a href="Galeria de fotos.html"><button>Ver más</button></a>
+        <div class="btn-gallery" style="margin-top: 40px;">
+            <a href="Galeria de fotos.html"><button style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: var(--deep); padding: 12px 30px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; font-size: 16px; transition: all 0.3s ease;">Ver más fotos</button></a>
         </div>
-
     </section>
 
     <footer>
-        Todos los derechos © 2026 Isla de Flores
+        <p>Todos los derechos © 2026 Vive Flores - Isla de Flores, Petén</p>
     </footer>
 </body>
 

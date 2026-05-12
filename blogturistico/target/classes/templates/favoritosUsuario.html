@@ -1,34 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="favoritosUsuario.css">
+    <title>Tus Favoritos - Vive Flores</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Favoritos</title>
+    <link rel="stylesheet" th:href="@{/index.css(v=1.2)}">
+    <link rel="stylesheet" th:href="@{/favoritosUsuario.css(v=1.2)}">
 </head>
 <body>
 
-    <div th:replace="~{fragments :: header}"></div>
+    <header>
+        <div class="logo">Vive Flores</div>
+        <nav>
+            <ul>
+                <li><a th:href="@{/index}">Inicio</a></li>
+                <li><a th:href="@{/favoritas}">Favoritos</a></li>
+                <li><a th:href="@{/perfil}">Ir al Perfil</a></li>
+                <li th:if="${session.usuarioLogueado != null and #strings.equalsIgnoreCase(session.usuarioLogueado.rol, 'usuario')}">
+                    <a th:href="@{/vendedor}">Conviértete en vendedor</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a th:if="${session.usuarioLogueado != null}" th:href="@{/logout}"><button class="btn-login" style="background-color: #e74c3c; color: white;">Cerrar Sesión</button></a>
+            <a th:if="${session.usuarioLogueado == null}" th:href="@{/acceder}"><button class="btn-login">Iniciar Sesión</button></a>
+        </div>
+    </header>
     
-    <h2>Tus Favoritos</h2>
-    <div class="container">
-        <div class="fav1" th:each="fav : ${publicaciones}">
-            <div class="content">
+    <section class="section alt fav-section">
+        <h2 class="reveal visible">Tus Favoritos</h2>
 
-                <img th:src="@{'/publicaciones/foto/' + ${fav.id_publicacion}}" width="200">
+        <div class="fav-container reveal visible">
+            <div th:if="${#lists.isEmpty(publicaciones)}" style="text-align: center; width: 100%; padding: 40px; color: var(--text-light);">
+                <i class="bi bi-heart" style="font-size: 48px; color: var(--gold); margin-bottom: 20px; display: block;"></i>
+                <p>Aún no tienes publicaciones favoritas. ¡Explora y añade algunas!</p>
+                <a th:href="@{/publicacionesAll}" class="btn-login" style="display: inline-block; margin-top: 20px; text-decoration: none;">Explorar</a>
+            </div>
 
-                <div class="textos-column">
-                    <h3 th:text="${fav.nombre_publicacion}"></h3>
-                    <p th:text="${fav.descripcion}"></p>
-
-                    <a th:href="@{'/post/' + ${fav.id_publicacion}}">Ver</a>
+            <div class="fav-item" th:each="fav : ${publicaciones}">
+                <img th:src="@{'/publicaciones/foto/' + ${fav.id_publicacion}}" alt="Foto de la publicación">
+                <div class="fav-content">
+                    <div class="fav-text">
+                        <h3 th:text="${fav.nombre_publicacion}"></h3>
+                        <p th:text="${fav.descripcion}"></p>
+                    </div>
+                    <div class="fav-actions">
+                        <a th:href="@{'/post/' + ${fav.id_publicacion}}" class="btn-ver">Ver Detalles</a>
+                        <form th:action="@{'/favorito/' + ${fav.id_publicacion}}" method="post" style="display: inline;">
+                            <button type="submit" class="btn-remove" title="Quitar de favoritos">
+                                <i class="bi bi-star-fill"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-
-                <i class="bi bi-star-fill"></i>
-
             </div>
         </div>
-    </div>
+    </section>
+
 </body>
 </html>
