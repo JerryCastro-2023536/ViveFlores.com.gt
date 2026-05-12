@@ -13,22 +13,22 @@ public class ReportesController {
     @Autowired
     private ReportesService service;
 
-    @GetMapping("/reportesUsuario")
-    public String formularioUsuario(Model model) {
-        model.addAttribute("reporte", new Reportes());
-        return "reportesUsuario";
-    }
+//    @GetMapping("/reportesUsuario")
+//    public String formularioUsuario(Model model) {
+//        model.addAttribute("reporte", new Reportes());
+//        return "reportesUsuario";
+//    }
 
-    @PostMapping("/reportes/agregar")
-    public String agregar(@ModelAttribute("reporte") Reportes reportes) {
-        reportes.setId_usuario(9);
-        reportes.setFecha_envio(java.time.LocalDateTime.now());
-        service.agregarReportes(reportes);
-        return "redirect:/reportesUsuario?exito";
-    }
+//    @PostMapping("/reportes/agregar")
+//    public String agregar(@ModelAttribute("reporte") Reportes reportes) {
+//        reportes.setId_usuario(9);
+//        reportes.setFecha_envio(java.time.LocalDateTime.now());
+//        service.agregarReportes(reportes);
+//        return "redirect:/reportesUsuario?exito";
+//    }
 
-    @GetMapping("/")
-    public String inicio() {
-        return "redirect:/reportesUsuario";
-    }
+//    @GetMapping("/")
+//    public String inicio() {
+//        return "redirect:/reportesUsuario";
+//    }
 }
