@@ -41,9 +41,7 @@
                 <div class="pub-footer">
                     <span class="fecha">Publicado: <span th:text="${p.fecha_creacion}"></span></span>
                 </div>
-                <a th:href="@{'/post/' + ${p.id_publicacion}}">
-                    <button class="">Ver más</button>
-                </a>
+                <a th:href="@{'/post/' + ${p.id_publicacion}}" style="display: block; width: 100%; text-align: center; margin-top: 15px; padding: 10px; background-color: #2c3e50; color: white; text-decoration: none; border-radius: 4px;">Ver más</a>
             </div>
         </div>
     </section>
