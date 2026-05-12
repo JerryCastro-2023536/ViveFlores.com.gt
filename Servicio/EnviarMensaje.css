@@ -1,0 +1,116 @@
+body {
+    background: #fcf5e3;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #0a1e2b;
+    color: white;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn-home {
+    text-decoration: none;
+    color: white;
+    background: #f6b93b;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-home:hover {
+    background: #e0a82f;
+}
+
+/* CONTENEDOR */
+.container-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+/* CARD (ahora oscura) */
+.contact-card {
+    background: linear-gradient(135deg, #0a1e2b, #1a2e3f);
+    color: white;
+    padding: 35px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation: fadeUp 0.5s ease;
+}
+
+/* TITULOS */
+.title {
+    text-align: center;
+    color: #f6b93b;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+/* INPUTS */
+.input-custom {
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    background: #f1f5f9;
+    transition: 0.3s;
+}
+
+.input-custom:focus {
+    outline: none;
+    border: 1px solid #f6b93b;
+    box-shadow: 0 0 0 0.2rem rgba(246, 185, 59, 0.25);
+}
+
+/* LABELS (importante para contraste) */
+.form-label {
+    color: #e2e8f0;
+}
+
+/* BOTON */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f6b93b, #f39c12);
+    color: #0a1e2b;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(246, 185, 59, 0.3);
+}
+
+/* ANIMACION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
