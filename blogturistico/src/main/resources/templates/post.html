@@ -74,7 +74,7 @@
             <h3>Comentarios</h3>
 
             <div th:each="resena : ${resenas}" class="comment" style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
-                <strong>Usuario <span th:text="${resena.id_usuario}"></span></strong> 
+                <strong><i class="bi bi-person-circle" style="margin-right: 5px;"></i><span th:text="${nombresUsuarios.get(resena.id_usuario)}"></span></strong> 
                 <span style="color: #f1c40f; margin-left: 10px;">
                     <i class="bi bi-star-fill" th:each="i : ${#numbers.sequence(1, resena.calificacion)}"></i>
                     <i class="bi bi-star" th:if="${resena.calificacion < 5}" th:each="i : ${#numbers.sequence(resena.calificacion + 1, 5)}"></i>
