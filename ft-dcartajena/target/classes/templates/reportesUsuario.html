@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Reporte - Vive Flores</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" th:href="@{/reportesUsuario.css}">
+</head>
+<body>
+
+<header>
+    <h1>Vive Flores</h1>
+    <a th:href="@{/}" class="btn-volver">Volver al inicio</a>
+</header>
+
+<main style="display: flex; justify-content: center; padding: 40px;">
+    <div class="card" style="max-width: 500px; width: 100%; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 6px solid #f6b93b;">
+
+        <h2 style="color: #0a1e2b; text-align: center; margin-bottom: 10px;">Enviar Reporte</h2>
+        <p style="text-align: center; color: #6b7c93; margin-bottom: 25px; font-size: 14px;">Informa cualquier inconveniente aquí.</p>
+
+        <div th:if="${param.exito}" style="background: #d4edda; color: #155724; padding: 10px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+            <i class="bi bi-check-circle-fill"></i> ¡Reporte enviado con éxito!
+        </div>
+
+        <form th:action="@{/reportes/agregar}" th:object="${reporte}" method="post">
+
+            <div class="input-group" style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Asunto</label>
+                <input type="text" th:field="*{asunto}" placeholder="¿Qué sucede?" required
+                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: #f0f4f7;">
+            </div>
+
+            <div class="input-group" style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Mensaje</label>
+                <textarea th:field="*{mensaje}" placeholder="Describe los detalles aquí..." required
+                          style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: #f0f4f7; min-height: 120px; resize: none;"></textarea>
+            </div>
+
+            <button type="submit" style="width: 100%; padding: 15px; background: #f6b93b; color: #0a1e2b; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+                <i class="bi bi-send"></i> Enviar Información
+            </button>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
