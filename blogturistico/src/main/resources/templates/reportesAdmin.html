@@ -1,79 +1,48 @@
- <!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reportes</title>
+    <title>Reportes - Vive Flores</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../static/reportesAdmin.css">
+    <link rel="stylesheet" th:href="@{/reportesAdmin.css}">
 </head>
 <body>
 
 <header>
-    <h1>Vive Flores </h1>
-    <a href="#" class="btn-volver">Volver al Panel</a>
+    <h1>Vive Flores</h1>
+    <a th:href="@{/panel}" class="btn-volver">Volver al Panel</a>
 </header>
 
 <main>
     <h2>Buzón de Reportes de Usuarios</h2>
 
-    <div class="search-container">
-        <form>
-            <input type="text" placeholder="Buscar por asunto o ID...">
-            <button type="submit"><i class="bi bi-search"></i> Buscar</button>
-        </form>
-    </div>
 
     <div class="reports-list">
-        
-        <div class="report-card-horizontal">
-            <div class="report-side-info">
-                <span class="report-id">#125</span>
-                <span class="report-date">15/10/2023 14:30</span>
-            </div>
-            
+        <div class="report-card-horizontal" th:each="r : ${reportes}">
+
             <div class="report-main-content">
                 <div class="report-details">
-                    <h3>Error en el proceso de pago</h3>
-                    <p class="user-info"><i class="bi bi-person"></i> Usuario ID: 450</p>
-                    <p class="message-text">Intenté realizar una compra con tarjeta de crédito pero el sistema se queda cargando eternamente después de ingresar el CVV...</p>
+                    <h3 th:text="${r.asunto}">Asunto del reporte</h3>
+                    <p class="user-info">
+                        <i class="bi bi-person"></i> ID Usuario: <span th:text="${r.id_usuario}">0</span>
+                    </p>
+                    <p class="message-text" th:text="${r.mensaje}">Mensaje del usuario...</p>
+                    <span class="report-date" th:text="${#temporals.format(r.fecha_envio, 'dd/MM/yyyy HH:mm')}">00/00/0000</span>
                 </div>
-                
+
                 <div class="report-actions">
-                    <button class="btn-manage" onclick="openModal()">
-                        <i class="bi bi-pencil-square"></i> Gestionar
-                    </button>
-                    <button class="btn-delete">
+                    <a th:href="@{/eliminar/{id}(id=${r.id_reporte})}"
+                       class="btn-delete"
+                       onclick="return confirm('¿Estás seguro de eliminar este reporte?')">
                         <i class="bi bi-trash"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="report-card-horizontal">
-            <div class="report-side-info">
-                <span class="report-id">#124</span>
-                <span class="report-date">14/10/2023 09:15</span>
-            </div>
-
-            <div class="report-main-content">
-                <div class="report-details">
-                    <h3>Sugerencia de nueva categoría</h3>
-                    <p class="user-info"><i class="bi bi-person"></i> Usuario ID: 882</p>
-                    <p class="message-text">Me gustaría que añadieran una sección específica para flores exóticas de temporada invernal.</p>
-                </div>
-
-                <div class="report-actions">
-                    <button class="btn-manage" onclick="openModal()">
-                        <i class="bi bi-pencil-square"></i> Gestionar
-                    </button>
-                    <button class="btn-delete">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </div>
-            </div>
+        <div th:if="${#lists.isEmpty(reportes)}" style="text-align: center; padding: 20px;">
+            <p>No hay reportes pendientes.</p>
         </div>
-
     </div>
 </main>
 
