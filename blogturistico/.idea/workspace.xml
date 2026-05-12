@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="30aef988-e59c-4f05-ba16-440ae6faa922" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/CategoriasController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ContactarController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/EventoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/FavoritosController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/FotosController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/PublicacionesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ResenaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ServicioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/UsuariosController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Categorias.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Contactar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Evento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Favoritos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Fotos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Publicaciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Reportes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Resena.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/SolicitudPublicacion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Usuarios.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/servicio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/CorreoValidar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/FechasValidar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/GlobalExcepcion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/NotFoundExcepcion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/Validation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/PrincipalApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/CategoriasRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/ContactarRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/EventoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/FavoritosRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/FotosRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/PublicacionesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/ReportesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/ResenaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/ServicioRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/SolicitudPublicacionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/UsuariosRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/CategoriasService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/CategoriasServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ContactarService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ContactarServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/EventoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/EventoServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/FavoritosService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/FavoritosServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/FotosService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/FotosServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/PublicacionesService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ReportesService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ReportesServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ResenaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ResenaServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ServicioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ServicioServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/SolicitudPublicacionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/SolicitudPublicacionServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/UsuariosService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/UsuariosServiceImplements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/agregarServicio.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/favoritosUsuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mensajesVendedor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/perfilUsuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/reportesAdmin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/reportesUsuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/solicitudPublicacion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/usuarios.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/agregarServicio.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/favoritosUsuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mensajesVendedor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/perfilUsuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reportesAdmin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reportesUsuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/solicitudPublicacion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/usuarios.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/viveflores/blogturistico/BlogturisticoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/viveflores/blogturistico/PrincipalApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/CategoriasController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ContactarController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/EventoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/FavoritosController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/FotosController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/PublicacionesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ReportesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ResenaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ServicioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/UsuariosController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Categorias.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Contactar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Evento.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Favoritos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Fotos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Publicaciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Reportes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Resena.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Servicio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/SolicitudPublicacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Usuarios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/CorreoValidar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/FechasValidar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/NotFoundExcepcion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/Validation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/PrincipalApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/CategoriasRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ContactarRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/EventoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/FavoritosRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/FotosRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/PublicacionesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ReportesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ResenaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ServicioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/SolicitudPublicacionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/UsuariosRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/CategoriasService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/CategoriasServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ContactarService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ContactarServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/EventoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/EventoServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/FavoritosService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/FavoritosServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/FotosService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/FotosServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/PublicacionesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ReportesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ReportesServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ResenaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ResenaServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ServicioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ServicioServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/UsuariosService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/UsuariosServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/agregarServicio.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/favoritosUsuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/mensajesVendedor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/perfilUsuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/reportesAdmin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/reportesUsuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/solicitudPublicacion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/usuarios.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/agregarServicio.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/favoritosUsuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/mensajesVendedor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/perfilUsuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/reportesAdmin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/reportesUsuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/solicitudPublicacion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/usuarios.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/viveflores/blogturistico/BlogturisticoApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/viveflores/blogturistico/PrincipalApplicationTests.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3DcuQS5OnqTIoTSQhb5vtlE2Goo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PrincipalApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "ft-dcartajena-2022510",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Informatica/Desktop/ViveFlores.com.gt/blogturistico"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="30aef988-e59c-4f05-ba16-440ae6faa922" name="Changes" comment="" />
+      <created>1778593663610</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1778593663610</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
