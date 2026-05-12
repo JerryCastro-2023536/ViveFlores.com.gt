@@ -8,16 +8,9 @@
     <title>Favoritos</title>
 </head>
 <body>
-    <header>
-        <div class="logo">Vive Flores</div>
-            <nav>
-                <ul>
-                    <button id="btn-regresar"> <i class="bi bi-arrow-left"></i> volver al inicio</button>
-            
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+    <div th:replace="~{fragments :: header}"></div>
+    
     <h2>Tus Favoritos</h2>
     <div class="container">
         <div class="fav1" th:each="fav : ${publicaciones}">

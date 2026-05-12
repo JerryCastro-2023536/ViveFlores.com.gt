@@ -8,16 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="logo">Vive Flores</div>
-            <nav>
-                <ul>
-                    <button id="btn-regresar"> <i class="bi bi-arrow-left"></i> volver al inicio</button>
-                    <li><a href="favoritas">Favoritos</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+    <div th:replace="~{fragments :: header}"></div>
+    
     <h2>Tu Perfil</h2>
 
     <div class="container">
