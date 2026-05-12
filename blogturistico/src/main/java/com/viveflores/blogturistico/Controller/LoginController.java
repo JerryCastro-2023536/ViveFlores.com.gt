@@ -40,4 +40,12 @@ public class LoginController {
             return "login";
         }
     }
+
+    @GetMapping("/logout")
+    public String cerrarSesion(HttpSession session) {
+        if (session != null) {
+            session.invalidate();
+        }
+        return "redirect:/index";
+    }
 }
