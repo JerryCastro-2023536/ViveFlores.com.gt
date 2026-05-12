@@ -12,120 +12,120 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">Vive Flores</div>
-        <nav>
-            <ul>
-                <li><a href="index">Inicio</a></li>
-                <li><a href="">Reportes</a></li>
-                <li><a href="">Mensajes</a></li>
-                <li><a href="">Administrar Publicaciones</a></li>
-            </ul>
-        </nav>
-        <a href="index"><button class="btn-regresar">Volver al menu</button></a>
-        </div>
-    </header>
-   <main>
+<header>
+    <div class="logo">Vive Flores</div>
+    <nav>
+        <ul>
+            <li><a href="index">Inicio</a></li>
+            <li><a href="">Reportes</a></li>
+            <li><a href="">Mensajes</a></li>
+            <li><a href="">Administrar Publicaciones</a></li>
+        </ul>
+    </nav>
+    <a href="index"><button class="btn-regresar">Volver al menu</button></a>
+    </div>
+</header>
+<main>
     <section class="hero1 fade-in">
         <h1>Panel de Administración</h1>
         <p th:if="${session.usuarioLogueado != null}" th:text="'Bienvenido al panel de administración, ' + ${session.usuarioLogueado.nombre_usuario}"></p>
         <p th:if="${session.usuarioLogueado == null}">Bienvenido al panel de administracion de Vive Flores.com</p>
     </section>
 
-        <section class="tablas">
-            <a href="">
-                <div class="cards delay-1">
-                    <h1>
-                        <i class="bi bi-people-fill">
-                        </i> Usuarios
-                    </h1>
-                </div>
-            </a>
-            <a href="publicaciones">
-                <div class="cards delay-2">
-                    <h1>
-                        <i class="bi bi-file-post">
-                        </i> Publicaciones
-                    </h1>
-                </div>
-            </a>
-            <a href="">
-                <div class="cards delay-3">
-                    <h1>
-                        <i class="bi bi-calendar2-event">
-                        </i> Eventos
-                    </h1>
-                </div>
-            </a>
-            <a href="">
-                <div class="cards delay-4">
-                    <h1>
-                        <i class="bi bi-bus-front">
-                        </i> Servicios
-                    </h1>
-                </div>
-            </a>
-            <a href="">
-                <div class="cards delay-5">
-                    <h1>
-                        <i class="bi bi-card-image">
-                        </i> Fotos
-                    </h1>
-                </div>
-            </a>
-            <a href="">
-                <div class="cards delay-6">
-                    <h1>
-                        <i class="bi bi-chat-right-text">
-                        </i> Reseñas
-                    </h1>
-                </div>
-            </a>
-            <a href="">
-                <div class="cards delay-7">
-                    <h1>
-                        <i class="bi bi-person-lines-fill">
-                        </i> Contactar
-                    </h1>
-                </div>
-            </a>
-            <a href="reportes">
-                <div class="cards delay-8">
-                    <h1>
-                        <i class="bi bi-file-earmark-text">
-                        </i> Reportes
-                    </h1>
-                </div>
-            </a>
-            <a href="">
-                <div class="cards delay-9">
-                    <h1>
-                        <i class="bi bi-envelope-paper">
-                        </i> Solicitud
-                    </h1>
-                </div>
-            </a>
-            <a href="">
-                <div class="cards delay-10">
-                    <h1>
-                        <i class="bi bi-tags">
-                        </i> Categorias
-                    </h1>
-                </div>
-            </a>
-            <a href="favoritos">
-                <div class="cards delay-11">
-                    <h1>
-                        <i class="bi bi-heart">
-                        </i> Favoritos
-                    </h1>
-                </div>
-            </a>
-        </section>
-    </main>
-    <footer>
-        Vive Flores.com 2026
-    </footer>
+    <section class="tablas">
+        <a href="">
+            <div class="cards delay-1">
+                <h1>
+                    <i class="bi bi-people-fill">
+                    </i> Usuarios
+                </h1>
+            </div>
+        </a>
+        <a href="publicaciones">
+            <div class="cards delay-2">
+                <h1>
+                    <i class="bi bi-file-post">
+                    </i> Publicaciones
+                </h1>
+            </div>
+        </a>
+        <a href="">
+            <div class="cards delay-3">
+                <h1>
+                    <i class="bi bi-calendar2-event">
+                    </i> Eventos
+                </h1>
+            </div>
+        </a>
+        <a href="">
+            <div class="cards delay-4">
+                <h1>
+                    <i class="bi bi-bus-front">
+                    </i> Servicios
+                </h1>
+            </div>
+        </a>
+        <a href="/fotos">
+            <div class="cards delay-5">
+                <h1>
+                    <i class="bi bi-card-image">
+                    </i> Fotos
+                </h1>
+            </div>
+        </a>
+        <a href="">
+            <div class="cards delay-6">
+                <h1>
+                    <i class="bi bi-chat-right-text">
+                    </i> Reseñas
+                </h1>
+            </div>
+        </a>
+        <a href="/contactar">
+            <div class="cards delay-7">
+                <h1>
+                    <i class="bi bi-person-lines-fill">
+                    </i> Contactar
+                </h1>
+            </div>
+        </a>
+        <a href="reportes">
+            <div class="cards delay-8">
+                <h1>
+                    <i class="bi bi-file-earmark-text">
+                    </i> Reportes
+                </h1>
+            </div>
+        </a>
+        <a href="">
+            <div class="cards delay-9">
+                <h1>
+                    <i class="bi bi-envelope-paper">
+                    </i> Solicitud
+                </h1>
+            </div>
+        </a>
+        <a href="/categorias">
+            <div class="cards delay-10">
+                <h1>
+                    <i class="bi bi-tags">
+                    </i> Categorias
+                </h1>
+            </div>
+        </a>
+        <a href="favoritos">
+            <div class="cards delay-11">
+                <h1>
+                    <i class="bi bi-heart">
+                    </i> Favoritos
+                </h1>
+            </div>
+        </a>
+    </section>
+</main>
+<footer>
+    Vive Flores.com 2026
+</footer>
 </body>
 
 </html>
