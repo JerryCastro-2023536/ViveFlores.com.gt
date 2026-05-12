@@ -28,7 +28,8 @@
    <main>
     <section class="hero1 fade-in">
         <h1>Panel de Administración</h1>
-        <p>Bienvenido al panel de administracion de Vive Flores.com</p>
+        <p th:if="${session.usuarioLogueado != null}" th:text="'Bienvenido al panel de administración, ' + ${session.usuarioLogueado.nombre_usuario}"></p>
+        <p th:if="${session.usuarioLogueado == null}">Bienvenido al panel de administracion de Vive Flores.com</p>
     </section>
 
         <section class="tablas">

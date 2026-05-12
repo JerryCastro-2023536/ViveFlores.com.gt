@@ -7,23 +7,8 @@
     <link rel='stylesheet' href='mostrar.css'>
 </head>
 <body>
-    <header>
-        <div class="logo">Vive Flores</div>
-        <nav>
-            <ul>
-                <li><a href="index">Inicio</a></li>
-                <li><a href="publicacionesAll">Publicaciones</a></li>
-                <li><a href="eventosAll">Eventos</a></li>
-                <li><a href="serviciosAll">Servicios</a></li>
-                <li><a href="quienessomos">¿Quienes Somos?</a></li>
-                <li><a href="contacto">Contacto</a></li>
-                <li><a href="vendedor">Conviertete en vendedor</a></li>
-                <li><a href="paneladmin">Administrar</a></li>
-            </ul>
-        </nav>
-        <a href="acceder"><button class="btn-login">Iniciar Sesión</button></a>
-        </div>
-    </header>
+    
+    <div th:replace="~{fragments :: header}"></div>
 
     <section class="hero">
         <h1>Elementos encontrados</h1>      

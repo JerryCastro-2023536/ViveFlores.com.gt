@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title th:text="${servicio.nombre_servicio}"></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" th:href="@{/post.css}">
+    <link rel="stylesheet" th:href="@{/index.css}">
+</head>
+
+<body>
+
+    <div th:replace="~{fragments :: header}"></div>
+
+<main class="feed">
+
+    <div class="post">
+
+        <div class="post-header">
+            <h2 th:text="${servicio.nombre_servicio}"></h2>
+        </div>
+
+        <img class="post-img" th:src="@{'/servicios/foto/' + ${servicio.id_servicio}}">
+
+        <div class="post-body">
+
+            <p th:text="${servicio.descripcion}"></p>
+
+            <div class="post-info">
+                <span><i class="bi bi-telephone"></i> <span th:text="${servicio.telefono}"></span></span>
+                <span><i class="bi bi-calendar"></i> <span th:text="${servicio.fecha_creacion}"></span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Vive Flores</p>
+</footer>
+
+</body>
+</html>

@@ -9,21 +9,7 @@
 </head>
 <body>
 
-    <header>
-        <div class="logo">Vive Flores</div>
-        <nav>
-            <ul>
-                <li><a href="index">Inicio</a></li>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="eventosAll">Eventos</a></li>
-                <li><a href="">Servicios</a></li>
-                <li><a href="quienessomos">¿Quiénes Somos?</a></li>
-                <li><a href="contacto">Contacto</a></li>
-                <li><a href="#">Conviértete en vendedor</a></li>
-            </ul>
-        </nav>
-        <a href="acceder"><button class="btn-login">Iniciar Sesión</button></a>
-    </header>
+    <div th:replace="~{fragments :: header}"></div>
 
     <section class="hero-small">
         <h1>Lugares Destacados</h1>
@@ -56,7 +42,7 @@
                     <span class="fecha">Publicado: <span th:text="${p.fecha_creacion}"></span></span>
                 </div>
                 <a th:href="@{'/post/' + ${p.id_publicacion}}">
-                    <button>Ver más</button>
+                    <button class="">Ver más</button>
                 </a>
             </div>
         </div>
