@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vive Flores - Gestión de Contactos</title>
+    <link rel="stylesheet" href="/css/estilos.css"   th:href="@{/css/estilos.css}"/>
+    <link rel="stylesheet" href="/css/contactar.css" th:href="@{/css/contactar.css}"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <span class="brand">Vive Flores</span>
+    <a class="btn-back" href="/">&#8592; Volver al inicio</a>
+</nav>
+
+<div class="container">
+    <h1>Gestión de Contactos</h1>
+
+    <!-- FORM CARD — sólo para guardar nuevos registros -->
+    <div class="card">
+        <form th:action="@{/contactar/guardar}" method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Asunto</label>
+                    <input type="text" name="asunto" placeholder="Asunto" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Usuario</label>
+                    <input type="number" name="id_usuario" placeholder="ID Usuario" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Publicación</label>
+                    <input type="number" name="id_publicacion" placeholder="ID Publicación" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Fecha de Envío</label>
+                    <input type="datetime-local" name="fecha_envio" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea name="mensaje" placeholder="Escribe el mensaje aquí..." required></textarea>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-save">Guardar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- BUSCADOR -->
+    <div class="search-wrapper">
+        <div class="search-bar">
+            <span class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Buscar contacto..." oninput="filterTable()"/>
+            <button class="btn-clear" id="btnClear" onclick="clearSearch()" style="display:none;" title="Limpiar">&#10005;</button>
+        </div>
+        <button class="btn-search" onclick="filterTable()" title="Buscar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrapper">
+        <table id="mainTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Asunto</th>
+                <th>Mensaje</th>
+                <th>Fecha Envío</th>
+                <th>ID Usuario</th>
+                <th>ID Publicación</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(contactos)}">
+                <td colspan="7" class="empty-row">No hay contactos registrados.</td>
+            </tr>
+            <tr th:each="c : ${contactos}">
+                <td th:text="${c.id_contactar}"></td>
+                <td th:text="${c.asunto}"></td>
+                <td th:text="${c.mensaje}"></td>
+                <td th:text="${#temporals.format(c.fecha_envio, 'dd/MM/yyyy HH:mm')}"></td>
+                <td th:text="${c.id_usuario}"></td>
+                <td th:text="${c.id_publicacion}"></td>
+                <td>
+                    <button type="button"
+                            class="btn-edit"
+                            th:data-id="${c.id_contactar}"
+                            th:data-asunto="${c.asunto}"
+                            th:data-mensaje="${c.mensaje}"
+                            th:data-fecha="${#temporals.format(c.fecha_envio, 'yyyy-MM-dd''T''HH:mm')}"
+                            th:data-usuario="${c.id_usuario}"
+                            th:data-publicacion="${c.id_publicacion}"
+                            onclick="openEditModal(this)">Editar</button>
+
+                    <button type="button"
+                            class="btn-delete"
+                            th:data-url="@{'/contactar/eliminar/' + ${c.id_contactar}}"
+                            onclick="openDeleteModal(this.getAttribute('data-url'))">Eliminar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ===== Modal de Eliminación ===== -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content" style="max-width: 400px; text-align: center;">
+        <span class="close" onclick="closeDeleteModal()">&times;</span>
+        <h2 style="color: #0a1e2b; margin-bottom: 15px;">¿Eliminar contacto?</h2>
+        <p style="color: #6b7c93; margin-bottom: 25px;">Esta acción no se puede deshacer.</p>
+        <div style="display: flex; justify-content: center; gap: 15px;">
+            <button type="button" class="btn-modal-cancel" onclick="closeDeleteModal()">Cancelar</button>
+            <a id="confirmDeleteBtn" href="#">
+                <button type="button" class="btn-confirm-delete">Sí, eliminar</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Modal de Edición ===== -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditModal()">&times;</span>
+        <h2>Editar Contacto</h2>
+        <form id="editForm" method="post">
+            <input type="hidden" id="edit-id" name="id"/>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Asunto</label>
+                    <input type="text" id="edit-asunto" name="asunto" placeholder="Asunto" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Usuario</label>
+                    <input type="number" id="edit-usuario" name="id_usuario" placeholder="ID Usuario" required/>
+                </div>
+                <div class="form-group">
+                    <label>ID Publicación</label>
+                    <input type="number" id="edit-publicacion" name="id_publicacion" placeholder="ID Publicación" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Fecha de Envío</label>
+                    <input type="datetime-local" id="edit-fecha" name="fecha_envio" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea id="edit-mensaje" name="mensaje" placeholder="Mensaje..." required></textarea>
+                </div>
+            </div>
+
+            <button type="submit" style="margin-top: 15px;">Actualizar Contacto</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function filterTable() {
+        const q = document.getElementById('searchInput').value.toLowerCase();
+        document.getElementById('btnClear').style.display = q ? 'inline-flex' : 'none';
+        const rows = document.querySelectorAll('#mainTable tbody tr:not(.empty-row-js)');
+        let visible = 0;
+        rows.forEach(row => {
+            const show = row.innerText.toLowerCase().includes(q);
+            row.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
+        let noResult = document.getElementById('noResultRow');
+        if (!visible) {
+            if (!noResult) {
+                noResult = document.createElement('tr');
+                noResult.id = 'noResultRow';
+                noResult.classList.add('empty-row-js');
+                noResult.innerHTML = '<td colspan="7" class="empty-row">No se encontraron resultados.</td>';
+                document.querySelector('#mainTable tbody').appendChild(noResult);
+            }
+            noResult.style.display = '';
+        } else if (noResult) { noResult.style.display = 'none'; }
+    }
+    function clearSearch() {
+        document.getElementById('searchInput').value = '';
+        filterTable();
+    }
+    function openEditModal(btn) {
+        const id = btn.getAttribute('data-id');
+        document.getElementById('edit-id').value          = id;
+        document.getElementById('edit-asunto').value      = btn.getAttribute('data-asunto');
+        document.getElementById('edit-mensaje').value     = btn.getAttribute('data-mensaje');
+        document.getElementById('edit-fecha').value       = btn.getAttribute('data-fecha');
+        document.getElementById('edit-usuario').value     = btn.getAttribute('data-usuario');
+        document.getElementById('edit-publicacion').value = btn.getAttribute('data-publicacion');
+        document.getElementById('editForm').action        = '/contactar/actualizar/' + id;
+        document.getElementById('editModal').style.display = 'block';
+    }
+
+    function closeEditModal() {
+        document.getElementById('editModal').style.display = 'none';
+    }
+
+    function openDeleteModal(url) {
+        document.getElementById('confirmDeleteBtn').href = url;
+        document.getElementById('deleteModal').style.display = 'block';
+    }
+
+    function closeDeleteModal() {
+        document.getElementById('deleteModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        const editModal   = document.getElementById('editModal');
+        const deleteModal = document.getElementById('deleteModal');
+        if (event.target === editModal)   closeEditModal();
+        if (event.target === deleteModal) closeDeleteModal();
+    };
+</script>
+
+</body>
+</html>

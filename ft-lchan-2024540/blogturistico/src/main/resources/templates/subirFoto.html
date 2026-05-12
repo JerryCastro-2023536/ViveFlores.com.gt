@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vive Flores - Subir Foto</title>
+    <link rel="stylesheet" href="/css/estilos.css"       th:href="@{/css/estilos.css}"/>
+    <link rel="stylesheet" href="/css/subirFoto.css"     th:href="@{/css/subirFoto.css}"/>
+</head>
+<body>
+
+<!-- ── NAV ────────────────────────────────────────────────── -->
+<nav>
+    <span class="brand">Vive Flores</span>
+    <a class="btn-back" href="/" th:href="@{/}">&#8592; Volver al inicio</a>
+</nav>
+
+<div class="container">
+    <h1>Subir Nueva Foto</h1>
+
+    <!-- ── FORM CARD ──────────────────────────────────────── -->
+    <div class="card">
+        <form th:action="@{/fotos/guardar}" method="post" enctype="multipart/form-data">
+
+            <!-- Fila 1: título + fecha -->
+            <div class="form-row">
+                <div class="form-group col-2">
+                    <label>Título de la Foto</label>
+                    <input type="text" name="titulo_foto"
+                           placeholder="Ej: Arreglo floral primavera" required/>
+                </div>
+                <div class="form-group">
+                    <label>Fecha de Creación</label>
+                    <input type="date" name="fecha_creacion" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea name="descripcion" rows="4"
+                              placeholder="Describe la foto..." required></textarea>
+                </div>
+            </div>
+
+            <!-- Fila 3: drop zone -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Archivo de Imagen</label>
+                    <div class="drop-zone" id="dropZone">
+                        <input type="file" name="foto" accept="image/*"
+                               id="fotoInput" class="drop-zone__input"/>
+
+                        <!-- Estado vacío -->
+                        <div class="drop-zone__content" id="dropContent">
+                            <div class="drop-zone__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="1.5"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                            </div>
+                            <p class="drop-zone__text">Arrastra tu imagen aquí</p>
+                            <span class="drop-zone__sub">o haz clic para seleccionar</span>
+                            <span class="drop-zone__hint">PNG, JPG, WEBP · Máx. 5 MB</span>
+                        </div>
+
+                        <!-- Vista previa -->
+                        <div class="drop-zone__preview" id="previewWrapper" style="display:none;">
+                            <img id="foto-preview" class="foto-preview" src="" alt="Vista previa"/>
+                            <button type="button" class="drop-zone__remove"
+                                    id="removeBtn" title="Quitar imagen">&#10005;</button>
+                            <p class="drop-zone__filename" id="fileName"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campo oculto para id_usuario (se setea desde el backend / sesión) -->
+            <input type="hidden" name="id_usuario" th:value="${session.usuarioId}"/>
+
+            <!-- Acciones -->
+            <div class="form-actions">
+                <a class="btn-cancel" href="/" th:href="@{/}">Cancelar</a>
+                <button type="submit" class="btn-save">Guardar Foto</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    const dropZone    = document.getElementById('dropZone');
+    const fotoInput   = document.getElementById('fotoInput');
+    const dropContent = document.getElementById('dropContent');
+    const previewWrap = document.getElementById('previewWrapper');
+    const preview     = document.getElementById('foto-preview');
+    const fileNameEl  = document.getElementById('fileName');
+    const removeBtn   = document.getElementById('removeBtn');
+
+    const MAX_BYTES = 5 * 1024 * 1024; // 5 MB
+
+    function showPreview(file) {
+        if (!file) return;
+        if (file.size > MAX_BYTES) {
+            alert('La imagen supera el límite de 5 MB.');
+            fotoInput.value = '';
+            return;
+        }
+        preview.src            = URL.createObjectURL(file);
+        fileNameEl.textContent = file.name;
+        dropContent.style.display = 'none';
+        previewWrap.style.display = 'flex';
+    }
+
+    function clearPreview() {
+        preview.src            = '';
+        fotoInput.value        = '';
+        dropContent.style.display = 'flex';
+        previewWrap.style.display = 'none';
+    }
+
+    fotoInput.addEventListener('change', e => showPreview(e.target.files[0]));
+    removeBtn.addEventListener('click',  e => { e.stopPropagation(); clearPreview(); });
+
+    dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+    dropZone.addEventListener('drop', e => {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+        const file = e.dataTransfer.files[0];
+        if (file && file.type.startsWith('image/')) {
+            const dt = new DataTransfer();
+            dt.items.add(file);
+            fotoInput.files = dt.files;
+            showPreview(file);
+        }
+    });
+
+    // Setear fecha de hoy por defecto
+    const fechaInput = document.querySelector('input[name="fecha_creacion"]');
+    if (fechaInput && !fechaInput.value) {
+        fechaInput.value = new Date().toISOString().split('T')[0];
+    }
+</script>
+
+</body>
+</html>
