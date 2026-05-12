@@ -1,61 +1,37 @@
 package com.viveflores.blogturistico.Service;
 
-import com.viveflores.blogturistico.Entity.Servicio;
-import com.viveflores.blogturistico.Exception.FechasValidar;
-import com.viveflores.blogturistico.Exception.NotFoundExcepcion;
-import com.viveflores.blogturistico.Repository.ServicioRepository;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.viveflores.blogturistico.Entity.servicio;
+import com.viveflores.blogturistico.Repository.ServicioRepository;
 
 @Service
 public class ServicioServiceImplements implements ServicioService{
-    private final ServicioRepository servicioRepository;
-    FechasValidar fv = new FechasValidar();
 
-    public ServicioServiceImplements (ServicioRepository servicioRepository) {
-        this.servicioRepository = servicioRepository;
+    @Autowired
+    private ServicioRepository repo;
+
+    @Override
+    public List<servicio> listar() {
+        return repo.findAll();
     }
 
     @Override
-    public List<Servicio> getAllServicios() {
-        return servicioRepository.findAll();
+    public servicio agregarServicio(servicio servicio) {
+       return repo.save(servicio);
     }
 
     @Override
-    public Servicio getServicioById(Integer id) {
-        return servicioRepository.findById(id).orElseThrow(() ->
-                new NotFoundExcepcion("El id no existe"));
+    public servicio buscarPorId(int id) {
+        return repo.findById(id).orElse(null);
     }
 
     @Override
-    public Servicio saveServicio(Servicio servicio) throws RuntimeException {
-        fv.validarLocalDate(servicio.getFecha_creacion());
-        return servicioRepository.save(servicio);
+    public void eliminar(int id) {
+        repo.deleteById(id);
     }
-
-    @Override
-    public void deleteServicio(Integer id) {
-        if (!servicioRepository.existsById(id)) {
-            throw new NotFoundExcepcion("El id no existe");
-        }
-        servicioRepository.deleteById(id);
-    }
-
-    @Override
-    public Servicio updateServicio(Integer id, Servicio servicio){
-        Servicio existingServicio = servicioRepository.findById(id).orElseThrow(() ->
-                new NotFoundExcepcion("El id no existe"));
-
-        existingServicio.setNombre_servicio(servicio.getNombre_servicio());
-        existingServicio.setDescripcion(servicio.getDescripcion());
-        existingServicio.setTelefono(servicio.getTelefono());
-        existingServicio.setFoto(servicio.getFoto());
-        existingServicio.setFecha_creacion(servicio.getFecha_creacion());
-        existingServicio.setId_usuario(servicio.getId_usuario());
-        fv.validarLocalDate(existingServicio.getFecha_creacion());
-
-        return servicioRepository.save(existingServicio);
-
-    }
+    
 }
