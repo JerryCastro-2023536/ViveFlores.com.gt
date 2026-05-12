@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>CRUD Reseñas</title>
+    <link rel="stylesheet" th:href="@{/Styles/EventosCrud.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Vive Flores</div>
+    <nav>
+        <a th:href="@{/}" class="btn-home">⬅ Volver al inicio</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h2 class="titulo">Gestión de Reseñas</h2>
+
+    <!-- FORMULARIO -->
+    <div class="form-container">
+        <form th:action="@{/resenascrud/guardar}"
+              th:object="${resena}"
+              method="post">
+
+            <input type="hidden" th:field="*{id_resena}">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Título</label>
+                    <input type="text" th:field="*{titulo_resena}" required>
+                </div>
+
+                <div class="form-group full">
+                    <label>Comentario</label>
+                    <textarea th:field="*{comentario}" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Calificación</label>
+                    <input type="number" min="1" max="5" th:field="*{calificacion}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de Creación</label>
+                    <input type="date" th:field="*{fecha_creacion}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>ID Usuario</label>
+                    <input type="number" th:field="*{id_usuario}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>ID Publicación</label>
+                    <input type="number" th:field="*{id_publicacion}" required>
+                </div>
+
+            </div>
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <!-- BUSCADOR (fuera del form 🔥) -->
+    <div class="mb-4 d-flex justify-content-center gap-2">
+        <input type="number" id="buscarId" placeholder="Buscar por ID"
+               class="form-control" style="max-width: 300px;">
+
+        <button onclick="buscarResena()" class="btn btn-dark">
+            <i class="bi bi-search"></i>
+        </button>
+    </div>
+
+    <!-- TABLA -->
+    <div class="tabla-container">
+        <table>
+
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Comentario</th>
+                <th>Calificación</th>
+                <th>Fecha</th>
+                <th>Usuario</th>
+                <th>Publicación</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="r : ${resenas}">
+
+                <td th:text="${r.id_resena}"></td>
+                <td th:text="${r.titulo_resena}"></td>
+                <td th:text="${r.comentario}"></td>
+                <td th:text="${r.calificacion}"></td>
+                <td th:text="${r.fecha_creacion}"></td>
+                <td th:text="${r.id_usuario}"></td>
+                <td th:text="${r.id_publicacion}"></td>
+
+                <td class="acciones">
+                    <a th:href="@{'/resenascrud/editar/' + ${r.id_resena}}">
+                        <button type="button" class="btn btn-warning">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                    </a>
+
+                    <a th:href="@{'/resenascrud/eliminar/' + ${r.id_resena}}">
+                        <button type="button" class="btn btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </a>
+                </td>
+
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+<script>
+    function buscarResena() {
+        let input = document.getElementById("buscarId").value;
+        let filas = document.querySelectorAll("tbody tr");
+
+        filas.forEach(fila => {
+            let id = fila.children[0].textContent;
+
+            if (id === input || input === "") {
+                fila.style.display = "";
+            } else {
+                fila.style.display = "none";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

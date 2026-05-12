@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Álbum de Fotos</title>
+    <link rel="stylesheet" th:href="@{/Styles/album.css}">
+</head>
+<body>
+
+<header class="header">
+    <h1>Álbum de Fotografías</h1>
+    <p>Explora momentos capturados en la Isla de Flores</p>
+</header>
+
+<div class="contenedor">
+
+    <div class="grid">
+
+        <div class="card" th:each="foto : ${fotos}">
+
+            <img th:src="@{'/foto/' + ${foto.id_foto}}" alt="Imagen">
+
+            <div class="info">
+                <h3 th:text="${foto.titulo_foto}"></h3>
+                <p th:text="${foto.descripcion}"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fcf5e3;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #0a1e2b;
+    color: white;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn-home {
+    text-decoration: none;
+    color: white;
+    background: #f6b93b;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+/* CONTENEDOR */
+.container-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+/* CARD */
+.error-card {
+    background: linear-gradient(135deg, #0a1e2b, #1a2e3f);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    color: white;
+}
+
+/* SVG */
+.svg-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.not_found_svg {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 🌊 OLAS */
+#waves {
+    animation: waveMove 8s linear infinite;
+}
+
+@keyframes waveMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-80px); }
+}
+
+/* ⛵ BARCO (más natural) */
+#boat {
+    animation: boatFloat 4s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes boatFloat {
+    0% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-3px) rotate(1deg); }
+    50% { transform: translateY(-6px) rotate(0deg); }
+    75% { transform: translateY(-3px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ☁️ NUBES */
+#cloud1 {
+    animation: cloudMove 25s linear infinite;
+}
+
+#cloud2 {
+    animation: cloudMove 35s linear infinite;
+}
+
+@keyframes cloudMove {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(900px); }
+}
+
+/* TEXTO */
+.error-code {
+    font-size: 60px;
+    color: #f6b93b;
+    margin: 0;
+}
+
+.error-title {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+.error-path {
+    font-size: 13px;
+    color: #a0aec0;
+    margin-bottom: 20px;
+}
+
+/* BOTÓN */
+.btn-back {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #f6b93b, #f39c12);
+    color: #0a1e2b;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(246, 185, 59, 0.3);
+}
