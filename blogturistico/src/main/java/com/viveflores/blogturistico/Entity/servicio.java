@@ -1,14 +1,20 @@
 package com.viveflores.blogturistico.Entity;
 
-import jakarta.persistence.*;
+import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-import java.time.LocalDate;
-
 @Entity
 @Table (name = "Servicios")
-public class Servicio {
+public class servicio {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (name = "id_servicio")
@@ -22,7 +28,7 @@ public class Servicio {
     @Column (name = "descripcion")
     private String descripcion;
 
-    @NotNull(message = "El campo no debe ir vacio")
+    @NotNull(message = "El campo no debe ir vaciSo")
     @Column (name = "telefono")
     private Integer telefono;
 
