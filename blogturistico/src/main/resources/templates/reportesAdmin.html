@@ -10,7 +10,7 @@
 
 <header>
     <h1>Vive Flores</h1>
-    <a th:href="@{/panel}" class="btn-volver">Volver al Panel</a>
+    <a th:href="@{/index}" class="btn-volver">Volver al Panel</a>
 </header>
 
 <main>
@@ -30,13 +30,11 @@
                     <span class="report-date" th:text="${#temporals.format(r.fecha_envio, 'dd/MM/yyyy HH:mm')}">00/00/0000</span>
                 </div>
 
-                <div class="report-actions">
-                    <a th:href="@{/eliminar/{id}(id=${r.id_reporte})}"
-                       class="btn-delete"
-                       onclick="return confirm('¿Estás seguro de eliminar este reporte?')">
-                        <i class="bi bi-trash"></i>
-                    </a>
-                </div>
+                <a th:href="@{/eliminar/{id}(id=${r.id_reporte})}"
+                   class="btn-delete"
+                   onclick="return confirm('¿Estás seguro de eliminar este reporte?')">
+                    <i class="bi bi-trash"></i>
+                </a>
             </div>
         </div>
 
