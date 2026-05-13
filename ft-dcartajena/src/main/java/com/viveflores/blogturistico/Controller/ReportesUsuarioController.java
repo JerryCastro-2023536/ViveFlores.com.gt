@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class ReportesController {
+public class ReportesUsuarioController {
 
     @Autowired
     private ReportesService service;
@@ -18,7 +18,7 @@ public class ReportesController {
 //        model.addAttribute("reporte", new Reportes());
 //        return "reportesUsuario";
 //    }
-
+//
 //    @PostMapping("/reportes/agregar")
 //    public String agregar(@ModelAttribute("reporte") Reportes reportes) {
 //        reportes.setId_usuario(9);
@@ -26,7 +26,7 @@ public class ReportesController {
 //        service.agregarReportes(reportes);
 //        return "redirect:/reportesUsuario?exito";
 //    }
-
+//
 //    @GetMapping("/")
 //    public String inicio() {
 //        return "redirect:/reportesUsuario";

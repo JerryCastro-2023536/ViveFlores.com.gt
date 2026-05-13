@@ -4,536 +4,144 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="87dfc6b5-dd69-467e-91c4-0911b3494367" name="Changes" comment="feat: Se adaptaron los archivos para el proyecto fusionado">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/UsuariosCrudController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/mensajesVendedor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/reportesAdmin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/reportesUsuario.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/solicitudPublicacion.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/usuarios.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarServicio.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mensajesVendedor.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/reportesAdmin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/reportesUsuario.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/solicitudPublicacion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/SolicitudPublicacionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/SolicitudPublicacionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/SolicitudPublicacionServiceImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/SolicitudPublicacionServiceImplements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/static/agregarServicio.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/agregarServicio.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/templates/usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/usuarios.html" afterDir="false" />
-=======
-    <list default="true" id="87dfc6b5-dd69-467e-91c4-0911b3494367" name="Changes" comment="refactor: Se cambiaron las credenciales de MySQL">
+    <list default="true" id="da60f5b6-8546-4628-b8db-41c796697126" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/reportesAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/reportesAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/reportesAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/reportesUsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/reportesUsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/reportesAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/reportesAdmin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/paneladmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/paneladmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/paneladmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/paneladmin.html" afterDir="false" />
->>>>>>> f4eea74 (refactor: "se edito paneladmin.html")
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reportesAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reportesAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reportesUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reportesUsuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/ReportesUsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/ServicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/ServicioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Service/ReportesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Service/ReportesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Service/ReportesServiceImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Service/ReportesServiceImplements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/static/reportesAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/static/reportesAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/templates/reportesAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/templates/reportesAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/CategoriasController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/CategoriasController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ContactarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ContactarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/EventoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/EventoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/FavoritosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/FavoritosController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/FotosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/FotosController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/PublicacionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/PublicacionesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ReportesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ResenaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ResenaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ServicioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ServicioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/UsuariosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/UsuariosController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Categorias.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Categorias.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Contactar.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Contactar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Evento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Favoritos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Favoritos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Fotos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Fotos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Publicaciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Publicaciones.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Reportes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Reportes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Resena.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Resena.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/SolicitudPublicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/SolicitudPublicacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Usuarios.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Usuarios.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/servicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/servicio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/CorreoValidar.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/CorreoValidar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/FechasValidar.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/FechasValidar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/NotFoundExcepcion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/NotFoundExcepcion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/Validation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/Validation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/PrincipalApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/PrincipalApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/CategoriasRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/CategoriasRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ContactarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ContactarRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/EventoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/EventoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/FavoritosRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/FavoritosRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/FotosRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/FotosRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/PublicacionesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/PublicacionesRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ReportesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ReportesRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ResenaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ResenaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ServicioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ServicioRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/SolicitudPublicacionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/SolicitudPublicacionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/UsuariosRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/UsuariosRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/CategoriasService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/CategoriasService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/CategoriasServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/CategoriasServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ContactarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ContactarService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ContactarServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ContactarServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/EventoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/EventoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/EventoServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/EventoServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FavoritosService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FavoritosService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FavoritosServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FavoritosServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FotosService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FotosService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FotosServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FotosServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/PublicacionesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/PublicacionesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ReportesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ReportesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ReportesServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ReportesServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ResenaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ResenaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ResenaServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ResenaServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ServicioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ServicioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ServicioServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ServicioServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/UsuariosService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/UsuariosService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/UsuariosServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/UsuariosServiceImplements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/static/agregarServicio.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/static/reportesAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/static/reportesAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/templates/reportesAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/templates/reportesAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/templates/usuarios.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="3CftL4hrOZkb8krEn052UIiirMw" />
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "diegocartajena-2022510"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/JerryCastro-2023536/ViveFlores.com.gt.git",
+    "accountId": "dfd66be6-9da6-4852-8b57-dbb427b2fdc4"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="3DeEJl4KFbpv5k05UIi7xdgSNrL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.PrincipalApplication.executor": "Run",
-    "Application.Unnamed.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-<<<<<<< HEAD
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.PrincipalApplication.executor": "Run",
     "git-widget-placeholder": "develop",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/informatica/Desktop/ViveFlores.com.gt/blogturistico",
-=======
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Informatica/Desktop/ViveFlores.com.gt/blogturistico/src/main/resources/static",
->>>>>>> f4eea74 (refactor: "se edito paneladmin.html")
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Informatica\Desktop\ViveFlores.com.gt\blogturistico\src\main\resources\static" />
-      <recent name="C:\Users\Informatica\Desktop\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Controller" />
-      <recent name="C:\Users\Informatica\Desktop\ViveFlores.com.gt\blogturistico\src\main\resources\templates" />
-      <recent name="C:\Users\Informatica\Documents\ViveFlores.com.gt\blogturistico\src\main\resources\templates\error" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Informatica\Documents\ViveFlores.com.gt\blogturistico\src\main\resources\static" />
-      <recent name="C:\Users\Informatica\Documents\ViveFlores.com.gt\blogturistico\src\main\resources\templates" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.viveflores.blogturistico.PrincipalApplication" />
-      <module name="blogturistico" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="87dfc6b5-dd69-467e-91c4-0911b3494367" name="Changes" comment="" />
-      <created>1776788392721</created>
+      <changelist id="da60f5b6-8546-4628-b8db-41c796697126" name="Changes" comment="" />
+      <created>1778634066433</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1776788392721</updated>
+      <updated>1778634066433</updated>
     </task>
-    <task id="LOCAL-00032" summary="feat: se agregaron validaciones al register">
-      <option name="closed" value="true" />
-      <created>1777389543164</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1777389543164</updated>
-    </task>
-    <task id="LOCAL-00033" summary="feat: se agregaron validaciones al login">
-      <option name="closed" value="true" />
-      <created>1777389552178</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1777389552178</updated>
-    </task>
-    <task id="LOCAL-00034" summary="fix: Se puso la ruta para acceder a todos los eventos">
-      <option name="closed" value="true" />
-      <created>1777389848506</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1777389848506</updated>
-    </task>
-    <task id="LOCAL-00035" summary="feat: Se agrego el mensaje de la validacion">
-      <option name="closed" value="true" />
-      <created>1777389881388</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1777389881388</updated>
-    </task>
-    <task id="LOCAL-00036" summary="refactro: Sa cambiaron las credenciales de MySQL">
-      <option name="closed" value="true" />
-      <created>1777389898398</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1777389898398</updated>
-    </task>
-    <task id="LOCAL-00037" summary="feat: Se agrego la hoja de estilos de css">
-      <option name="closed" value="true" />
-      <created>1777389941890</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1777389941890</updated>
-    </task>
-    <task id="LOCAL-00038" summary="feat: Se agrego el controlador de eventos all">
-      <option name="closed" value="true" />
-      <created>1777392324079</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1777392324079</updated>
-    </task>
-    <task id="LOCAL-00039" summary="feat: Se agrego el html de eventos all">
-      <option name="closed" value="true" />
-      <created>1777392346275</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1777392346275</updated>
-    </task>
-    <task id="LOCAL-00040" summary="refactor: Se cambio el nombre del controlador y se agregaron las rutas de accerso de publicaciones y servicios">
-      <option name="closed" value="true" />
-      <created>1777398626374</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1777398626374</updated>
-    </task>
-    <task id="LOCAL-00041" summary="feat: Elementos Target">
-      <option name="closed" value="true" />
-      <created>1777398697983</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1777398697983</updated>
-    </task>
-    <task id="LOCAL-00042" summary="fix: Se arreglaron las rutas de acceso a otras vistas">
-      <option name="closed" value="true" />
-      <created>1777398727485</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1777398727485</updated>
-    </task>
-    <task id="LOCAL-00043" summary="refactor: Se cambio nombre al CSS y se agrego el nuevo estilo">
-      <option name="closed" value="true" />
-      <created>1777398766319</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1777398766319</updated>
-    </task>
-    <task id="LOCAL-00044" summary="refactor: Se cambio el diseño al panel de admin">
-      <option name="closed" value="true" />
-      <created>1777398799267</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1777398799267</updated>
-    </task>
-    <task id="LOCAL-00045" summary="refactor: Se cambio la estructura a las cards de las tablas">
-      <option name="closed" value="true" />
-      <created>1777398826845</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1777398826845</updated>
-    </task>
-    <task id="LOCAL-00046" summary="feat: Se agrego la estructura de publicaciones">
-      <option name="closed" value="true" />
-      <created>1777398859341</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1777398859341</updated>
-    </task>
-    <task id="LOCAL-00047" summary="feat: Se agrego la estructura html de servicios">
-      <option name="closed" value="true" />
-      <created>1777398867970</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1777398867970</updated>
-    </task>
-    <task id="LOCAL-00048" summary="refactor: Se cambio las credenciales de MyQL">
-      <option name="closed" value="true" />
-      <created>1777468245547</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1777468245547</updated>
-    </task>
-    <task id="LOCAL-00049" summary="refactor: Se cambio las credenciales de MySQL">
-      <option name="closed" value="true" />
-      <created>1777468253650</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1777468253650</updated>
-    </task>
-    <task id="LOCAL-00050" summary="feat: Se cargo la plantilla de publicacion conectada con thymeleaf">
-      <option name="closed" value="true" />
-      <created>1777480134019</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480134020</updated>
-    </task>
-    <task id="LOCAL-00051" summary="feat: Se cargo el estilo plantilla de publicacion conectada con thymeleaf">
-      <option name="closed" value="true" />
-      <created>1777480144286</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480144286</updated>
-    </task>
-    <task id="LOCAL-00052" summary="refactor: Se elimino un archivo duplicado">
-      <option name="closed" value="true" />
-      <created>1777480165955</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480165956</updated>
-    </task>
-    <task id="LOCAL-00053" summary="refactor: Se puso los limites del tamaño de una imagen">
-      <option name="closed" value="true" />
-      <created>1777480199854</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480199854</updated>
-    </task>
-    <task id="LOCAL-00054" summary="feat: Se agrego los metodos para renderizar por el id">
-      <option name="closed" value="true" />
-      <created>1777480297891</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480297891</updated>
-    </task>
-    <task id="LOCAL-00055" summary="fix: Se puso required a los input">
-      <option name="closed" value="true" />
-      <created>1777480323764</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480323764</updated>
-    </task>
-    <task id="LOCAL-00056" summary="refactor: se cambiaron las rutas de acceso del index">
-      <option name="closed" value="true" />
-      <created>1777480370302</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480370302</updated>
-    </task>
-    <task id="LOCAL-00057" summary="feat: Se agrego el boton para redireccionar a las plantillas">
-      <option name="closed" value="true" />
-      <created>1777480448861</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480448861</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Test: Se agregaron pruebas para verificar si se suben las imagenes">
-      <option name="closed" value="true" />
-      <created>1777480481908</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480481908</updated>
-    </task>
-    <task id="LOCAL-00059" summary="refactor: Se cambio el objeto del metodo">
-      <option name="closed" value="true" />
-      <created>1777480541689</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480541689</updated>
-    </task>
-    <task id="LOCAL-00060" summary="refactor: Se cambio el objeto del metodo">
-      <option name="closed" value="true" />
-      <created>1777480556682</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1777480556682</updated>
-    </task>
-    <task id="LOCAL-00061" summary="feat: Se agrego la ruta para acceder a la publicacion">
-      <option name="closed" value="true" />
-      <created>1777485210372</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1777485210372</updated>
-    </task>
-    <task id="LOCAL-00062" summary="refactor: Se cambio el diseño del register">
-      <option name="closed" value="true" />
-      <created>1777993812439</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1777993812440</updated>
-    </task>
-    <task id="LOCAL-00063" summary="refactor: Se cambio el diseño de Quienes somos">
-      <option name="closed" value="true" />
-      <created>1777993826195</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1777993826195</updated>
-    </task>
-    <task id="LOCAL-00064" summary="refactor: Se cambio el diseño de contacto">
-      <option name="closed" value="true" />
-      <created>1777993856817</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1777993856817</updated>
-    </task>
-    <task id="LOCAL-00065" summary="refactor: Se cambiaron las credenciales del MySQL">
-      <option name="closed" value="true" />
-      <created>1777993873829</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1777993873829</updated>
-    </task>
-    <task id="LOCAL-00066" summary="style: se arreglo el indentado">
-      <option name="closed" value="true" />
-      <created>1777993939417</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1777993939417</updated>
-    </task>
-    <task id="LOCAL-00067" summary="feat: Se agrego el css de la vista buscar por nombre">
-      <option name="closed" value="true" />
-      <created>1778002633761</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1778002633761</updated>
-    </task>
-    <task id="LOCAL-00068" summary="feat: Se agrego el html de la vista buscar por nombre">
-      <option name="closed" value="true" />
-      <created>1778002640498</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1778002640498</updated>
-    </task>
-    <task id="LOCAL-00069" summary="feat: Se agrego la funcion de buscar por nombre dentro del index">
-      <option name="closed" value="true" />
-      <created>1778002682705</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1778002682705</updated>
-    </task>
-    <task id="LOCAL-00070" summary="feat: Se agrego el metodo para buscar por nombre dentro del controller">
-      <option name="closed" value="true" />
-      <created>1778002708197</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1778002708197</updated>
-    </task>
-    <task id="LOCAL-00071" summary="feat: Se agrego una consulta para buscar por nombre">
-      <option name="closed" value="true" />
-      <created>1778002735193</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1778002735193</updated>
-    </task>
-    <task id="LOCAL-00072" summary="feat: Se agregaron las pantallas de error con sus estilos">
-      <option name="closed" value="true" />
-      <created>1778089275598</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1778089275598</updated>
-    </task>
-    <task id="LOCAL-00073" summary="feat: Se implemento los componentes del header">
-      <option name="closed" value="true" />
-      <created>1778089302407</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1778089302407</updated>
-    </task>
-    <task id="LOCAL-00074" summary="feat: Se agrego la funcion de agregar favoritos en el perfil del usuario">
-      <option name="closed" value="true" />
-      <created>1778089332163</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1778089332163</updated>
-    </task>
-    <task id="LOCAL-00075" summary="feat: Se agrego el estilo y la opcion de agregar favorito">
-      <option name="closed" value="true" />
-      <created>1778089359155</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1778089359155</updated>
-    </task>
-    <task id="LOCAL-00076" summary="feat: Se implemento el componente del header">
-      <option name="closed" value="true" />
-      <created>1778089381976</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1778089381976</updated>
-    </task>
-    <task id="LOCAL-00077" summary="style: Se corrigio el indentado">
-      <option name="closed" value="true" />
-      <created>1778089405584</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1778089405584</updated>
-    </task>
-    <task id="LOCAL-00078" summary="refactor: Se cambiaron las credenciales de MySQL">
-      <option name="closed" value="true" />
-      <created>1778089421822</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1778089421822</updated>
-    </task>
-    <task id="LOCAL-00079" summary="feat: Elemnto target">
-      <option name="closed" value="true" />
-      <created>1778607059568</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1778607059569</updated>
-    </task>
-    <task id="LOCAL-00080" summary="feat: Se adaptaron los archivos para el proyecto fusionado">
-      <option name="closed" value="true" />
-      <created>1778607249576</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1778607249577</updated>
-    </task>
-    <option name="localTasksCounter" value="81" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: Se puso required a los input" />
-    <MESSAGE value="refactor: se cambiaron las rutas de acceso del index" />
-    <MESSAGE value="feat: Se agrego el boton para redireccionar a las plantillas" />
-    <MESSAGE value="Test: Se agregaron pruebas para verificar si se suben las imagenes" />
-    <MESSAGE value="refactor: Se cambio el objeto del metodo" />
-    <MESSAGE value="feat: Se agrego la ruta para acceder a la publicacion" />
-    <MESSAGE value="refactor: Se cambio el diseño del register" />
-    <MESSAGE value="refactor: Se cambio el diseño de Quienes somos" />
-    <MESSAGE value="refactor: Se cambio el diseño de contacto" />
-    <MESSAGE value="refactor: Se cambiaron las credenciales del MySQL" />
-    <MESSAGE value="style: se arreglo el indentado" />
-    <MESSAGE value="feat: Se agrego el css de la vista buscar por nombre" />
-    <MESSAGE value="feat: Se agrego el html de la vista buscar por nombre" />
-    <MESSAGE value="feat: Se agrego la funcion de buscar por nombre dentro del index" />
-    <MESSAGE value="feat: Se agrego el metodo para buscar por nombre dentro del controller" />
-    <MESSAGE value="feat: Se agrego una consulta para buscar por nombre" />
-    <MESSAGE value="feat: Se agregaron las pantallas de error con sus estilos" />
-    <MESSAGE value="feat: Se implemento los componentes del header" />
-    <MESSAGE value="feat: Se agrego la funcion de agregar favoritos en el perfil del usuario" />
-    <MESSAGE value="feat: Se agrego el estilo y la opcion de agregar favorito" />
-    <MESSAGE value="feat: Se implemento el componente del header" />
-    <MESSAGE value="style: Se corrigio el indentado" />
-    <MESSAGE value="refactor: Se cambiaron las credenciales de MySQL" />
-    <MESSAGE value="feat: Elemnto target" />
-    <MESSAGE value="feat: Se adaptaron los archivos para el proyecto fusionado" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Se adaptaron los archivos para el proyecto fusionado" />
   </component>
 </project>

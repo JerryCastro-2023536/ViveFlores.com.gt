@@ -61,6 +61,7 @@ main {
     padding: 0 20px;
 }
 
+<<<<<<< HEAD
 h2 { color: var(--deep); margin-bottom: 30px; text-align: center; }
 
 .search-container {
@@ -88,6 +89,10 @@ h2 { color: var(--deep); margin-bottom: 30px; text-align: center; }
     border-radius: 8px;
     cursor: pointer;
 }
+=======
+h2 { color: var(--deep); margin-bottom: 30px; text-align: center; font-size: 35px;}
+
+>>>>>>> c97f52b7a89e5f16a56f501b8fb58eeb7c0a23ad
 .reports-list {
     display: flex;
     flex-direction: column;
@@ -128,7 +133,11 @@ h2 { color: var(--deep); margin-bottom: 30px; text-align: center; }
 }
 
 .report-date {
+<<<<<<< HEAD
     font-size: 0.75rem;
+=======
+    font-size: 10px
+>>>>>>> c97f52b7a89e5f16a56f501b8fb58eeb7c0a23ad
     color: var(--text-light);
     margin-top: 5px;
 }
@@ -145,18 +154,31 @@ h2 { color: var(--deep); margin-bottom: 30px; text-align: center; }
 .report-details h3 {
     margin: 0 0 8px 0;
     color: var(--deep);
+<<<<<<< HEAD
     font-size: 1.1rem;
 }
 
 .user-info {
     font-size: 0.85rem;
+=======
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.user-info {
+    font-size:20px;
+>>>>>>> c97f52b7a89e5f16a56f501b8fb58eeb7c0a23ad
     font-weight: 700;
     color: var(--navy);
     margin-bottom: 8px;
 }
 
 .message-text {
+<<<<<<< HEAD
     font-size: 0.9rem;
+=======
+    font-size: 20px;
+>>>>>>> c97f52b7a89e5f16a56f501b8fb58eeb7c0a23ad
     color: var(--text-light);
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -187,6 +209,10 @@ h2 { color: var(--deep); margin-bottom: 30px; text-align: center; }
     padding: 10px 14px;
     border-radius: 6px;
     cursor: pointer;
+<<<<<<< HEAD
+=======
+    font-size: 25px;
+>>>>>>> c97f52b7a89e5f16a56f501b8fb58eeb7c0a23ad
 }
 
 .btn-delete:hover {
