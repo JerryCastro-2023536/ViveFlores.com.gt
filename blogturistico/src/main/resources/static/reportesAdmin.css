@@ -61,33 +61,8 @@ main {
     padding: 0 20px;
 }
 
-h2 { color: var(--deep); margin-bottom: 30px; text-align: center; }
+h2 { color: var(--deep); margin-bottom: 30px; text-align: center; font-size: 35px;}
 
-.search-container {
-    margin-bottom: 30px;
-}
-
-.search-container form {
-    display: flex;
-    gap: 10px;
-}
-
-.search-container input {
-    flex: 1;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background: white;
-}
-
-.search-container button {
-    background: var(--deep);
-    color: white;
-    border: none;
-    padding: 0 20px;
-    border-radius: 8px;
-    cursor: pointer;
-}
 .reports-list {
     display: flex;
     flex-direction: column;
@@ -128,7 +103,7 @@ h2 { color: var(--deep); margin-bottom: 30px; text-align: center; }
 }
 
 .report-date {
-    font-size: 0.75rem;
+    font-size: 10px
     color: var(--text-light);
     margin-top: 5px;
 }
@@ -145,18 +120,19 @@ h2 { color: var(--deep); margin-bottom: 30px; text-align: center; }
 .report-details h3 {
     margin: 0 0 8px 0;
     color: var(--deep);
-    font-size: 1.1rem;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .user-info {
-    font-size: 0.85rem;
+    font-size:20px;
     font-weight: 700;
     color: var(--navy);
     margin-bottom: 8px;
 }
 
 .message-text {
-    font-size: 0.9rem;
+    font-size: 20px;
     color: var(--text-light);
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -187,6 +163,7 @@ h2 { color: var(--deep); margin-bottom: 30px; text-align: center; }
     padding: 10px 14px;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 25px;
 }
 
 .btn-delete:hover {
