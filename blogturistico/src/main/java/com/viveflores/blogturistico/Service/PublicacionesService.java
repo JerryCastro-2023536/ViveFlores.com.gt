@@ -8,6 +8,7 @@ import java.util.List;
 @Service
 public interface PublicacionesService {
     List<Publicaciones> getAllPublicaciones();
+    List<Publicaciones> getPublicacionesByUsuarioId(Integer idUsuario);
     Publicaciones getPublicacionesById(Integer id);
     void savePublicaciones(Publicaciones publicaciones);
     void updatePublicaciones(Integer id, Publicaciones publicaciones);

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import jakarta.servlet.http.HttpSession;
+import com.viveflores.blogturistico.Entity.Usuarios;
 
 import java.time.LocalDate;
 
@@ -22,8 +24,13 @@ public class AdministrarPublicacionController {
 
     // LISTAR
     @GetMapping
-    public String listar(Model model) {
-        model.addAttribute("publicaciones", publicacionesService.getAllPublicaciones());
+    public String listar(Model model, HttpSession session) {
+        Usuarios u = (Usuarios) session.getAttribute("usuarioLogueado");
+        if (u != null) {
+            model.addAttribute("publicaciones", publicacionesService.getPublicacionesByUsuarioId(u.getId_usuario()));
+        } else {
+            model.addAttribute("publicaciones", publicacionesService.getAllPublicaciones());
+        }
         model.addAttribute("publicacion", new Publicaciones());
         return "administrarPublicaciones";
     }
@@ -32,7 +39,8 @@ public class AdministrarPublicacionController {
     @PostMapping("/guardar")
     public String guardar(
             @ModelAttribute Publicaciones publicacion,
-            @RequestParam(value = "archivo", required = false) MultipartFile archivo
+            @RequestParam(value = "archivo", required = false) MultipartFile archivo,
+            HttpSession session
     ) {
         try {
 
@@ -43,6 +51,12 @@ public class AdministrarPublicacionController {
 
                 // Mantener fecha
                 publicacion.setFecha_creacion(existente.getFecha_creacion());
+                
+                // Mantener usuario
+                publicacion.setId_usuario(existente.getId_usuario());
+                
+                // Mantener estado
+                publicacion.setEstado_publicacion(existente.getEstado_publicacion());
 
                 // Mantener imagen si no sube nueva
                 if (archivo == null || archivo.isEmpty()) {
@@ -54,7 +68,14 @@ public class AdministrarPublicacionController {
             } else {
                 // NUEVA PUBLICACIÓN
                 publicacion.setFecha_creacion(LocalDate.now());
-                publicacion.setEstado_publicacion("activo");
+                publicacion.setEstado_publicacion("pendiente");
+                
+                Usuarios u = (Usuarios) session.getAttribute("usuarioLogueado");
+                if (u != null) {
+                    publicacion.setId_usuario(u.getId_usuario());
+                } else {
+                    publicacion.setId_usuario(1); // Default safe value
+                }
 
                 if (archivo != null && !archivo.isEmpty()) {
                     publicacion.setFoto(archivo.getBytes());

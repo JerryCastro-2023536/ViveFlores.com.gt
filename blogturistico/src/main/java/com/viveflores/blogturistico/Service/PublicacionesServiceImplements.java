@@ -26,6 +26,11 @@ public class PublicacionesServiceImplements implements PublicacionesService {
     }
 
     @Override
+    public List<Publicaciones> getPublicacionesByUsuarioId(Integer idUsuario) {
+        return publicacionesRepository.findByIdUsuario(idUsuario);
+    }
+
+    @Override
     public Publicaciones getPublicacionesById(Integer id) {
         return publicacionesRepository.findById(id).orElseThrow(() ->
                 new NotFoundExcepcion("El id no existe"));
@@ -35,13 +40,6 @@ public class PublicacionesServiceImplements implements PublicacionesService {
     public void savePublicaciones(Publicaciones publicaciones) {
         cv.formatoCorreo(publicaciones.getEmail_publicacion());
         fv.validarLocalDate(publicaciones.getFecha_creacion());
-
-        List<Publicaciones> publicacionesList = publicacionesRepository.findAll();
-        for(Publicaciones p : publicacionesList){
-            if(p.getEmail_publicacion().equals(publicaciones.getEmail_publicacion())){
-                throw new NotFoundExcepcion("El correo ya existe");
-            }
-        }
 
         publicacionesRepository.save(publicaciones);
     }

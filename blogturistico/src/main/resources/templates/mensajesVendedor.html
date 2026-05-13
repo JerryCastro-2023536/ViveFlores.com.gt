@@ -32,23 +32,23 @@
             <span>Acción</span>
         </div>
 
-        <div class="grid-row" th:each="contacto : ${listaContactos}">
+        <div class="grid-row" th:each="info : ${listaContactos}">
             <div class="cliente-info">
                 <i class="bi bi-person-circle"></i>
-                <span>Nombre Cliente</span>
+                <span th:text="'ID Usuario Remitente: ' + ${info[0].id_usuario}">Nombre Cliente</span>
             </div>
 
             <div class="asunto-info">
-                <strong>Asunto</strong>
-                <small >Nombre de la Publicación</small>
+                <strong th:text="${info[0].asunto}">Asunto</strong>
+                <small th:text="${info[1]}">Nombre de la Publicación</small>
             </div>
 
             <div class="mensaje-preview">
-                <p>Contenido del mensaje...</p>
+                <p th:text="${info[0].mensaje}">Contenido del mensaje...</p>
             </div>
 
             <div class="fecha-info">
-                <span>01/01/2026</span>
+                <span th:text="${#temporals.format(info[0].fecha_envio, 'dd/MM/yyyy')}">01/01/2026</span>
             </div>
 
             <div class="acciones">
@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <div class="no-mensajes">
+        <div class="no-mensajes" th:if="${listaContactos == null or listaContactos.empty}">
             <i class="bi bi-inbox"></i>
             <p>No tienes mensajes nuevos en este momento.</p>
         </div>

@@ -12,4 +12,7 @@ import java.util.List;
 public interface PublicacionesRepository extends JpaRepository <Publicaciones, Integer> {
     @Query("SELECT p FROM Publicaciones p WHERE LOWER(p.nombre_publicacion) LIKE LOWER(CONCAT('%', :nombre, '%'))")
     List<Publicaciones> buscarPorNombre(@Param("nombre") String nombre);
+
+    @Query("SELECT p FROM Publicaciones p WHERE p.id_usuario = :idUsuario")
+    List<Publicaciones> findByIdUsuario(@Param("idUsuario") Integer idUsuario);
 }
