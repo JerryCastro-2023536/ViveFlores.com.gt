@@ -19,7 +19,7 @@ public class reportesUsuarioController {
         return "reportesUsuario";
     }
 
-    @PostMapping("/reportes/agregar")
+    @PostMapping("/usuarios/reportes/agregar")
     public String agregar(@ModelAttribute("reporte") Reportes reportes) {
         reportes.setId_usuario(9);
         reportes.setFecha_envio(java.time.LocalDateTime.now());
