@@ -14,7 +14,7 @@ public class reportesAdminController {
     @Autowired
     private ReportesService reportesService;
 
-    @GetMapping("/admin/reportes")
+    @GetMapping("/reportesAdmin")
     public String index(Model model) {
         List<Reportes> lista = reportesService.listarReportes();
         model.addAttribute("reportes", lista);
