@@ -21,6 +21,9 @@
                     <li th:if="${session.usuarioLogueado != null and #strings.equalsIgnoreCase(session.usuarioLogueado.rol, 'usuario')}">
                         <a th:href="@{/vendedor}">Conviertete en vendedor</a>
                     </li>
+                    <li th:if="${session.usuarioLogueado != null and #strings.equalsIgnoreCase(session.usuarioLogueado.rol, 'vendedor')}">
+                        <a th:href="@{/panelvendedor}">administrar</a>
+                    </li>
                     <li th:if="${session.usuarioLogueado != null and #strings.equalsIgnoreCase(session.usuarioLogueado.rol, 'admin')}">
                         <a href="paneladmin">Administrar</a>
                     </li>

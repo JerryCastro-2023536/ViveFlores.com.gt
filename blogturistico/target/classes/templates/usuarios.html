@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Gestión de Usuarios - Vive Flores</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" th:href="@{/usuarios.css}">
+</head>
+<body>
+    <header>
+        <h1>Vive Flores</h1>
+        <a th:href="@{/}" class="btn-volver">Volver al inicio</a>
+    </header>
+
+    <main>
+        <h2>Gestión de Usuarios</h2>
+        
+        <div class="card">
+            <form th:action="@{/usuarios/agregar}" method="post">
+                <input type="text" placeholder="Username" name="username" required>
+                <div class="grid-2">
+                    <input type="text" placeholder="Nombre" name="nombre_usuario" required>
+                    <input type="text" placeholder="Apellido" name="apellido_usuario" required>
+                </div>
+                <input type="email" placeholder="Correo Electrónico" name="email_usuario" required>
+                <div class="grid-3">
+                    <input type="password" placeholder="Contraseña" name="contrasena_usuario" required>
+                    <input type="text" placeholder="Rol" name="rol" required>
+                    <input type="date" name="fecha_registro" required title="Fecha de Registro">
+                </div>
+                <button type="submit">Guardar Usuario</button>
+            </form>
+
+            <form th:action="@{/usuarios/buscar}" method="post">
+                <input type="number" name="id_usuario" placeholder="Buscar por ID" required>
+                <button type="submit" class="btn-search">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Nombre y apellido</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Fecha Registro</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="u : ${usuarios}">
+                        <td th:text="${u.id_usuario}"></td>
+                        <td th:text="${u.username}"></td>
+                        <td th:text="${u.nombre_usuario + ' ' + u.apellido_usuario}"></td>
+                        <td th:text="${u.email_usuario}"></td>
+                        <td th:text="${u.rol}"></td>
+                        <td th:text="${u.fecha_registro}"></td>
+                        <td>
+                            <button type="button" 
+                                th:data-id="${u.id_usuario}"
+                                th:data-username="${u.username}"
+                                th:data-nombre="${u.nombre_usuario}"
+                                th:data-apellido="${u.apellido_usuario}"
+                                th:data-email="${u.email_usuario}"
+                                th:data-rol="${u.rol}"
+                                th:data-fecha="${u.fecha_registro}"
+                                onclick="openEditModal(this)">Editar</button>
+                                
+                            <button type="button" 
+                                th:data-url="@{'/usuarios/eliminar/' + ${u.id_usuario}}"
+                                onclick="openDeleteModal(this.getAttribute('data-url'))">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Editar Usuario</h2>
+            <form th:action="@{/usuarios/editar}" method="post">
+                <input type="hidden" id="edit-id" name="id_usuario">
+                
+                <input type="text" placeholder="Username" id="edit-username" name="username">
+                <div class="grid-2">
+                    <input type="text" placeholder="Nombre" id="edit-nombre" name="nombre_usuario">
+                    <input type="text" placeholder="Apellido" id="edit-apellido" name="apellido_usuario">
+                </div>
+                <input type="email" placeholder="Email" id="edit-email" name="email_usuario">
+                
+                <div class="grid-2">
+                    <input type="text" placeholder="Rol" id="edit-rol" name="rol">
+                    <input type="date" id="edit-fecha" name="fecha_registro">
+                </div>
+                <button type="submit" style="margin-top: 15px;">Actualizar Usuario</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <span class="close" onclick="closeDeleteModal()">&times;</span>
+            <h2 style="color: #0a1e2b; margin-bottom: 15px;">¿Eliminar registro?</h2>
+            <p style="color: #6b7c93; margin-bottom: 25px;">Esta acción no se puede deshacer.</p>
+            <div style="display: flex; justify-content: center; gap: 15px;">
+                <button type="button" onclick="closeDeleteModal()" style="background: #e0e6ed; color: #1a1a2e; border-radius: 50px; padding: 10px 20px; border:none; cursor:pointer;">Cancelar</button>
+                <a id="confirmDeleteBtn" href="#">
+                    <button type="button" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; border-radius: 50px; padding: 10px 20px; border:none; cursor:pointer;">Sí, eliminar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openEditModal(btn) {
+            document.getElementById('edit-id').value = btn.getAttribute('data-id');
+            document.getElementById('edit-username').value = btn.getAttribute('data-username');
+            document.getElementById('edit-nombre').value = btn.getAttribute('data-nombre');
+            document.getElementById('edit-apellido').value = btn.getAttribute('data-apellido');
+            document.getElementById('edit-email').value = btn.getAttribute('data-email');
+            document.getElementById('edit-rol').value = btn.getAttribute('data-rol');
+            document.getElementById('edit-fecha').value = btn.getAttribute('data-fecha');
+
+            document.getElementById('editModal').style.display = 'block';
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        function openDeleteModal(url) {
+            document.getElementById('confirmDeleteBtn').href = url;
+            document.getElementById('deleteModal').style.display = 'block';
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var editModal = document.getElementById('editModal');
+            var deleteModal = document.getElementById('deleteModal');
+            if (event.target == editModal) closeEditModal();
+            if (event.target == deleteModal) closeDeleteModal();
+        }
+    </script>
+</body>
+</html>
