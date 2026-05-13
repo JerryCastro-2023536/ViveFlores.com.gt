@@ -6,15 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class ReportesServiceImplements implements ReportesService{
+public class ReportesServiceImplements implements ReportesService {
+
     @Autowired
     private ReportesRepository repo;
 
     @Override
     public List<Reportes> listarReportes() {
-        return List.of();
+        return (List<Reportes>) repo.findAll();
     }
 
     @Override
@@ -24,11 +26,12 @@ public class ReportesServiceImplements implements ReportesService{
 
     @Override
     public Reportes BuscarPorId(int id) {
-        return null;
+        Optional<Reportes> reporte = repo.findById(id);
+        return reporte.orElse(null);
     }
 
     @Override
     public void eliminarReportes(int id) {
-
+        repo.deleteById(id);
     }
 }
