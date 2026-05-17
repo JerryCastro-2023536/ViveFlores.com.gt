@@ -1,6 +1,7 @@
 package com.viveflores.blogturistico.Controller;
 
 import com.viveflores.blogturistico.Entity.Publicaciones;
+import com.viveflores.blogturistico.Service.CategoriasService;
 import com.viveflores.blogturistico.Service.PublicacionesService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,9 +18,11 @@ import java.time.LocalDate;
 public class AdministrarPublicacionController {
 
     private final PublicacionesService publicacionesService;
+    private final CategoriasService categoriasService;
 
-    public AdministrarPublicacionController(PublicacionesService publicacionesService) {
+    public AdministrarPublicacionController(PublicacionesService publicacionesService, CategoriasService categoriasService) {
         this.publicacionesService = publicacionesService;
+        this.categoriasService = categoriasService;
     }
 
     // LISTAR
@@ -31,11 +34,12 @@ public class AdministrarPublicacionController {
         } else {
             model.addAttribute("publicaciones", publicacionesService.getAllPublicaciones());
         }
+        model.addAttribute("categorias", categoriasService.getAllCategorias());
         model.addAttribute("publicacion", new Publicaciones());
         return "administrarPublicaciones";
     }
 
-    // GUARDAR (crear y editar)
+    // GUARDAR (crear y editar) - Admin Legacy
     @PostMapping("/guardar")
     public String guardar(
             @ModelAttribute Publicaciones publicacion,

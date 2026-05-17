@@ -15,7 +15,9 @@ public class SessionInterceptor implements HandlerInterceptor {
         HttpSession session = request.getSession(false);
         String uri = request.getRequestURI();
 
-        if (uri.startsWith("/css/") || uri.startsWith("/js/") || uri.startsWith("/img/")) {
+        if (uri.startsWith("/css/") || uri.startsWith("/js/") || uri.startsWith("/img/") ||
+            uri.startsWith("/publicaciones/foto/") || uri.startsWith("/servicios/foto/") ||
+            uri.startsWith("/eventos/foto/") || uri.startsWith("/fotos/foto/")) {
             return true;
         }
 
@@ -26,18 +28,22 @@ public class SessionInterceptor implements HandlerInterceptor {
 
         Usuarios usuario = (Usuarios) session.getAttribute("usuarioLogueado");
 
-        boolean isAdminRoute = uri.startsWith("/paneladmin") || 
-                               uri.startsWith("/publicaciones") || 
+        // Rutas exclusivas de ADMIN (solo rol "admin" puede acceder)
+        boolean isAdminRoute = uri.startsWith("/paneladmin") ||
+                               (uri.startsWith("/publicaciones") && !uri.startsWith("/publicaciones/foto/")) ||
                                uri.startsWith("/savePublicacion") ||
                                uri.startsWith("/updatePublicacion") ||
                                uri.startsWith("/deletePublicacion") ||
-                               uri.startsWith("/reportes") || 
+                               uri.startsWith("/reportes") ||
                                uri.startsWith("/saveReporte") ||
                                uri.startsWith("/updateReporte") ||
                                uri.startsWith("/deleteReporte") ||
-                               uri.startsWith("/favoritos") || 
-                               uri.startsWith("/categorias") || 
+                               uri.startsWith("/favoritos") ||
+                               uri.startsWith("/categorias") ||
                                uri.startsWith("/servicios");
+
+        // Las rutas de vendedor (/vendedor/**, /panelvendedor, /adminpublicaciones,
+        // /mensajes, /subir) solo requieren sesión iniciada, NO rol admin.
 
         if (isAdminRoute) {
             if (usuario.getRol() == null || !usuario.getRol().equalsIgnoreCase("admin")) {

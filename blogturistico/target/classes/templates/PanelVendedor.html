@@ -10,17 +10,7 @@
 
 <body>
 
-<header>
-    <div class="logo">Vive Flores</div>
-
-    <nav class="nav-links">
-        <a th:href="@{/}" class="link">Inicio</a>
-        <a th:href="@{/mensajes}" class="link">Mensajes</a>
-        <a th:href="@{/adminpublicaciones}" class="link">Publicaciones</a>
-    </nav>
-
-    <a th:href="@{/}" class="btn-home">Volver al menú</a>
-</header>
+<div th:replace="~{fragments :: headerVendedor}"></div>
 
 <div class="container">
 
@@ -29,7 +19,7 @@
 
     <div class="panel-grid">
 
-        <a th:href="@{/subir}" class="card-panel">
+        <a th:href="@{/vendedor/subir}" class="card-panel">
             <i class="bi bi-upload icono"></i>
             <h3>Subir Publicación</h3>
         </a>
@@ -48,9 +38,7 @@
 
 </div>
 
-<footer class="footer">
-    <p>ViveFlores.com 2026</p>
-</footer>
+<div th:replace="~{fragments :: footer}"></div>
 
 </body>
 </html>

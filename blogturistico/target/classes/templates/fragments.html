@@ -6,12 +6,24 @@
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
 </head>
 <body>
-    <header th:fragment="header">
+    <header th:fragment="headerNormal">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/headerNormal.css}">
         <div class="logo">Vive Flores</div>
             <nav>
                 <ul>
                     <li><a th:href="@{/index}">Inicio</a></li>
-                    <li><a href="#">Categorias</a></li>
+                    <li class="nav-dropdown">
+                        <a class="dropdown-trigger">Categorías <i class="bi bi-chevron-down" style="font-size: 11px; margin-left: 2px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li th:each="cat : ${categoriasGlobal}">
+                                <span class="dropdown-item">
+                                    <i class="bi bi-tag-fill" style="margin-right: 8px; color: #f6b93b; font-size: 12px;"></i>
+                                    <span th:text="${cat.nombre_categoria}">Categoría</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </li>
                     <li><a th:href="@{/publicacionesAll}">Publicaciones</a></li>
                     <li><a th:href="@{/eventosAll}">Eventos</a></li>
                     <li><a th:href="@{/serviciosAll}">Servicios</a></li>
@@ -25,15 +37,96 @@
                         <a th:href="@{/panelvendedor}">administrar</a>
                     </li>
                     <li th:if="${session.usuarioLogueado != null and #strings.equalsIgnoreCase(session.usuarioLogueado.rol, 'admin')}">
-                        <a href="paneladmin">Administrar</a>
+                        <a th:href="@{/paneladmin}">Administrar</a>
                     </li>
                 </ul>
             </nav>
             <div class="user-actions" style="display: flex; align-items: center; gap: 15px;">
-                <a th:if="${session.usuarioLogueado == null}" href="acceder"><button class="btn-login">Iniciar Sesión</button></a>
-                <a th:if="${session.usuarioLogueado != null}" href="logout"><button class="btn-login" style="background-color: #e74c3c;">Cerrar Sesión</button></a>
+                <a th:if="${session.usuarioLogueado == null}" th:href="@{/acceder}"><button class="btn-login">Iniciar Sesión</button></a>
+                <a th:if="${session.usuarioLogueado != null}" th:href="@{/logout}"><button class="btn-login" style="background-color: #e74c3c;">Cerrar Sesión</button></a>
             </div>
+    </header>
+
+    <!-- VENDEDOR HEADER FRAGMENT -->
+    <header th:fragment="headerVendedor">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/header.css}">
+        <div class="logo" style="cursor: pointer;" th:onclick="|window.location.href='@{/panelvendedor}'|">Vive Flores</div>
+        <nav>
+            <ul>
+                <li><a th:href="@{/panelvendedor}">Panel Vendedor</a></li>
+                <li><a th:href="@{/mensajes}">Mensajes</a></li>
+                <li><a th:href="@{/adminpublicaciones}">Publicaciones</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions" style="display: flex; align-items: center; gap: 15px;">
+            <a th:href="@{/index}"><button class="btn-login" style="animation: none; box-shadow: none;">Volver al menú</button></a>
         </div>
     </header>
+
+    <!-- FOOTER FRAGMENT -->
+    <footer th:fragment="footer" class="site-footer">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/footer.css}">
+
+        <div class="footer-container">
+            <!-- Brand Info -->
+            <div class="footer-brand">
+                <h3>Vive Flores</h3>
+                <p>Tu blog turístico y directorio comercial predilecto de la hermosa Isla de Flores, Petén. Descubre destinos, eventos únicos, servicios locales y apoya al comercio isleño.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://youtube.com" target="_blank" title="Youtube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a th:href="@{/index}">Inicio</a></li>
+                    <li><a th:href="@{/publicacionesAll}">Publicaciones</a></li>
+                    <li><a th:href="@{/eventosAll}">Eventos</a></li>
+                    <li><a th:href="@{/serviciosAll}">Servicios</a></li>
+                    <li><a th:href="@{/quienessomos}">¿Quiénes Somos?</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact details -->
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="bi bi-geo-alt-fill"></i> Isla de Flores, Petén, Guatemala</p>
+                <p><i class="bi bi-telephone-fill"></i> +502-1234-5678</p>
+                <p><i class="bi bi-envelope-fill"></i> info@viveflores.com.gt</p>
+                <p><i class="bi bi-clock-fill"></i> Lun - Dom: 8:00 AM - 8:00 PM</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vive Flores. Todos los derechos reservados.</p>
+            <div class="footer-bottom-links">
+                <a th:href="@{/contacto}">Reportar</a>
+            </div>
+        </div>
+    <!-- GLOBAL CRUD ERROR NOTIFICATION FRAGMENT -->
+    <div th:fragment="errorGlobalNotification">
+        <div th:if="${errorGlobal}" style="position: fixed; top: 20px; right: 20px; background: rgba(235, 77, 75, 0.98); color: white; padding: 16px 24px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 99999; font-weight: 500; display: flex; align-items: center; gap: 12px; font-family: 'Segoe UI', Roboto, sans-serif; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); animation: slideInError 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;" id="globalErrorToast">
+            <div style="display: flex; flex-direction: column; gap: 2px; text-align: left;">
+                <strong style="font-size: 14px; font-weight: 700; color: #fff;">Error de Operación</strong>
+                <span th:text="${errorGlobal}" style="font-size: 13px; color: rgba(255,255,255,0.95); max-width: 300px; word-wrap: break-word;">Mensaje de error</span>
+            </div>
+            <button onclick="document.getElementById('globalErrorToast').style.display='none'" style="background: transparent; border: none; color: white; cursor: pointer; font-size: 20px; margin-left: 15px; font-weight: bold; padding: 0; line-height: 1; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">&times;</button>
+        </div>
+        <style>
+            @keyframes slideInError {
+                from { transform: translateX(120%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+        </style>
+    </div>
 </body>
 </html>

@@ -54,4 +54,38 @@ public class GlobalExcepcion {
     public ResponseEntity<Object> validarDatos(MethodArgumentTypeMismatchException e){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("Error", "Tipo de dato incorrecto"));
     }
+
+    @ExceptionHandler(Exception.class)
+    public Object manejarExcepcionGlobal(
+            Exception e,
+            jakarta.servlet.http.HttpServletRequest request,
+            org.springframework.web.servlet.mvc.support.RedirectAttributes redirectAttributes
+    ) {
+        String uri = request.getRequestURI();
+
+        // Si es una llamada API REST, retornamos JSON
+        if (uri.startsWith("/api/")) {
+            java.util.Map<String, String> errorResponse = new java.util.HashMap<>();
+            errorResponse.put("Error", e.getMessage() != null ? e.getMessage() : "Error interno del servidor");
+            return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        // Si es un CRUD de Thymeleaf:
+        e.printStackTrace(); // Log en la consola del servidor para depuración
+
+        // Guardamos el mensaje exacto del error en Flash Attributes
+        redirectAttributes.addFlashAttribute(
+                "errorGlobal",
+                e.getMessage() != null ? e.getMessage() : "Ocurrió un error inesperado al procesar la solicitud."
+        );
+
+        // Intentamos obtener la cabecera 'Referer' para redireccionar exactamente a la misma pantalla del CRUD
+        String referer = request.getHeader("Referer");
+        if (referer != null && !referer.isEmpty()) {
+            return "redirect:" + referer;
+        }
+
+        // Si no hay Referer, volvemos al panel principal de administración
+        return "redirect:/paneladmin";
+    }
 }

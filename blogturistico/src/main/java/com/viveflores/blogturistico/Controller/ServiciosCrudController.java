@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.time.LocalDate;
 
 @Controller
-@RequestMapping("/servicio")
+@RequestMapping("/servicioscrud")
 public class ServiciosCrudController {
 
     private final ServicioService servicioService;
@@ -60,7 +60,7 @@ public class ServiciosCrudController {
         model.addAttribute("servicio", servicioEdit);
         model.addAttribute("servicios", servicioService.getAllServicios());
 
-        return "servicioscrud";
+        return "serviciosCrud";
     }
 
     @GetMapping("/eliminar/{id}")

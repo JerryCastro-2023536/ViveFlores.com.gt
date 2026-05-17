@@ -27,7 +27,7 @@
     <form th:action="@{/adminpublicaciones/guardar}"
           th:object="${publicacion}"
           method="post"
-          <!--enctype="multipart/form-data">-->
+          enctype="multipart/form-data">
 
         <!-- IMPORTANTES -->
         <input type="hidden" th:field="*{id_publicacion}">
@@ -86,7 +86,7 @@
 
             <div class="form-group full">
                 <label>Foto (opcional)</label>
-                <!--<input type="file" name="archivo">-->
+                <input type="file" name="archivo" accept="image/*">
             </div>
 
         </div>

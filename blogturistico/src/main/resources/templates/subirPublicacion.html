@@ -5,22 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vive Flores - Crear Publicación</title>
-    <link rel="stylesheet" href="estilos.css" />
-    <link rel="stylesheet" href="subirPublicacion.css" />
+    <link rel="stylesheet" th:href="@{/estilos.css}" />
+    <link rel="stylesheet" th:href="@{/subirPublicacion.css}" />
 </head>
 
 <body>
 
-    <nav>
-        <span class="brand">Vive Flores</span>
-        <a class="btn-back" href="/" th:href="@{/}">&#8592; Volver al inicio</a>
-    </nav>
+    <div th:replace="~{fragments :: headerVendedor}"></div>
 
     <div class="container">
         <h1>Crear Nueva Publicación</h1>
 
         <div class="card">
-            <form th:action="@{/publicaciones/guardar}" method="post" enctype="multipart/form-data">
+            <form th:action="@{/vendedor/publicaciones/guardar}" method="post" enctype="multipart/form-data">
 
                 <!-- Fila 1: nombre + teléfono + horario -->
                 <div class="form-row">
@@ -89,29 +86,24 @@
                         <label>Categoría</label>
                         <select name="id_categoria" required>
                             <option value="" disabled selected>Seleccionar...</option>
-                            <option value="1">Servicios</option>
-                            <option value="2">Ventas</option>
-                            <option value="3">Educación</option>
-                            <option value="4">Inmuebles</option>
-                            <option value="5">Mascotas</option>
-                            <option value="6">Comida</option>
-                            <option value="7">Tecnología</option>
-                            <option value="8">Deportes</option>
-                            <option value="9">Jardinería</option>
-                            <option value="10">Marketing</option>
+                            <option th:each="cat : ${categorias}" 
+                                    th:value="${cat.id_categoria}" 
+                                    th:text="${cat.nombre_categoria}"></option>
                         </select>
                     </div>
                 </div>
 
                 <!-- Acciones -->
                 <div class="form-actions">
-                    <a class="btn-cancel" href="/" th:href="@{/}">Cancelar</a>
+                    <a class="btn-cancel" th:href="@{/panelvendedor}">Cancelar</a>
                     <button type="submit" class="btn-save">Guardar Publicación</button>
                 </div>
 
             </form>
         </div>
     </div>
+
+    <div th:replace="~{fragments :: footer}"></div>
 
     <script>
         const dropZone = document.getElementById('dropZone');

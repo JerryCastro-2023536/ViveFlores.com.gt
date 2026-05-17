@@ -52,7 +52,12 @@ public class CardsController {
 
     @GetMapping("/publicacionesAll")
     public String mostrarPublicaciones(Model model) {
-        model.addAttribute("publicaciones", publicacionesService.getAllPublicaciones());
+        List<Publicaciones> activas = publicacionesService.getAllPublicaciones().stream()
+                .filter(p -> p.getEstado_publicacion() != null &&
+                             (p.getEstado_publicacion().equalsIgnoreCase("activo") ||
+                              p.getEstado_publicacion().equalsIgnoreCase("aceptado")))
+                .toList();
+        model.addAttribute("publicaciones", activas);
         return "Publicaciones";
     }
 

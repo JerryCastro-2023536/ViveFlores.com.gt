@@ -8,14 +8,7 @@
     <title>Bandeja de Entrada</title>
 </head>
 <body>
-<header>
-    <div class="logo">Vive Flores</div>
-    <nav>
-        <button id="btn-regresar" onclick="window.history.back()">
-            <i class="bi bi-arrow-left"></i> volver al inicio
-        </button>
-    </nav>
-</header>
+<div th:replace="~{fragments :: headerVendedor}"></div>
 
 <main class="mensajes-container">
     <div class="header-section">
@@ -69,5 +62,6 @@
         </div>
     </div>
 </main>
+<div th:replace="~{fragments :: footer}"></div>
 </body>
 </html>

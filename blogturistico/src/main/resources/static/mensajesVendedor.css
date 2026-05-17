@@ -19,36 +19,7 @@ body {
     background-color: var(--cream);
 }
 
-header {
-    background: var(--deep);
-    color: var(--white);
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
-    border-bottom: 2px solid var(--gold);
-}
 
-.logo {
-    font-size: 26px;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--white) 40%, var(--gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#btn-regresar {
-    background: transparent;
-    color: var(--white);
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex; align-items: center; gap: 8px;
-    transition: 0.3s;
-}
-
-#btn-regresar:hover { color: var(--gold); }
 
 .mensajes-container {
     max-width: 1200px;

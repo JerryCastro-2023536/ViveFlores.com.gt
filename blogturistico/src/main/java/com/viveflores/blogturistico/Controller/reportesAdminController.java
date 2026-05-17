@@ -14,16 +14,16 @@ public class reportesAdminController {
     @Autowired
     private ReportesService reportesService;
 
-    @GetMapping("/reportesAdmin")
+    @GetMapping("/reportes")
     public String index(Model model) {
         List<Reportes> lista = reportesService.listarReportes();
         model.addAttribute("reportes", lista);
         return "reportesAdmin";
     }
-    @GetMapping("/eliminar/{id}")
+    @GetMapping("/reportes/eliminar/{id}")
     public String eliminar(@PathVariable("id") int id) {
         reportesService.eliminarReportes(id);
-        return "redirect:/admin/reportes";
+        return "redirect:/reportes";
     }
     @GetMapping("/nuevo")
     public String nuevo(Model model) {

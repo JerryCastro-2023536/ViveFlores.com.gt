@@ -5,89 +5,171 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da60f5b6-8546-4628-b8db-41c796697126" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/reportesAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Config/SessionInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Config/SessionInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/AdministrarPublicacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/AdministrarPublicacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/CardsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/PaginaPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/PaginaPrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ServiciosCrudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ServiciosCrudController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/SubirPublicacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/SubirPublicacionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/reportesAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/reportesAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/reportesUsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/reportesUsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/reportesAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/reportesAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/GlobalExcepcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/GlobalExcepcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/PanelVendedor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/PanelVendedor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/administrarPublicacion.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/administrarPublicacion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mensajesVendedor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/mensajesVendedor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Contacto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Eventos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Eventos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/EventosCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/EventosCrud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/PanelVendedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/PanelVendedor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Publicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Publicaciones.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/QuienesSomos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/QuienesSomos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ResenasCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ResenasCrud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Servicios.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Servicios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ServiciosCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ServiciosCrud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/administrarPublicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/administrarPublicaciones.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/categorias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crudFavoritos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crudFavoritos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crudPublicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crudPublicaciones.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editarPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editarPublicacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/evento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mensajesVendedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mensajesVendedor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mostrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mostrar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/paneladmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/paneladmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reportesAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reportesAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reportesUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reportesUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/ReportesUsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/ServicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Controller/ServicioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Service/ReportesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Service/ReportesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Service/ReportesServiceImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/java/com/viveflores/blogturistico/Service/ReportesServiceImplements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/static/reportesAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/static/reportesAdmin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/templates/reportesAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/src/main/resources/templates/reportesAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/CategoriasController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/CategoriasController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ContactarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ContactarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/EventoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/EventoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/FavoritosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/FavoritosController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/FotosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/FotosController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/PublicacionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/PublicacionesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ReportesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ResenaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ResenaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ServicioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/ServicioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/UsuariosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Controller/UsuariosController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Categorias.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Categorias.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Contactar.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Contactar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Evento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Favoritos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Favoritos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Fotos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Fotos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Publicaciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Publicaciones.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Reportes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Reportes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Resena.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Resena.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/SolicitudPublicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/SolicitudPublicacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Usuarios.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/Usuarios.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/servicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Entity/servicio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/CorreoValidar.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/CorreoValidar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/FechasValidar.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/FechasValidar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/NotFoundExcepcion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/NotFoundExcepcion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/Validation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Exception/Validation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/PrincipalApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/PrincipalApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/CategoriasRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/CategoriasRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ContactarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ContactarRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/EventoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/EventoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/FavoritosRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/FavoritosRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/FotosRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/FotosRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/PublicacionesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/PublicacionesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ReportesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ReportesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ResenaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ResenaRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ServicioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/ServicioRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/SolicitudPublicacionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/SolicitudPublicacionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/UsuariosRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Repository/UsuariosRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/CategoriasService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/CategoriasService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/CategoriasServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/CategoriasServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ContactarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ContactarService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ContactarServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ContactarServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/EventoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/EventoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/EventoServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/EventoServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FavoritosService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FavoritosService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FavoritosServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FavoritosServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FotosService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FotosService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FotosServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/FotosServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/PublicacionesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/PublicacionesService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ReportesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ReportesService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ReportesServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ReportesServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ResenaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ResenaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ResenaServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ResenaServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ServicioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ServicioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ServicioServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/ServicioServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/UsuariosService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/UsuariosService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/UsuariosServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/com/viveflores/blogturistico/Service/UsuariosServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/static/agregarServicio.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/static/reportesAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/static/reportesAdmin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/templates/reportesAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ft-dcartajena/target/classes/templates/reportesAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ft-dcartajena/target/classes/templates/usuarios.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/servicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/servicio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/solicitudPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/solicitudPublicacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/subirPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/subirPublicacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/usuarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Config/SessionInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/AdministrarPublicacionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/AlbumFotosController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/CardsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/CategoriasController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/CategoriasViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ContactarController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ContactarViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/DatabaseFix.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/EnviarMensajeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/EventoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/EventoCrudController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/FavoritosController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/FavoritosUsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/FotosController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/FotosViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/MensajesVendedorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/PaginaPrincipalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/PanelVendedorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/PerfilUsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/PublicacionesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/RegisterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ReportesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ResenaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ResenasCrudController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ServicioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ServiciosCrudController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/SubirEventoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/SubirPublicacionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/UsuariosController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/UsuariosCrudController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/reportesAdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/reportesUsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Categorias.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Contactar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Evento.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Favoritos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Fotos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Publicaciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Reportes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Resena.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Servicio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/SolicitudPublicacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Usuarios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/CorreoValidar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/FechasValidar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/NotFoundExcepcion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/Validation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/PrincipalApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/CategoriasRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ContactarRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/EventoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/FavoritosRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/FotosRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/PublicacionesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ReportesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ResenaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ServicioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/SolicitudPublicacionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/UsuariosRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/CategoriasService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/CategoriasServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ContactarService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ContactarServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/EventoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/EventoServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/FavoritosService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/FavoritosServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/FotosService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/FotosServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/PublicacionesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ReportesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ReportesServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ResenaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ResenaServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ServicioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ServicioServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/SolicitudPublicacionServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/UsuariosService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/UsuariosServiceImplements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/PanelVendedor.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/PanelVendedor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/administrarPublicacion.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/administrarPublicacion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/mensajesVendedor.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/mensajesVendedor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/reportesAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/reportesAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Contacto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Eventos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Eventos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/EventosCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/EventosCrud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/PanelVendedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/PanelVendedor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Publicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Publicaciones.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/QuienesSomos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/QuienesSomos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/ResenasCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ResenasCrud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Servicios.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Servicios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/ServiciosCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ServiciosCrud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/administrarPublicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/administrarPublicaciones.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/categorias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/crudFavoritos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/crudFavoritos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/crudPublicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/crudPublicaciones.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/editarPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/editarPublicacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/evento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/mensajesVendedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/mensajesVendedor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/mostrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/mostrar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/paneladmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/paneladmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/reportesAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/reportesAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/reportesUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/reportesUsuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/servicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/servicio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/solicitudPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/solicitudPublicacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/subirPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/subirPublicacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/usuarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,22 +179,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "diegocartajena-2022510"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;diegocartajena-2022510&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/JerryCastro-2023536/ViveFlores.com.gt.git",
-    "accountId": "dfd66be6-9da6-4852-8b57-dbb427b2fdc4"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JerryCastro-2023536/ViveFlores.com.gt.git&quot;,
+    &quot;accountId&quot;: &quot;dfd66be6-9da6-4852-8b57-dbb427b2fdc4&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="3DeEJl4KFbpv5k05UIi7xdgSNrL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -120,13 +212,29 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.PrincipalApplication.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.PrincipalApplication.executor": "Run",
     "git-widget-placeholder": "develop",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/danie/Downloads/ViveFlores.com.gt/blogturistico",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="PrincipalApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.viveflores.blogturistico.PrincipalApplication" />
+      <module name="blogturistico" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

@@ -1,51 +1,8 @@
 /* BODY */
 body {
-    background: linear-gradient(135deg, #f5f6fa, #e9ecf2);
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.main-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(10px);
-    background: rgba(0, 29, 61, 0.95);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 20px 50px; /* más alto */
-    color: white;
-}
-
-/* LOGO más grande */
-.logo {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-/* NAV más claro */
-.main-header nav {
-    display: flex;
-    gap: 30px;
-}
-
-.main-header a {
-    font-size: 16px;
-    font-weight: 500;
-    transition: 0.2s;
-}
-
-.main-header a:hover {
-    color: #fbb824;
-    transform: translateY(-1px);
-}
-
-.main-header a:hover {
-    color: #fbb824;
-    transform: translateY(-1px);
+    background: #faf7f0;
+    font-family: 'Outfit', 'Segoe UI', sans-serif;
+    color: #0a1e2b;
 }
 
 /* CONTENEDOR */

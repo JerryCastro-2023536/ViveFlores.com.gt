@@ -49,7 +49,12 @@ public class PaginaPrincipalController {
 
     @GetMapping("/index")
     public String paginaPrincipal(Model model){
-        model.addAttribute("publi", publicacionesService.getAllPublicaciones());
+        List<Publicaciones> activas = publicacionesService.getAllPublicaciones().stream()
+                .filter(p -> p.getEstado_publicacion() != null &&
+                             (p.getEstado_publicacion().equalsIgnoreCase("activo") ||
+                              p.getEstado_publicacion().equalsIgnoreCase("aceptado")))
+                .toList();
+        model.addAttribute("publi", activas);
         model.addAttribute("servi", servicioService.getAllServicios());
         model.addAttribute("event", eventoService.getAllEventos());
         model.addAttribute("fotos", fotosService.getAllFotos());
@@ -59,44 +64,69 @@ public class PaginaPrincipalController {
     @GetMapping("/publicaciones/foto/{id}")
     public ResponseEntity<byte[]> obtenerFotoPublicacion(@PathVariable("id") Integer id) {
         return publicacionesRepository.findById(id)
-                .map(u -> ResponseEntity.ok()
-                        .contentType(MediaType.IMAGE_JPEG)
-                        .body(u.getFoto()))
+                .map(u -> {
+                    if (u.getFoto() == null || u.getFoto().length == 0) {
+                        return ResponseEntity.notFound().<byte[]>build();
+                    }
+                    return ResponseEntity.ok()
+                            .contentType(MediaType.IMAGE_JPEG)
+                            .body(u.getFoto());
+                })
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/servicios/foto/{id}")
     public ResponseEntity<byte[]> obtenerFotoServicio(@PathVariable("id") Integer id) {
         return servicioRepository.findById(id)
-                .map(u -> ResponseEntity.ok()
-                        .contentType(MediaType.IMAGE_JPEG)
-                        .body(u.getFoto()))
+                .map(u -> {
+                    if (u.getFoto() == null || u.getFoto().length == 0) {
+                        return ResponseEntity.notFound().<byte[]>build();
+                    }
+                    return ResponseEntity.ok()
+                            .contentType(MediaType.IMAGE_JPEG)
+                            .body(u.getFoto());
+                })
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/eventos/foto/{id}")
     public ResponseEntity<byte[]> obtenerFotoEvento(@PathVariable("id") Integer id) {
         return eventoRepository.findById(id)
-                .map(u -> ResponseEntity.ok()
-                        .contentType(MediaType.IMAGE_JPEG)
-                        .body(u.getFoto()))
+                .map(u -> {
+                    if (u.getFoto() == null || u.getFoto().length == 0) {
+                        return ResponseEntity.notFound().<byte[]>build();
+                    }
+                    return ResponseEntity.ok()
+                            .contentType(MediaType.IMAGE_JPEG)
+                            .body(u.getFoto());
+                })
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/fotos/foto/{id}")
     public ResponseEntity<byte[]> obtenerFotoGaleria(@PathVariable("id") Integer id) {
         return fotosRepository.findById(id)
-                .map(u -> ResponseEntity.ok()
-                        .contentType(MediaType.IMAGE_JPEG)
-                        .body(u.getFoto()))
+                .map(u -> {
+                    if (u.getFoto() == null || u.getFoto().length == 0) {
+                        return ResponseEntity.notFound().<byte[]>build();
+                    }
+                    return ResponseEntity.ok()
+                            .contentType(MediaType.IMAGE_JPEG)
+                            .body(u.getFoto());
+                })
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/buscarNombre")
     public String buscar(@RequestParam("nombre") String nombre, Model model) {
         List<Publicaciones> resultados = publicacionesRepository.buscarPorNombre(nombre);
+        List<Publicaciones> resultadosActivas = resultados.stream()
+                .filter(p -> p.getEstado_publicacion() != null &&
+                             (p.getEstado_publicacion().equalsIgnoreCase("activo") ||
+                              p.getEstado_publicacion().equalsIgnoreCase("aceptado")))
+                .toList();
         model.addAttribute("busqueda", nombre);
-        model.addAttribute("publiEncont", resultados);
+        model.addAttribute("publiEncont", resultadosActivas);
         return "mostrar";
     }
 }

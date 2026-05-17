@@ -7,6 +7,7 @@
     <link rel="stylesheet" th:href="@{/reportesAdmin.css}">
 </head>
 <body>
+<div th:replace="~{fragments :: errorGlobalNotification}"></div>
 
 <header>
     <h1>Vive Flores</h1>
@@ -30,7 +31,7 @@
                     <span class="report-date" th:text="${#temporals.format(r.fecha_envio, 'dd/MM/yyyy HH:mm')}">00/00/0000</span>
                 </div>
 
-                <a th:href="@{/eliminar/{id}(id=${r.id_reporte})}"
+                <a th:href="@{/reportes/eliminar/{id}(id=${r.id_reporte})}"
                    class="btn-delete"
                    onclick="return confirm('¿Estás seguro de eliminar este reporte?')">
                     <i class="bi bi-trash"></i>
