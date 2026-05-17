@@ -1,0 +1,206 @@
+/* ─── VARIABLES ─── */
+:root {
+    --deep: #0a1e2b;
+    --navy: #0f2e3e;
+    --gold: #f6b93b;
+    --gold-light: #fdd17a;
+    --gold-dark: #c9932a;
+    --cream: #faf7f0;
+    --mist: #f0f4f7;
+    --text: #1a1a2e;
+    --text-light: #6b7c93;
+    --white: #ffffff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes navSlide {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logoReveal {
+    from { opacity: 0; letter-spacing: 0.5em; }
+    to   { opacity: 1; letter-spacing: 0.02em; }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(246, 185, 59, 0.4); }
+    50%       { box-shadow: 0 0 0 12px rgba(246, 185, 59, 0); }
+}
+
+/* ─── HEADER ─── */
+header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: rgba(10, 30, 43, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    padding: 0 48px !important;
+    color: var(--white) !important;
+    height: 80px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    border-bottom: 1px solid rgba(246, 185, 59, 0.15) !important;
+    animation: fadeIn 0.6s ease both !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+header::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent) !important;
+    background-size: 200% auto !important;
+}
+
+.logo {
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    background: linear-gradient(135deg, var(--white) 40%, var(--gold)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    animation: logoReveal 1s ease 0.2s both !important;
+    cursor: default !important;
+    font-family: 'Outfit', 'Inter', sans-serif !important;
+}
+
+nav > ul {
+    list-style: none !important;
+    display: flex !important;
+    gap: 8px !important;
+    animation: navSlide 0.6s ease 0.3s both !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+nav > ul > li {
+    animation: fadeIn 0.5s ease both !important;
+    list-style: none !important;
+}
+
+nav > ul > li > a {
+    text-decoration: none !important;
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 13.5px !important;
+    font-weight: 400 !important;
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    transition: all 0.25s ease !important;
+    position: relative !important;
+    font-family: 'Outfit', 'Inter', sans-serif !important;
+    display: inline-block !important;
+}
+
+nav > ul > li > a::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 2px !important;
+    left: 12px !important;
+    right: 12px !important;
+    height: 1.5px !important;
+    background: var(--gold) !important;
+    transform: scaleX(0) !important;
+    transition: transform 0.25s ease !important;
+    transform-origin: center !important;
+}
+
+nav > ul > li > a:hover {
+    color: var(--gold) !important;
+    background: rgba(246, 185, 59, 0.08) !important;
+}
+
+nav > ul > li > a:hover::after {
+    transform: scaleX(1) !important;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%) !important;
+    border: none !important;
+    padding: 10px 22px !important;
+    cursor: pointer !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 13.5px !important;
+    color: var(--deep) !important;
+    letter-spacing: 0.02em !important;
+    transition: all 0.3s ease !important;
+    animation: fadeIn 0.6s ease 0.9s both, pulseGlow 2.5s ease-in-out infinite !important;
+    font-family: 'Outfit', 'Inter', sans-serif !important;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px) scale(1.04) !important;
+    box-shadow: 0 8px 24px rgba(246, 185, 59, 0.45) !important;
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%) !important;
+}
+
+/* ─── DROPDOWN MENU ─── */
+.nav-dropdown {
+    position: relative !important;
+}
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) !important;
+}
+.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) !important;
+    background: rgba(10, 30, 43, 0.98) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(246, 185, 59, 0.3) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    padding: 10px 0 !important;
+    min-width: 180px !important;
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    z-index: 999 !important;
+}
+.dropdown-menu li {
+    padding: 0 12px !important;
+    margin: 0 !important;
+    animation: none !important;
+    display: block !important;
+}
+.dropdown-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 8px 12px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    cursor: default !important;
+    text-decoration: none !important;
+}
+.dropdown-item:hover {
+    color: #0a1e2b !important;
+    background: #f6b93b !important;
+    font-weight: 600 !important;
+}
+.dropdown-item:hover i {
+    color: #0a1e2b !important;
+}
