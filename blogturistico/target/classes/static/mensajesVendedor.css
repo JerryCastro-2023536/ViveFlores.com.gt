@@ -116,3 +116,109 @@ body {
     .grid-row { grid-template-columns: 1fr; gap: 10px; text-align: center; }
     .cliente-info, .acciones { justify-content: center; }
 }
+
+/* Modal Responder */
+.modal-responder {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-responder-content {
+    background-color: var(--white);
+    margin: 10% auto; 
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: slideDown 0.4s ease;
+    position: relative;
+}
+
+.modal-responder-content h2 {
+    color: var(--navy);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.close-responder {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-responder:hover,
+.close-responder:focus {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.modal-responder-content .form-group {
+    margin-bottom: 20px;
+}
+
+.modal-responder-content label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--navy);
+}
+
+.modal-responder-content textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.modal-responder-content textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.btn-submit-responder {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit-responder:hover {
+    background-color: var(--gold);
+    color: var(--deep);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

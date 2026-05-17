@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mensajesVendedor.css">
+    <link rel="stylesheet" th:href="@{/mensajesVendedor.css(v=1.1)}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Bandeja de Entrada</title>
 </head>
@@ -45,10 +45,13 @@
             </div>
 
             <div class="acciones">
-                <a class="btn-responder" title="Responder">
+                <a class="btn-responder" title="Responder" th:onclick="'openResponderModal(' + ${info[0].id_contactar} + ')'" th:if="${info[0].respuesta == null}">
                     <i class="bi bi-reply-fill"></i>
                 </a>
-                <form style="display:inline;">
+                <span th:if="${info[0].respuesta != null}" style="color:var(--gold-dark); font-size:12px; font-weight:bold;">
+                    <i class="bi bi-check-all"></i> Respondido
+                </span>
+                <form th:action="@{'/mensajes/eliminar/' + ${info[0].id_contactar}}" method="post" style="display:inline;">
                     <button type="submit" class="btn-eliminar" onclick="return confirm('¿Eliminar este mensaje?')">
                         <i class="bi bi-trash3-fill"></i>
                     </button>
@@ -62,6 +65,41 @@
         </div>
     </div>
 </main>
+
+<!-- Modal de Responder -->
+<div id="responderModal" class="modal-responder">
+    <div class="modal-responder-content">
+        <span class="close-responder" onclick="closeResponderModal()">&times;</span>
+        <h2>Responder al Cliente</h2>
+        <form id="formResponder" method="post">
+            <div class="form-group">
+                <label for="respuesta">Tu Respuesta:</label>
+                <textarea id="respuesta" name="respuesta" rows="5" required placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit-responder">
+                <i class="bi bi-send-check"></i> Enviar Respuesta
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openResponderModal(idContactar) {
+        document.getElementById('responderModal').style.display = 'block';
+        document.getElementById('formResponder').action = '/mensajes/responder/' + idContactar;
+    }
+
+    function closeResponderModal() {
+        document.getElementById('responderModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        var modal = document.getElementById('responderModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 <div th:replace="~{fragments :: footer}"></div>
 </body>
 </html>

@@ -30,6 +30,9 @@ public class Reportes {
     @Column(name = "id_usuario")
     private Integer id_usuario;
 
+    @Column(name = "respuesta")
+    private String respuesta;
+
     public Integer getId_reporte() {
         return id_reporte;
     }
@@ -68,5 +71,13 @@ public class Reportes {
 
     public void setId_usuario(Integer id_usuario) {
         this.id_usuario = id_usuario;
+    }
+
+    public String getRespuesta() {
+        return respuesta;
+    }
+
+    public void setRespuesta(String respuesta) {
+        this.respuesta = respuesta;
     }
 }

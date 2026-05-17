@@ -5,63 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/mensajesVendedor.css(v=1.1)}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Bandeja de Entrada</title>
+    <title>Administrar Reportes</title>
 </head>
 <body>
-<div th:replace="~{fragments :: headerVendedor}"></div>
+<div th:replace="~{fragments :: headerNormal}"></div>
 
 <main class="mensajes-container">
     <div class="header-section">
-        <h2><i class="bi bi-chat-dots-fill"></i> Mensajes de Clientes</h2>
-        <p>Gestiona las consultas sobre tus publicaciones</p>
+        <h2><i class="bi bi-shield-lock-fill"></i> Panel de Reportes</h2>
+        <p>Gestiona y responde a los reportes de los usuarios</p>
     </div>
 
     <div class="tabla-mensajes">
         <div class="grid-header">
-            <span>Cliente</span>
-            <span>Asunto / Publicación</span>
+            <span>Usuario</span>
+            <span>Asunto</span>
             <span>Mensaje</span>
             <span>Fecha</span>
             <span>Acción</span>
         </div>
 
-        <div class="grid-row" th:each="info : ${listaContactos}">
+        <div class="grid-row" th:each="r : ${listaReportes}">
             <div class="cliente-info">
-                <i class="bi bi-person-circle"></i>
-                <span th:text="'ID Usuario Remitente: ' + ${info[0].id_usuario}">Nombre Cliente</span>
+                <i class="bi bi-person-exclamation" style="color:var(--gold);"></i>
+                <span th:text="'ID Usuario: ' + ${r.id_usuario}">Usuario</span>
             </div>
 
             <div class="asunto-info">
-                <strong th:text="${info[0].asunto}">Asunto</strong>
-                <small th:text="${info[1]}">Nombre de la Publicación</small>
+                <strong th:text="${r.asunto}">Asunto</strong>
             </div>
 
             <div class="mensaje-preview">
-                <p th:text="${info[0].mensaje}">Contenido del mensaje...</p>
+                <p th:text="${r.mensaje}">Contenido del reporte...</p>
             </div>
 
             <div class="fecha-info">
-                <span th:text="${#temporals.format(info[0].fecha_envio, 'dd/MM/yyyy')}">01/01/2026</span>
+                <span th:text="${#temporals.format(r.fecha_envio, 'dd/MM/yyyy')}">01/01/2026</span>
             </div>
 
             <div class="acciones">
-                <a class="btn-responder" title="Responder" th:onclick="'openResponderModal(' + ${info[0].id_contactar} + ')'" th:if="${info[0].respuesta == null}">
+                <a class="btn-responder" title="Responder" th:onclick="'openResponderModal(' + ${r.id_reporte} + ')'" th:if="${r.respuesta == null}">
                     <i class="bi bi-reply-fill"></i>
                 </a>
-                <span th:if="${info[0].respuesta != null}" style="color:var(--gold-dark); font-size:12px; font-weight:bold;">
+                <span th:if="${r.respuesta != null}" style="color:var(--gold-dark); font-size:12px; font-weight:bold;">
                     <i class="bi bi-check-all"></i> Respondido
                 </span>
-                <form th:action="@{'/mensajes/eliminar/' + ${info[0].id_contactar}}" method="post" style="display:inline;">
-                    <button type="submit" class="btn-eliminar" onclick="return confirm('¿Eliminar este mensaje?')">
+                <form th:action="@{'/reportes/eliminar/' + ${r.id_reporte}}" method="post" style="display:inline;">
+                    <button type="submit" class="btn-eliminar" onclick="return confirm('¿Eliminar este reporte?')">
                         <i class="bi bi-trash3-fill"></i>
                     </button>
                 </form>
             </div>
         </div>
 
-        <div class="no-mensajes" th:if="${listaContactos == null or listaContactos.empty}">
+        <div class="no-mensajes" th:if="${listaReportes == null or listaReportes.empty}">
             <i class="bi bi-inbox"></i>
-            <p>No tienes mensajes nuevos en este momento.</p>
+            <p>No hay reportes pendientes en este momento.</p>
         </div>
     </div>
 </main>
@@ -70,10 +69,10 @@
 <div id="responderModal" class="modal-responder">
     <div class="modal-responder-content">
         <span class="close-responder" onclick="closeResponderModal()">&times;</span>
-        <h2>Responder al Cliente</h2>
+        <h2>Responder Reporte</h2>
         <form id="formResponder" method="post">
             <div class="form-group">
-                <label for="respuesta">Tu Respuesta:</label>
+                <label for="respuesta">Respuesta del Administrador:</label>
                 <textarea id="respuesta" name="respuesta" rows="5" required placeholder="Escribe tu respuesta aquí..."></textarea>
             </div>
             <button type="submit" class="btn-submit-responder">
@@ -84,9 +83,9 @@
 </div>
 
 <script>
-    function openResponderModal(idContactar) {
+    function openResponderModal(idReporte) {
         document.getElementById('responderModal').style.display = 'block';
-        document.getElementById('formResponder').action = '/mensajes/responder/' + idContactar;
+        document.getElementById('formResponder').action = '/reportes/responder/' + idReporte;
     }
 
     function closeResponderModal() {
@@ -100,6 +99,7 @@
         }
     }
 </script>
+
 <div th:replace="~{fragments :: footer}"></div>
 </body>
 </html>

@@ -20,6 +20,9 @@
                 <li th:if="${session.usuarioLogueado != null and #strings.equalsIgnoreCase(session.usuarioLogueado.rol, 'usuario')}">
                     <a th:href="@{/vendedor}">Conviértete en vendedor</a>
                 </li>
+                <li><a th:if="${session.usuarioLogueado != null}" href="#" onclick="if(document.getElementById('modalEnviarReporte')) { document.getElementById('modalEnviarReporte').style.display='flex'; } return false;">Enviar Reporte</a></li>
+                <li><a th:if="${session.usuarioLogueado != null}" th:href="@{/mis-mensajes}">Mensajes</a></li>
+                <li><a th:if="${session.usuarioLogueado != null}" th:href="@{/mis-reportes}">Mis Reportes</a></li>
             </ul>
         </nav>
         <div class="user-actions">

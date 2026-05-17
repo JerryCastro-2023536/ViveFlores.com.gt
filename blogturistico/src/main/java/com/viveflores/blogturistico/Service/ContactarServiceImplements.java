@@ -45,6 +45,7 @@ public class ContactarServiceImplements implements ContactarService {
         contactar1.setFecha_envio(contactar.getFecha_envio());
         contactar1.setId_usuario(contactar.getId_usuario());
         contactar1.setId_publicacion(contactar.getId_publicacion());
+        contactar1.setRespuesta(contactar.getRespuesta());
         fv.validarLocalDateTime(contactar1.getFecha_envio());
 
         return contactarRepository.save(contactar1);

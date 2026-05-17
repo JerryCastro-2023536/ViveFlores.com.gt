@@ -12,4 +12,7 @@ import java.util.List;
 public interface ContactarRepository extends JpaRepository<Contactar, Integer> {
     @Query("SELECT c, p.nombre_publicacion FROM Contactar c JOIN Publicaciones p ON c.id_publicacion = p.id_publicacion WHERE p.id_usuario = :idUsuario")
     List<Object[]> findMensajesYPublicacionPorVendedor(@Param("idUsuario") Integer idUsuario);
+
+    @Query("SELECT c, p.nombre_publicacion FROM Contactar c JOIN Publicaciones p ON c.id_publicacion = p.id_publicacion WHERE c.id_usuario = :idUsuario")
+    List<Object[]> findMensajesYPublicacionPorUsuario(@Param("idUsuario") Integer idUsuario);
 }

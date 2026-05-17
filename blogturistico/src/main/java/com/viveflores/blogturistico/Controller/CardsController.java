@@ -26,8 +26,9 @@ public class CardsController {
     private final FavoritosService favoritosService;
     private final FavoritosRepository favoritosRepository;
     private final UsuariosService usuariosService;
+    private final ContactarService contactarService;
 
-    public CardsController(EventoService eventoService, EventoRepository eventoRepository, PublicacionesService publicacionesService, ServicioService servicioService, ResenaService resenaService, FavoritosService favoritosService, FavoritosRepository favoritosRepository, UsuariosService usuariosService) {
+    public CardsController(EventoService eventoService, EventoRepository eventoRepository, PublicacionesService publicacionesService, ServicioService servicioService, ResenaService resenaService, FavoritosService favoritosService, FavoritosRepository favoritosRepository, UsuariosService usuariosService, ContactarService contactarService) {
         this.eventoService = eventoService;
         this.publicacionesService = publicacionesService;
         this.servicioService = servicioService;
@@ -35,6 +36,7 @@ public class CardsController {
         this.favoritosService = favoritosService;
         this.favoritosRepository = favoritosRepository;
         this.usuariosService = usuariosService;
+        this.contactarService = contactarService;
     }
 
     @GetMapping("/eventosAll")
@@ -123,6 +125,30 @@ public class CardsController {
         resena.setCalificacion(calificacion);
 
         resenaService.saveResena(resena);
+
+        return "redirect:/post/" + id;
+    }
+
+    @PostMapping("/post/{id}/contactar")
+    public String contactarVendedor(
+            @PathVariable Integer id,
+            @RequestParam("asunto") String asunto,
+            @RequestParam("mensaje") String mensaje,
+            HttpSession session) {
+
+        Usuarios usuarioLogueado = (Usuarios) session.getAttribute("usuarioLogueado");
+        if (usuarioLogueado == null) {
+            return "redirect:/acceder";
+        }
+
+        Contactar contactar = new Contactar();
+        contactar.setId_publicacion(id);
+        contactar.setId_usuario(usuarioLogueado.getId_usuario());
+        contactar.setAsunto(asunto);
+        contactar.setMensaje(mensaje);
+        contactar.setFecha_envio(java.time.LocalDateTime.now());
+
+        contactarService.saveContactar(contactar);
 
         return "redirect:/post/" + id;
     }

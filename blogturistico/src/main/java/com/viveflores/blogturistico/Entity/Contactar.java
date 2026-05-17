@@ -35,6 +35,9 @@ public class Contactar {
     @Column(name = "id_publicacion")
     private Integer id_publicacion;
 
+    @Column(name = "respuesta")
+    private String respuesta;
+
     public Integer getId_contactar() {
         return id_contactar;
     }
@@ -81,5 +84,13 @@ public class Contactar {
 
     public void setId_publicacion(Integer id_publicacion) {
         this.id_publicacion = id_publicacion;
+    }
+
+    public String getRespuesta() {
+        return respuesta;
+    }
+
+    public void setRespuesta(String respuesta) {
+        this.respuesta = respuesta;
     }
 }
