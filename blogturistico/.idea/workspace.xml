@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da60f5b6-8546-4628-b8db-41c796697126" name="Changes" comment="refactor: Se cambioaron los diseños del footer y el header">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/CardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/MensajesVendedorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/MensajesVendedorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Contactar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Contactar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Reportes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Reportes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/GlobalExcepcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/GlobalExcepcion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/ContactarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/ContactarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/ReportesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/ReportesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ContactarServiceImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/ContactarServiceImplements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mensajesVendedor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/mensajesVendedor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/post.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/post.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mensajesVendedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mensajesVendedor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/paneladmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/paneladmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/perfilUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/perfilUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/paneladmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/paneladmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="da60f5b6-8546-4628-b8db-41c796697126" name="Changes" comment="fix: Se arreglaron errores dentro de las vistas" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,12 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1778994957566</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix: Se arreglaron errores dentro de las vistas">
+      <option name="closed" value="true" />
+      <created>1779012931181</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1779012931181</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: Se corrigieron errores en las vistas y se agregaron nuevas funciones de vendedor" />
     <MESSAGE value="refactor: Se cambioaron los diseños del footer y el header" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Se cambioaron los diseños del footer y el header" />
+    <MESSAGE value="fix: Se arreglaron errores dentro de las vistas" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: Se arreglaron errores dentro de las vistas" />
   </component>
 </project>
