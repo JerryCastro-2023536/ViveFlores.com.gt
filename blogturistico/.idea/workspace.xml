@@ -4,92 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da60f5b6-8546-4628-b8db-41c796697126" name="Changes" comment="fix: Se arreglaron errores dentro de las vistas">
+    <list default="true" id="da60f5b6-8546-4628-b8db-41c796697126" name="Changes" comment="fix: Se arreglaron y terminaron de unificar partaes del proyecto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/AlbumFotosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/AlbumFotosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/PerfilUsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/PerfilUsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/ReportesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/SubirPublicacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/SubirPublicacionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/UsuariosCrudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Controller/UsuariosCrudController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Fotos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Entity/Fotos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/GlobalExcepcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Exception/GlobalExcepcion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/UsuariosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Repository/UsuariosRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/UsuariosServiceImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viveflores/blogturistico/Service/UsuariosServiceImplements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/album.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/album.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Album.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Album.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/EnviarMensaje.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/EnviarMensaje.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/EventosCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/EventosCrud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ResenasCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ResenasCrud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ServiciosCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ServiciosCrud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminReportes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminReportes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/administrarPublicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/administrarPublicaciones.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/agregarServicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarServicio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/categorias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contactar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contactar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crudFavoritos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crudFavoritos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crudPublicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crudPublicaciones.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crudReportes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crudReportes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editarPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editarPublicacion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/favoritosUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/favoritosUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fotos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fotos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mensajesUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mensajesUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/misReportes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/misReportes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/paneladmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/paneladmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/perfilUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/perfilUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reportesAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reportesAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/solicitudPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/solicitudPublicacion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/subirEvento.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/subirEvento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/usuarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/AlbumFotosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/AlbumFotosController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/MensajesUsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/MensajesUsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/MensajesVendedorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/MensajesVendedorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/PerfilUsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/PerfilUsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ReportesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ReportesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ServiciosCrudController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/ServiciosCrudController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/SolicitudPublicacionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/SubirPublicacionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/SubirPublicacionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/UsuariosCrudController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Controller/UsuariosCrudController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Contactar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Contactar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Fotos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Fotos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Reportes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Entity/Reportes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Exception/GlobalExcepcion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ContactarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/ContactarRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/UsuariosRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Repository/UsuariosRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ContactarServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/ContactarServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/PublicacionesServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/UsuariosServiceImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viveflores/blogturistico/Service/UsuariosServiceImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/album.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/album.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Album.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Album.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/EnviarMensaje.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/EnviarMensaje.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/EventosCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/EventosCrud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/ResenasCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ResenasCrud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/ServiciosCrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ServiciosCrud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/adminReportes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/adminReportes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/administrarPublicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/administrarPublicaciones.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/agregarServicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/agregarServicio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/categorias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/contactar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/contactar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/crudFavoritos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/crudFavoritos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/crudPublicaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/crudPublicaciones.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/crudReportes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/crudReportes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/editarPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/editarPublicacion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/favoritosUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/favoritosUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fotos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fotos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/mensajesUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/mensajesUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/misReportes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/misReportes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/paneladmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/paneladmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/perfilUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/perfilUsuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/reportesAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/reportesAdmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/solicitudPublicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/solicitudPublicacion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/subirEvento.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/subirEvento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/usuarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,13 +110,22 @@
       <option name="project" value="LOCAL" />
       <updated>1779012931181</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix: Se arreglaron y terminaron de unificar partaes del proyecto">
+      <option name="closed" value="true" />
+      <created>1779152364862</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779152364868</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: Se corrigieron errores en las vistas y se agregaron nuevas funciones de vendedor" />
     <MESSAGE value="refactor: Se cambioaron los diseños del footer y el header" />
     <MESSAGE value="fix: Se arreglaron errores dentro de las vistas" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: Se arreglaron errores dentro de las vistas" />
+    <MESSAGE value="fix: Se arreglaron y terminaron de unificar partaes del proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: Se arreglaron y terminaron de unificar partaes del proyecto" />
   </component>
 </project>
