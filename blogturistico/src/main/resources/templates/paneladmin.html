@@ -12,19 +12,7 @@
 </head>
 
 <body>
-<header>
-    <div class="logo">Vive Flores</div>
-    <nav>
-        <ul>
-            <li><a href="index">Inicio</a></li>
-            <li><a href="reportes">CRUD Reportes</a></li>
-            <li><a href="/admin-reportes">Bandeja de Reportes</a></li>
-            <li><a href="">Administrar Publicaciones</a></li>
-        </ul>
-    </nav>
-    <a href="index"><button class="btn-regresar">Volver al menu</button></a>
-    </div>
-</header>
+<div th:replace="~{fragments :: headerAdmin}"></div>
 <main>
     <section class="hero1 fade-in">
         <h1>Panel de Administración</h1>
@@ -89,14 +77,7 @@
                 </h1>
             </div>
         </a>
-        <a href="reportes">
-            <div class="cards delay-8">
-                <h1>
-                    <i class="bi bi-file-earmark-text">
-                    </i> CRUD Reportes
-                </h1>
-            </div>
-        </a>
+
         <a href="/admin-reportes">
             <div class="cards delay-8">
                 <h1>
@@ -126,6 +107,14 @@
                 <h1>
                     <i class="bi bi-heart">
                     </i> Favoritos
+                </h1>
+            </div>
+        </a>
+        <a href="solicitudVendedor">
+            <div class="cards delay-12">
+                <h1>
+                    <i class="bi bi-person-badge">
+                    </i> Solicitudes Vendedor
                 </h1>
             </div>
         </a>

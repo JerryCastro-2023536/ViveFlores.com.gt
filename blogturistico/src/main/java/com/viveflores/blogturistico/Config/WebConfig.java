@@ -29,13 +29,18 @@ public class WebConfig implements WebMvcConfigurer {
                         "/panelvendedor",
                         "/adminpublicaciones/**",
                         "/mensajes",
-                        "/subir"
+                        "/subir",
+                        "/solicitudPublicacion/**",
+                        "/solicitudVendedor/**",
+                        "/album/guardar",
+                        "/album/eliminar/**"
                 )
                 .excludePathPatterns(
                         "/", "/index", "/acceder", "/login", "/register", "/saveUsuario",
                         "/quienessomos", "/contacto",
                         "/css/**", "/js/**", "/img/**",
-                        "/publicaciones/foto/**", "/servicios/foto/**", "/eventos/foto/**", "/fotos/foto/**"
+                        "/publicaciones/foto/**", "/servicios/foto/**", "/eventos/foto/**", "/fotos/foto/**",
+                        "/album", "/foto/**"
                 );
     }
 }

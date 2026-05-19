@@ -47,6 +47,25 @@
             </div>
     </header>
 
+    <header th:fragment="headerUsuario">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/headerNormal.css}">
+        <div class="logo">Vive Flores</div>
+            <nav>
+                <ul>
+                    <li><a th:href="@{/index}">Inicio</a></li>
+                    <li><a th:href="@{/favoritas}">Favoritos</a></li>
+                    <li><a href="#" onclick="document.getElementById('modalEditar').style.display='flex'">Editar Perfil</a></li>
+                    <li><a th:if="${session.usuarioLogueado != null}" th:href="@{/mis-mensajes}">Mensajes</a></li>
+                    <li><a th:if="${session.usuarioLogueado != null}" th:href="@{/mis-reportes}">Mis Reportes</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" style="display: flex; align-items: center; gap: 15px;">
+                <a th:if="${session.usuarioLogueado != null}" th:href="@{/logout}"><button class="btn-login" style="background-color: #e74c3c; color: white;">Cerrar Sesión</button></a>
+                <a th:if="${session.usuarioLogueado == null}" th:href="@{/acceder}"><button class="btn-login">Iniciar Sesión</button></a>
+            </div>
+    </header>
+
     <!-- VENDEDOR HEADER FRAGMENT -->
     <header th:fragment="headerVendedor">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -61,6 +80,30 @@
         </nav>
         <div class="user-actions" style="display: flex; align-items: center; gap: 15px;">
             <a th:href="@{/index}"><button class="btn-login" style="animation: none; box-shadow: none;">Volver al menú</button></a>
+        </div>
+    </header>
+
+    <!-- ADMIN HEADER FRAGMENT -->
+    <header th:fragment="headerAdmin">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/headerAdmin.css}">
+        <div class="admin-header">
+            <div class="admin-brand">
+                <a class="logo" th:href="@{/paneladmin}">Vive Flores</a>
+                <nav>
+                    <ul>
+                        <li><a th:href="@{/solicitudPublicacion}">Solicitud Publicaciones</a></li>
+                        <li><a th:href="@{/solicitudVendedor}">Solicitud Vendedor</a></li>
+                        <li><a th:href="@{/admin-reportes}">Reportes</a></li>
+                        <li><a th:href="@{/eventoscrud}">Subir Evento</a></li>
+                        <li><a th:href="@{/servicioscrud}">Subir Servicio</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="admin-actions">
+                <a th:href="@{/paneladmin}" class="btn-secondary">Volver al panel</a>
+                <a th:href="@{/index}" class="btn-primary">Inicio</a>
+            </div>
         </div>
     </header>
 

@@ -3,6 +3,7 @@ package com.viveflores.blogturistico.Service;
 import com.viveflores.blogturistico.Entity.Publicaciones;
 import com.viveflores.blogturistico.Exception.CorreoValidar;
 import com.viveflores.blogturistico.Exception.FechasValidar;
+import com.viveflores.blogturistico.Exception.CorreoExistenteExcepcion;
 import com.viveflores.blogturistico.Exception.NotFoundExcepcion;
 import com.viveflores.blogturistico.Repository.PublicacionesRepository;
 import org.springframework.stereotype.Service;
@@ -69,7 +70,7 @@ public class PublicacionesServiceImplements implements PublicacionesService {
         for(Publicaciones p : publicacionesList){
             if(p.getEmail_publicacion().equals(publicaciones1.getEmail_publicacion()) && 
                !p.getId_publicacion().equals(publicaciones1.getId_publicacion())){
-                throw new NotFoundExcepcion("El correo ya existe");
+                throw new CorreoExistenteExcepcion("El correo ya existe");
             }
         }
 

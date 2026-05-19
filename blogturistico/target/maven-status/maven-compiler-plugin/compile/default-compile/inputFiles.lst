@@ -32,6 +32,7 @@ C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\vivef
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Controller\ServicioController.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Controller\ServiciosCrudController.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Controller\SolicitudPublicacionController.java
+C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Controller\SolicitudVendedorController.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Controller\SubirEventoController.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Controller\SubirPublicacionController.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Controller\UsuariosController.java
@@ -47,6 +48,7 @@ C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\vivef
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Entity\Resena.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Entity\Servicio.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Entity\SolicitudPublicacion.java
+C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Entity\SolicitudVendedor.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Entity\Usuarios.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Exception\CorreoValidar.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Exception\FechasValidar.java
@@ -64,6 +66,7 @@ C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\vivef
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Repository\ResenaRepository.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Repository\ServicioRepository.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Repository\SolicitudPublicacionRepository.java
+C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Repository\SolicitudVendedorRepository.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Repository\UsuariosRepository.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Service\CategoriasService.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Service\CategoriasServiceImplements.java
@@ -85,5 +88,7 @@ C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\vivef
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Service\ServicioServiceImplements.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Service\SolicitudPublicacionService.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Service\SolicitudPublicacionServiceImplements.java
+C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Service\SolicitudVendedorService.java
+C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Service\SolicitudVendedorServiceImplements.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Service\UsuariosService.java
 C:\Users\danie\Downloads\ViveFlores.com.gt\blogturistico\src\main\java\com\viveflores\blogturistico\Service\UsuariosServiceImplements.java

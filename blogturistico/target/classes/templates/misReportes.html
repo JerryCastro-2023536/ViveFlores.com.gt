@@ -9,7 +9,7 @@
     <title>Mis Reportes</title>
 </head>
 <body>
-<div th:replace="~{fragments :: headerNormal}"></div>
+<div th:replace="~{fragments :: headerUsuario}"></div>
 
 <main class="mensajes-container">
     <div class="header-section">
@@ -18,25 +18,19 @@
     </div>
 
     <div class="tabla-mensajes">
-        <div class="grid-header" style="grid-template-columns: 2fr 3fr 3fr 1.5fr;">
+        <div class="grid-header" style="grid-template-columns: 2fr 3fr 1.5fr;">
             <span>Asunto</span>
             <span>Mi Mensaje</span>
-            <span>Respuesta del Admin</span>
             <span>Fecha Envío</span>
         </div>
 
-        <div class="grid-row" th:each="r : ${listaReportes}" style="grid-template-columns: 2fr 3fr 3fr 1.5fr;">
+        <div class="grid-row" th:each="r : ${listaReportes}" style="grid-template-columns: 2fr 3fr 1.5fr;">
             <div class="asunto-info">
                 <strong th:text="${r.asunto}">Asunto</strong>
             </div>
 
             <div class="mensaje-preview">
                 <p th:text="${r.mensaje}" style="-webkit-line-clamp: unset;"></p>
-            </div>
-
-            <div class="mensaje-preview" style="background:#f5f6fa; padding:10px; border-radius:8px;">
-                <p th:if="${r.respuesta != null}" th:text="${r.respuesta}" style="color:var(--deep); -webkit-line-clamp: unset;"></p>
-                <p th:if="${r.respuesta == null}" style="color:#aaa; font-style:italic;">Esperando respuesta...</p>
             </div>
 
             <div class="fecha-info">

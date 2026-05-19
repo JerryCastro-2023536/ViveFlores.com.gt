@@ -35,6 +35,10 @@ public class Fotos {
     @Column(name = "id_usuario")
     private Integer id_usuario;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario", insertable = false, updatable = false)
+    private Usuarios usuario;
+
     public Integer getId_foto() {
         return id_foto;
     }
@@ -81,5 +85,13 @@ public class Fotos {
 
     public void setId_usuario(Integer id_usuario) {
         this.id_usuario = id_usuario;
+    }
+
+    public Usuarios getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuarios usuario) {
+        this.usuario = usuario;
     }
 }

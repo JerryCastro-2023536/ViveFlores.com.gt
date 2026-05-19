@@ -62,10 +62,7 @@
 <body>
 <div th:replace="~{fragments :: errorGlobalNotification}"></div>
 
-    <header>
-        <h1>Vive Flores</h1>
-        <a href="#" class="btn-volver">← Volver al inicio</a>
-    </header>
+    <div th:replace="~{fragments :: headerAdmin}"></div>
 
     <main>
         <h2>Gestión de Publicaciones</h2>
@@ -114,6 +111,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
+                        <th>Foto</th>
                         <th>Dirección</th>
                         <th>Descripcion</th>
                         <th>Telefono</th>
@@ -130,6 +128,10 @@
                     <tr th:each="p : ${publicaciones}">
                         <td th:text="${p.id_publicacion}"></td>
                         <td th:text="${p.nombre_publicacion}"></td>
+                        <td>
+                            <img th:if="${p.foto != null}" th:src="@{'/publicaciones/foto/' + ${p.id_publicacion}}" alt="Imagen publicación" style="max-width: 90px; max-height: 70px; object-fit: cover; border-radius: 10px; display: block;"/>
+                            <span th:unless="${p.foto != null}" style="color: #6b7280; font-size: 0.9rem;">Sin imagen</span>
+                        </td>
                         <td th:text="${p.direccion}"></td>
                         <td th:text="${p.descripcion}"></td>
                         <td th:text="${p.telefono}"></td>

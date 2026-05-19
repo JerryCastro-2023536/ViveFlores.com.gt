@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Aceptar Solicitud Vendedor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" th:href="@{/aceptarSolicitudVendedor.css}">
+</head>
+<body>
+<div th:replace="~{fragments :: errorGlobalNotification}"></div>
+<div th:replace="~{fragments :: headerAdmin}"></div>
+
+<main>
+    <h2>Aceptar Solicitud Vendedor</h2>
+
+    <div class="cards-grid">
+        <div th:each="s : ${solicitudes}" class="request-card">
+            <header>
+                <div>
+                    <div class="request-id">Solicitud ID <strong th:text="${s.id_solicitud}"></strong></div>
+                    <div class="request-title" th:text="${s.descripcion}"></div>
+                </div>
+                <span class="status-badge"
+                      th:text="${s.estado}"
+                      th:style="${#strings.equalsIgnoreCase(s.estado, 'pendiente') ? 'background: #f59e0b;' :
+                                (#strings.equalsIgnoreCase(s.estado, 'aprobada') ? 'background: #16a34a;' : 'background: #dc2626;')}"></span>
+            </header>
+
+            <div class="details">
+                <p><strong>Fecha de solicitud:</strong> <span th:text="${s.fecha_solicitud}"></span></p>
+                <p><strong>ID Usuario:</strong> <span th:text="${s.id_usuario}"></span></p>
+            </div>
+
+            <div class="card-actions">
+                <button type="button" class="btn-delete"
+                        th:onclick="'openDeleteModal(\'/solicitudVendedor/eliminar/' + ${s.id_solicitud} + '\')'">
+                    <i class="bi bi-trash"></i> Eliminar
+                </button>
+            </div>
+        </div>
+
+        <div th:if="${#lists.isEmpty(solicitudes)}" class="empty-message">
+            No hay solicitudes de vendedor registradas.
+        </div>
+    </div>
+</main>
+
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeDeleteModal()">&times;</span>
+        <h2 class="modal-title">¿Eliminar solicitud?</h2>
+        <p class="modal-text">Esta acción borrará el registro permanentemente.</p>
+        <div class="modal-actions">
+            <button type="button" class="btn-modal-cancel" onclick="closeDeleteModal()">Cancelar</button>
+            <a id="confirmDeleteBtn" href="#">
+                <button type="button" class="btn-modal-confirm">Sí, eliminar</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openDeleteModal(url) {
+        document.getElementById('confirmDeleteBtn').href = url;
+        document.getElementById('deleteModal').style.display = 'flex';
+    }
+
+    function closeDeleteModal() {
+        document.getElementById('deleteModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        var deleteModal = document.getElementById('deleteModal');
+        if (event.target == deleteModal) closeDeleteModal();
+    }
+</script>
+</body>
+</html>

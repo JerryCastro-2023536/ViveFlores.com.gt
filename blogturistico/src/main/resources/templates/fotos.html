@@ -9,10 +9,7 @@
 </head>
 <body>
 
-<nav>
-    <span class="brand">Vive Flores</span>
-    <a class="btn-back" href="/">&#8592; Volver al inicio</a>
-</nav>
+<div th:replace="~{fragments :: headerAdmin}"></div>
 
 <div class="container">
     <h1>Gestión de Fotos</h1>
@@ -74,7 +71,7 @@
                 <th>Descripción</th>
                 <th>Imagen</th>
                 <th>Fecha Creación</th>
-                <th>ID Usuario</th>
+                <th>Usuario</th>
                 <th>Acciones</th>
             </tr>
             </thead>
@@ -92,7 +89,7 @@
                     <span th:unless="${f.foto != null}" class="no-img">Sin imagen</span>
                 </td>
                 <td th:text="${#temporals.format(f.fecha_creacion, 'dd/MM/yyyy')}"></td>
-                <td th:text="${f.id_usuario}"></td>
+                <td th:text="${f.usuario != null ? f.usuario.username : 'Anónimo'}"></td>
                 <td>
                     <button type="button"
                             class="btn-edit"

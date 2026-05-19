@@ -16,15 +16,7 @@
 <body>
 <div th:replace="~{fragments :: errorGlobalNotification}"></div>
 
-<header>
-    <div class="logo">Vive Flores</div>
-
-    <nav>
-        <a th:href="@{/}" class="btn-home">
-            ⬅ Volver al inicio
-        </a>
-    </nav>
-</header>
+<div th:replace="~{fragments :: headerAdmin}"></div>
 
 <div class="container">
 
@@ -126,6 +118,7 @@
                 <th>Nombre</th>
                 <th>Teléfono</th>
                 <th>Descripción</th>
+                <th>Imagen</th>
                 <th>Fecha</th>
                 <th>Usuario</th>
                 <th>Acciones</th>
@@ -140,6 +133,10 @@
                 <td th:text="${s.nombre_servicio}"></td>
                 <td th:text="${s.telefono}"></td>
                 <td th:text="${s.descripcion}"></td>
+                <td>
+                    <img th:if="${s.foto != null}" th:src="@{'/servicios/foto/' + ${s.id_servicio}}" alt="Imagen servicio" style="max-width: 90px; max-height: 70px; object-fit: cover; border-radius: 10px; display: block;"/>
+                    <span th:unless="${s.foto != null}" style="color: #6b7280; font-size: 0.9rem;">Sin imagen</span>
+                </td>
                 <td th:text="${s.fecha_creacion}"></td>
                 <td th:text="${s.id_usuario}"></td>
 

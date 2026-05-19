@@ -46,12 +46,7 @@ public class UsuariosCrudController {
     public String buscar(@RequestParam Integer id_usuario, Model model) {
         if (id_usuario != null) {
             Usuarios u = service.getUsuariosById(id_usuario);
-            if (u != null) {
-                model.addAttribute("usuarios", java.util.List.of(u));
-            } else {
-                model.addAttribute("usuarios", service.getAllUsuarios());
-                model.addAttribute("error", "No existe ese ID");
-            }
+            model.addAttribute("usuarios", java.util.List.of(u));
         }
         return "usuarios";
     }
@@ -59,7 +54,7 @@ public class UsuariosCrudController {
 
     @PostMapping("/usuarios/editar")
     public String editar(@ModelAttribute Usuarios usuarios) {
-        service.saveUsuarios(usuarios);
+        service.updateUsuarios(usuarios.getId_usuario(), usuarios);
         return "redirect:/usuarios";
     }
 

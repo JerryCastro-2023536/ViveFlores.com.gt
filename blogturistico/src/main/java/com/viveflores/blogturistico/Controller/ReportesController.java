@@ -63,18 +63,7 @@ public class ReportesController {
         return "adminReportes";
     }
 
-    @PostMapping("/reportes/responder/{id}")
-    public String responderReporte(@PathVariable Integer id, @RequestParam("respuesta") String respuesta, HttpSession session) {
-        Usuarios u = (Usuarios) session.getAttribute("usuarioLogueado");
-        if (u == null || !u.getRol().equalsIgnoreCase("admin")) return "redirect:/acceder";
 
-        Reportes reporte = service.BuscarPorId(id);
-        if (reporte != null) {
-            reporte.setRespuesta(respuesta);
-            service.agregarReportes(reporte); // save
-        }
-        return "redirect:/admin-reportes";
-    }
 
     @PostMapping("/reportes/eliminar/{id}")
     public String eliminarReporte(@PathVariable Integer id, HttpSession session) {

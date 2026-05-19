@@ -1,6 +1,7 @@
 package com.viveflores.blogturistico.Controller;
 
 import com.viveflores.blogturistico.Entity.Publicaciones;
+import com.viveflores.blogturistico.Entity.SolicitudPublicacion;
 import com.viveflores.blogturistico.Entity.Usuarios;
 import com.viveflores.blogturistico.Service.CategoriasService;
 import com.viveflores.blogturistico.Service.PublicacionesService;
@@ -18,10 +19,12 @@ public class SubirPublicacionController {
 
     private final PublicacionesService publicacionesService;
     private final CategoriasService categoriasService;
+    private final com.viveflores.blogturistico.Service.SolicitudPublicacionService solicitudPublicacionService;
 
-    public SubirPublicacionController(PublicacionesService publicacionesService, CategoriasService categoriasService) {
+    public SubirPublicacionController(PublicacionesService publicacionesService, CategoriasService categoriasService, com.viveflores.blogturistico.Service.SolicitudPublicacionService solicitudPublicacionService) {
         this.publicacionesService = publicacionesService;
         this.categoriasService = categoriasService;
+        this.solicitudPublicacionService = solicitudPublicacionService;
     }
 
     @GetMapping("/subir")
@@ -57,6 +60,14 @@ public class SubirPublicacionController {
             }
 
             publicacionesService.savePublicaciones(publicacion);
+
+            SolicitudPublicacion sol = new SolicitudPublicacion();
+            sol.setFecha_solicitud(LocalDate.now());
+            sol.setEstado("pendiente");
+            sol.setDescripcion("Nueva publicación pendiente de aprobación: " + publicacion.getNombre_publicacion());
+            sol.setId_publicacion(publicacion.getId_publicacion());
+            sol.setId_usuario(publicacion.getId_usuario());
+            solicitudPublicacionService.guardar(sol);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -117,6 +128,14 @@ public class SubirPublicacionController {
             }
 
             publicacionesService.savePublicaciones(publicacion);
+
+            SolicitudPublicacion sol = new SolicitudPublicacion();
+            sol.setFecha_solicitud(LocalDate.now());
+            sol.setEstado("pendiente");
+            sol.setDescripcion("Nueva publicación pendiente de aprobación: " + publicacion.getNombre_publicacion());
+            sol.setId_publicacion(publicacion.getId_publicacion());
+            sol.setId_usuario(publicacion.getId_usuario());
+            solicitudPublicacionService.guardar(sol);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
+import com.viveflores.blogturistico.Exception.CorreoExistenteExcepcion;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,6 +18,12 @@ public class GlobalExcepcion {
 
     @ExceptionHandler(NotFoundExcepcion.class)
     public String notFound(NotFoundExcepcion e, HttpServletRequest request, RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("errorGlobal", e.getMessage());
+        return getRedirectUrl(request);
+    }
+
+    @ExceptionHandler(CorreoExistenteExcepcion.class)
+    public String correoExistente(CorreoExistenteExcepcion e, HttpServletRequest request, RedirectAttributes redirectAttributes){
         redirectAttributes.addFlashAttribute("errorGlobal", e.getMessage());
         return getRedirectUrl(request);
     }

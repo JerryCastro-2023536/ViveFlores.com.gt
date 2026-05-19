@@ -9,10 +9,7 @@
     <link rel="stylesheet" th:href="@{/usuarios.css}">
 </head>
 <body>
-<header>
-    <h1>Vive Flores</h1>
-    <a th:href="@{/}" class="btn-volver">Volver al inicio</a>
-</header>
+<div th:replace="~{fragments :: headerVendedor}"></div>
 
 <main>
     <h2>Registrar Nuevo Servicio</h2>

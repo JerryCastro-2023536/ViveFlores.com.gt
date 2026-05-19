@@ -10,23 +10,7 @@
 </head>
 <body>
 
-    <header>
-        <div class="logo">Vive Flores</div>
-        <nav>
-            <ul>
-                <li><a th:href="@{/index}">Inicio</a></li>
-                <li><a th:href="@{/favoritas}">Favoritos</a></li>
-                <li><a th:href="@{/perfil}">Ir al Perfil</a></li>
-                <li th:if="${session.usuarioLogueado != null and #strings.equalsIgnoreCase(session.usuarioLogueado.rol, 'usuario')}">
-                    <a th:href="@{/vendedor}">Conviértete en vendedor</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="user-actions">
-            <a th:if="${session.usuarioLogueado != null}" th:href="@{/logout}"><button class="btn-login" style="background-color: #e74c3c; color: white;">Cerrar Sesión</button></a>
-            <a th:if="${session.usuarioLogueado == null}" th:href="@{/acceder}"><button class="btn-login">Iniciar Sesión</button></a>
-        </div>
-    </header>
+    <div th:replace="~{fragments :: headerUsuario}"></div>
     
     <section class="section alt fav-section">
         <h2 class="reveal visible">Tus Favoritos</h2>

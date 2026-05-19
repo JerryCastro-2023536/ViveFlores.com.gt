@@ -14,6 +14,42 @@ public class SolicitudPublicacionController {
     @Autowired
     private SolicitudPublicacionService service;
 
+    @Autowired
+    private com.viveflores.blogturistico.Service.PublicacionesService publicacionesService;
+
+    @GetMapping("/solicitudPublicacion/aprobar/{id}")
+    public String aprobar(@PathVariable int id) {
+        SolicitudPublicacion sol = service.buscarPorId(id);
+        if (sol != null) {
+            sol.setEstado("Aprobada");
+            service.guardar(sol);
+            if (sol.getId_publicacion() != null) {
+                com.viveflores.blogturistico.Entity.Publicaciones pub = publicacionesService.getPublicacionesById(sol.getId_publicacion());
+                if (pub != null) {
+                    pub.setEstado_publicacion("activo");
+                    publicacionesService.savePublicaciones(pub);
+                }
+            }
+        }
+        return "redirect:/solicitudPublicacion";
+    }
+
+    @GetMapping("/solicitudPublicacion/rechazar/{id}")
+    public String rechazar(@PathVariable int id) {
+        SolicitudPublicacion sol = service.buscarPorId(id);
+        if (sol != null) {
+            sol.setEstado("Rechazada");
+            service.guardar(sol);
+            if (sol.getId_publicacion() != null) {
+                com.viveflores.blogturistico.Entity.Publicaciones pub = publicacionesService.getPublicacionesById(sol.getId_publicacion());
+                if (pub != null) {
+                    pub.setEstado_publicacion("rechazado");
+                    publicacionesService.savePublicaciones(pub);
+                }
+            }
+        }
+        return "redirect:/solicitudPublicacion";
+    }
 
     @GetMapping("/solicitudPublicacion")
     public String listarsolicitudPublicacion(@RequestParam(name = "accion", required = false) String accion,

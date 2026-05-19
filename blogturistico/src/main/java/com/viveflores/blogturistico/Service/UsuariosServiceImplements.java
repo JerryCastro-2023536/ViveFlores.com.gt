@@ -37,17 +37,53 @@ public class UsuariosServiceImplements implements UsuariosService{
         cv.formatoCorreo(usuarios.getEmail_usuario());
         fv.validarLocalDate(usuarios.getFecha_registro());
         v.validarRol(usuarios.getRol());
+
+        Usuarios existingEmail = UsuarioRepository.findByEmailUsuario(usuarios.getEmail_usuario());
+        if (existingEmail != null && !existingEmail.getId_usuario().equals(usuarios.getId_usuario())) {
+            throw new NotFoundExcepcion("El correo ya existe");
+        }
+
+        Usuarios existingUsername = UsuarioRepository.findByUsername(usuarios.getUsername());
+        if (existingUsername != null && !existingUsername.getId_usuario().equals(usuarios.getId_usuario())) {
+            throw new NotFoundExcepcion("El nombre de usuario ya existe");
+        }
+
         return UsuarioRepository.save(usuarios);
     }
 
     @Override
     public Usuarios updateUsuarios(Integer id, Usuarios usuarios) {
-        return UsuarioRepository.save(usuarios);
+        Usuarios existing = getUsuariosById(id);
+
+        existing.setUsername(usuarios.getUsername());
+        existing.setNombre_usuario(usuarios.getNombre_usuario());
+        existing.setApellido_usuario(usuarios.getApellido_usuario());
+        existing.setEmail_usuario(usuarios.getEmail_usuario());
+        existing.setContrasena_usuario(usuarios.getContrasena_usuario());
+        existing.setRol(usuarios.getRol());
+        existing.setFecha_registro(usuarios.getFecha_registro());
+
+        cv.formatoCorreo(existing.getEmail_usuario());
+        fv.validarLocalDate(existing.getFecha_registro());
+        v.validarRol(existing.getRol());
+
+        Usuarios existingEmail = UsuarioRepository.findByEmailUsuario(existing.getEmail_usuario());
+        if (existingEmail != null && !existingEmail.getId_usuario().equals(id)) {
+            throw new NotFoundExcepcion("El correo ya existe");
+        }
+
+        Usuarios existingUsername = UsuarioRepository.findByUsername(existing.getUsername());
+        if (existingUsername != null && !existingUsername.getId_usuario().equals(id)) {
+            throw new NotFoundExcepcion("El nombre de usuario ya existe");
+        }
+
+        return UsuarioRepository.save(existing);
     }
 
     @Override
     public void deleteUsuarios(Integer id) {
-        UsuarioRepository.deleteById(id);
+        Usuarios existing = getUsuariosById(id);
+        UsuarioRepository.delete(existing);
     }
 
     @Override

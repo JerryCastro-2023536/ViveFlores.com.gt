@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,166 +9,173 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" th:href="@{/solicitudPublicacion.css}">
 </head>
+
 <body>
-<div th:replace="~{fragments :: errorGlobalNotification}"></div>
-<header>
-    <h1>Vive Flores</h1>
-    <a th:href="@{/}" class="btn-volver">Volver al inicio</a>
-</header>
+    <div th:replace="~{fragments :: errorGlobalNotification}"></div>
+    <div th:replace="~{fragments :: headerAdmin}"></div>
 
-<main>
-    <h2>Solicitud de Publicación</h2>
+    <main>
+        <h2>Solicitud de Publicación</h2>
 
-    <div class="card">
-        <form th:action="@{/solicitudPublicacion/agregar}" method="post">
-            <div class="grid-2">
-                <div class="input-group">
-                    <label>Fecha de Solicitud</label>
-                    <input type="date" name="fecha_solicitud" required>
+        <div class="card">
+            <form th:action="@{/solicitudPublicacion/agregar}" method="post">
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label>Fecha de Solicitud</label>
+                        <input type="date" name="fecha_solicitud" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Estado</label>
+                        <input type="text" placeholder="Ej: Pendiente" name="estado" required>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label>Estado</label>
-                    <input type="text" placeholder="Ej: Pendiente" name="estado" required>
+
+                <textarea placeholder="Descripción de la solicitud" name="descripcion" required></textarea>
+
+                <div class="grid-2">
+                    <input type="number" placeholder="ID Publicación" name="id_publicacion" required>
+                    <input type="number" placeholder="ID Usuario" name="id_usuario" required>
                 </div>
-            </div>
+                <button type="submit">Agregar Solicitud</button>
+            </form>
 
-            <textarea placeholder="Descripción de la solicitud" name="descripcion" required></textarea>
+            <form th:action="@{/solicitudPublicacion/buscar}" method="post" class="search-form">
+                <input type="number" name="id_solicitud" placeholder="Buscar por ID de solicitud" required>
+                <button type="submit" class="btn-search">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+        </div>
 
-            <div class="grid-2">
-                <input type="number" placeholder="ID Publicación" name="id_publicacion" required>
-                <input type="number" placeholder="ID Usuario" name="id_usuario" required>
-            </div>
-            <button type="submit">Agregar Solicitud</button>
-        </form>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Descripción</th>
+                        <th>ID Pub.</th>
+                        <th>ID Usu.</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="u : ${solicitudPublicacion}">
+                        <td th:text="${u.id_solicitud}"></td>
+                        <td th:text="${u.fecha_solicitud}"></td>
+                        <td>
+                            <span class="status-badge" th:text="${u.estado}"></span>
+                        </td>
+                        <td th:text="${u.descripcion}"></td>
+                        <td th:text="${u.id_publicacion}"></td>
+                        <td th:text="${u.id_usuario}"></td>
+                        <td>
+                            <div style="display: flex; gap: 5px; align-items: center;">
+                                <a th:if="${#strings.equalsIgnoreCase(u.estado, 'pendiente')}"
+                                    th:href="@{'/solicitudPublicacion/aprobar/' + ${u.id_solicitud}}"
+                                    style="background: #27ae60; color: white; padding: 5px 10px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: bold; display: inline-flex; align-items: center; gap: 4px;">
+                                    <i class="bi bi-check-circle-fill"></i> Aprobar
+                                </a>
+                                <a th:if="${#strings.equalsIgnoreCase(u.estado, 'pendiente')}"
+                                    th:href="@{'/solicitudPublicacion/rechazar/' + ${u.id_solicitud}}"
+                                    style="background: #c0392b; color: white; padding: 5px 10px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: bold; display: inline-flex; align-items: center; gap: 4px;">
+                                    <i class="bi bi-x-circle-fill"></i> Rechazar
+                                </a>
 
-        <form th:action="@{/solicitudPublicacion/buscar}" method="post" class="search-form">
-            <input type="number" name="id_solicitud" placeholder="Buscar por ID de solicitud" required>
-            <button type="submit" class="btn-search">
-                <i class="bi bi-search"></i>
-            </button>
-        </form>
-    </div>
+                                <button type="button" th:data-id="${u.id_solicitud}"
+                                    th:data-fecha="${u.fecha_solicitud}" th:data-estado="${u.estado}"
+                                    th:data-descripcion="${u.descripcion}" th:data-idpub="${u.id_publicacion}"
+                                    th:data-idusu="${u.id_usuario}" onclick="openEditModal(this)">Editar</button>
 
-    <div class="table-container">
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Fecha</th>
-                <th>Estado</th>
-                <th>Descripción</th>
-                <th>ID Pub.</th>
-                <th>ID Usu.</th>
-                <th>Acciones</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="u : ${solicitudPublicacion}">
-                <td th:text="${u.id_solicitud}"></td>
-                <td th:text="${u.fecha_solicitud}"></td>
-                <td>
-                    <span class="status-badge" th:text="${u.estado}"></span>
-                </td>
-                <td th:text="${u.descripcion}"></td>
-                <td th:text="${u.id_publicacion}"></td>
-                <td th:text="${u.id_usuario}"></td>
-                <td>
-                    <!-- Usamos la misma lógica de pasar datos al JS para el modal -->
-                    <button type="button"
-                            th:data-id="${u.id_solicitud}"
-                            th:data-fecha="${u.fecha_solicitud}"
-                            th:data-estado="${u.estado}"
-                            th:data-descripcion="${u.descripcion}"
-                            th:data-idpub="${u.id_publicacion}"
-                            th:data-idusu="${u.id_usuario}"
-                            onclick="openEditModal(this)">Editar</button>
+                                <button type="button" class="btn-delete-icon"
+                                    th:onclick="'openDeleteModal(\'/solicitudPublicacion/eliminar/' + ${u.id_solicitud} + '\')'">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
 
-                    <button type="button" class="btn-delete-icon"
-                            th:onclick="'openDeleteModal(\'/solicitudPublicacion/eliminar/' + ${u.id_solicitud} + '\')'">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</main>
+    <!-- Modal de Edición -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Editar Solicitud</h2>
+            <form th:action="@{/solicitudPublicacion/editar}" method="post">
+                <input type="hidden" id="edit-id" name="id_solicitud">
 
-<!-- Modal de Edición -->
-<div id="editModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeEditModal()">&times;</span>
-        <h2>Editar Solicitud</h2>
-        <form th:action="@{/solicitudPublicacion/editar}" method="post">
-            <input type="hidden" id="edit-id" name="id_solicitud">
-
-            <div class="grid-2">
-                <div class="input-group">
-                    <label>Fecha</label>
-                    <input type="date" id="edit-fecha" name="fecha_solicitud">
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label>Fecha</label>
+                        <input type="date" id="edit-fecha" name="fecha_solicitud">
+                    </div>
+                    <div class="input-group">
+                        <label>Estado</label>
+                        <input type="text" id="edit-estado" name="estado">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label>Estado</label>
-                    <input type="text" id="edit-estado" name="estado">
+
+                <textarea id="edit-descripcion" name="descripcion" placeholder="Descripción"></textarea>
+
+                <div class="grid-2">
+                    <input type="number" id="edit-idpub" name="id_publicacion" placeholder="ID Publicación">
+                    <input type="number" id="edit-idusu" name="id_usuario" placeholder="ID Usuario">
                 </div>
-            </div>
-
-            <textarea id="edit-descripcion" name="descripcion" placeholder="Descripción"></textarea>
-
-            <div class="grid-2">
-                <input type="number" id="edit-idpub" name="id_publicacion" placeholder="ID Publicación">
-                <input type="number" id="edit-idusu" name="id_usuario" placeholder="ID Usuario">
-            </div>
-            <button type="submit" style="margin-top: 15px;">Actualizar Cambios</button>
-        </form>
-    </div>
-</div>
-
-<div id="deleteModal" class="modal">
-    <div class="modal-content" style="max-width: 400px; text-align: center;">
-        <span class="close" onclick="closeDeleteModal()">&times;</span>
-        <h2 style="color: #0a1e2b; margin-bottom: 15px;">¿Eliminar solicitud?</h2>
-        <p style="color: #6b7c93; margin-bottom: 25px;">Esta acción borrará el registro permanentemente.</p>
-        <div style="display: flex; justify-content: center; gap: 15px;">
-            <button type="button" onclick="closeDeleteModal()" class="btn-cancelar">Cancelar</button>
-            <a id="confirmDeleteBtn" href="#">
-                <button type="button" class="btn-confirmar-eliminar">Sí, eliminar</button>
-            </a>
+                <button type="submit" style="margin-top: 15px;">Actualizar Cambios</button>
+            </form>
         </div>
     </div>
-</div>
 
-<script>
-    function openEditModal(btn) {
-        document.getElementById('edit-id').value = btn.getAttribute('data-id');
-        document.getElementById('edit-fecha').value = btn.getAttribute('data-fecha');
-        document.getElementById('edit-estado').value = btn.getAttribute('data-estado');
-        document.getElementById('edit-descripcion').value = btn.getAttribute('data-descripcion');
-        document.getElementById('edit-idpub').value = btn.getAttribute('data-idpub');
-        document.getElementById('edit-idusu').value = btn.getAttribute('data-idusu');
+    <div id="deleteModal" class="modal">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <span class="close" onclick="closeDeleteModal()">&times;</span>
+            <h2 style="color: #0a1e2b; margin-bottom: 15px;">¿Eliminar solicitud?</h2>
+            <p style="color: #6b7c93; margin-bottom: 25px;">Esta acción borrará el registro permanentemente.</p>
+            <div style="display: flex; justify-content: center; gap: 15px;">
+                <button type="button" onclick="closeDeleteModal()" class="btn-cancelar">Cancelar</button>
+                <a id="confirmDeleteBtn" href="#">
+                    <button type="button" class="btn-confirmar-eliminar">Sí, eliminar</button>
+                </a>
+            </div>
+        </div>
+    </div>
 
-        document.getElementById('editModal').style.display = 'block';
-    }
+    <script>
+        function openEditModal(btn) {
+            document.getElementById('edit-id').value = btn.getAttribute('data-id');
+            document.getElementById('edit-fecha').value = btn.getAttribute('data-fecha');
+            document.getElementById('edit-estado').value = btn.getAttribute('data-estado');
+            document.getElementById('edit-descripcion').value = btn.getAttribute('data-descripcion');
+            document.getElementById('edit-idpub').value = btn.getAttribute('data-idpub');
+            document.getElementById('edit-idusu').value = btn.getAttribute('data-idusu');
 
-    function closeEditModal() {
-        document.getElementById('editModal').style.display = 'none';
-    }
+            document.getElementById('editModal').style.display = 'block';
+        }
 
-    function openDeleteModal(url) {
-        document.getElementById('confirmDeleteBtn').href = url;
-        document.getElementById('deleteModal').style.display = 'block';
-    }
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
 
-    function closeDeleteModal() {
-        document.getElementById('deleteModal').style.display = 'none';
-    }
+        function openDeleteModal(url) {
+            document.getElementById('confirmDeleteBtn').href = url;
+            document.getElementById('deleteModal').style.display = 'block';
+        }
 
-    window.onclick = function(event) {
-        var editModal = document.getElementById('editModal');
-        var deleteModal = document.getElementById('deleteModal');
-        if (event.target == editModal) closeEditModal();
-        if (event.target == deleteModal) closeDeleteModal();
-    }
-</script>
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        window.onclick = function (event) {
+            var editModal = document.getElementById('editModal');
+            var deleteModal = document.getElementById('deleteModal');
+            if (event.target == editModal) closeEditModal();
+            if (event.target == deleteModal) closeDeleteModal();
+        }
+    </script>
 </body>
+
 </html>
